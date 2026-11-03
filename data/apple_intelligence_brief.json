@@ -1,0 +1,26 @@
+{
+  "disclaimer": "Case study built from public reporting, as the plan stood on 2024-08-26. Facts marked [assumed] reconstruct internal plans and are not Apple documents. Not affiliated with or endorsed by Apple. Sources: cases/apple_intelligence.md in the repo.",
+  "as_of": "2024-08-26",
+  "planning_rule": "Plan only from the facts below, as of the as_of date. Do not use knowledge of anything that happened after that date.",
+  "company": "Apple",
+  "launch_name": "Apple Intelligence first wave (case study)",
+  "launch_date": "2024-10-28",
+  "embargo_lifts": "2024-09-09T10:00:00-07:00",
+  "summary": "Apple Intelligence is Apple's generative AI system for iPhone, iPad and Mac. The iPhone 16 is announced at a keynote on 2024-09-09 and marketed around Apple Intelligence, but the first wave of features ships later in iOS 18.1, in beta and in US English only, with more features, languages and regions rolling out over the following year.",
+  "kickoff": "2024-06-10",
+  "workstreams": ["PR", "Product", "Regional", "Legal"],
+  "facts": [
+    "Apple announced Apple Intelligence at WWDC on 2024-06-10: Writing Tools, notification summaries, Image Playground, Genmoji, ChatGPT access in Siri, and a more personal Siri with personal context, onscreen awareness and in-app actions. Apple said it would arrive in beta in US English in the fall, with some features, languages and platforms coming over the course of the next year.",
+    "Apple Intelligence requires an iPhone 15 Pro, iPhone 15 Pro Max or iPhone 16 model, or an iPad or Mac with Apple silicon.",
+    "The iPhone 16 keynote is 2024-09-09 at 10:00 PT. The phones go on sale 2024-09-20 without Apple Intelligence. The first features arrive in iOS 18.1, targeted for 2024-10-28.",
+    "iOS 18.1 ships Writing Tools, the Clean Up photo tool, notification summaries and a redesigned Siri, all labeled beta. Image Playground, Genmoji and ChatGPT in Siri follow in iOS 18.2 in December. The more personal Siri features have no ship date.",
+    "Notification summaries condense stacked notifications from any app, including news apps, into one AI-generated line. The summary appears on the Lock Screen under the source app's name and icon.",
+    "[assumed] The iPhone 16 campaign is built around Apple Intelligence, including TV spots that demonstrate the more personal Siri answering questions from the user's own emails and calendar.",
+    "[assumed] The Apple Intelligence web page shows an 'Available now' banner at the top, above the full list of features, including features that ship later.",
+    "At launch, Apple Intelligence works only with the device and Siri language set to US English. Localized English for the UK, Canada, Australia, New Zealand and South Africa is planned for December. Other languages, including Chinese, French, German, Japanese and Spanish, are planned for 2025.",
+    "On 2024-06-21 Apple said Apple Intelligence will not launch in the EU in 2024, citing regulatory uncertainty under the Digital Markets Act. There is no EU date.",
+    "Generative AI services in mainland China need approval from the Cyberspace Administration of China. Apple has not announced a local model partner or a China date.",
+    "[assumed] The iPhone 16 goes on sale on 2024-09-20 in more than 50 markets, including the EU and mainland China, under the same Apple Intelligence campaign.",
+    "[assumed] Owner names are not public. Assign owners as roles."
+  ]
+}

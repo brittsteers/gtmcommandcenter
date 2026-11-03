@@ -7,7 +7,7 @@ It runs two ways:
 - **In the cloud:** GitHub Actions runs the agents, signs in to Claude through workload identity federation with no stored API key, and opens a pull request as the approval step. The dashboard is published on GitHub Pages. Setup is in [SETUP.md](SETUP.md).
 - **Locally:** a FastAPI dashboard that streams the agents live and has an approve button.
 
-All launch data is fictional ("Lumen" and "Nova 2" are invented).
+The sample launch is fictional ("Lumen" and "Nova 2" are invented). A second brief rebuilds a real launch, Apple Intelligence, from public reporting as it stood before launch, so a run can be scored against what actually happened. See [cases/apple_intelligence.md](cases/apple_intelligence.md).
 
 ## Agent graph
 

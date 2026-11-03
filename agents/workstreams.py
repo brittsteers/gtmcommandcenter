@@ -6,9 +6,9 @@ import json
 from schemas import MasterSchedule, WorkstreamPlan
 
 TEAMS = {
-    "PR": "External communications: press announcement, blog post, embargo management, media briefings, creator and influencer comms.",
-    "Product": "Product readiness: red teaming, early access program, feature availability, integrations such as the browser, in-product launch moments.",
-    "Regional": "Regional marketing across 14 regions: localization, translation, local publish timing, local press and social.",
+    "PR": "External communications: press announcement, blog post, embargo management, media briefings, creator and influencer comms, launch advertising.",
+    "Product": "Product readiness: red teaming, early access program, feature availability, staged feature rollout, integrations and partners, in-product launch moments.",
+    "Regional": "Regional marketing across launch markets: localization, translation, regional availability, local publish timing, local press and social.",
     "Legal": "Legal and policy review: performance and safety claims, disclaimers, NDAs for early access, regional regulatory requirements.",
 }
 
