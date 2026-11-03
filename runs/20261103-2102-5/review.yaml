@@ -1,0 +1,71 @@
+# Risk review for run 20261103-2102-5
+#
+# For each risk, set `decision` to accept or reject. You can also rewrite the mitigation.
+# Merging this pull request is the approval: the Synthesizer runs only after the merge.
+# Close the pull request without merging to discard the run.
+
+risks:
+- id: R1
+  title: Australia and Japan regional publishes break the 09:00 PT embargo, and the teams have set conflicting
+    decision dates
+  severity: high
+  decision: accept
+  owner: PR Lead (decision), with a Regional lead named via REG-1
+  mitigation: Make one binding decision by 02-05 (the PR-2 date). Either (a) hold all regional publishes,
+    social posts and in-product moments until 09:00 PT on 03-10, which is 03:00 AEDT / 02:00 JST on 03-11,
+    or (b) move the global embargo to 09:00 AEDT on 03-10 (14:00 PT on 03-09) and re-brief media. Publish
+    one per-region UTC schedule, get Legal to confirm the embargo wording covers regional press and social,
+    and move REG-5 to 02-05 with a named owner.
+- id: R2
+  title: Safety disclaimer translation and launch-copy localization for 14 regions must fit a window of
+    less than two business days, with no owner
+  severity: high
+  decision: accept
+  owner: Regional lead (to be named under REG-1), with Legal counsel (claims review)
+  mitigation: Pull claims submission forward to 02-12 (PRO-4) so Legal can finish around 02-26. Ask Legal
+    to release disclaimer wording first, in batches, ahead of the full claims review (Regional has asked
+    for this). Name the REG-1 owner by 02-05 and pre-book vendors and per-region reviewers under REG-2.
+    Set a fallback of Legal-approved English disclaimers for any region not finished by its publish cutoff.
+- id: R3
+  title: Early access opens before red team sign-off, and the gating decision has no owner
+  severity: high
+  decision: accept
+  owner: Head of Product (Product workstream lead)
+  mitigation: Assign an accountable Product exec to PRO-1 by 01-15. Decide by 01-22 to either move the
+    opening to on or after 02-08, or sign a documented risk acceptance with limited-scope access and guardrails.
+    Executed NDAs (LEG-2) and leak guidance (PR-3) must be in place before any access.
+- id: R4
+  title: Browser-availability correction is scheduled after the claims go to Legal, so the corrected claim
+    may never get the full review
+  severity: high
+  decision: accept
+  owner: PR Lead
+  mitigation: Move PRO-5 and PR-1 to before 02-12 so the corrected 'coming 03-17' wording is in the claims
+    package. Make PR Lead the single owner of the fix, with LEG-4 as review only. Add a hard check at
+    the 03-05 copy lock that no asset (press, blog, ads, creator copy, in-product, localized) claims browser
+    availability on launch day.
+- id: R5
+  title: Claims submission has three owners and dates, no red-team gate, and zero slack to copy lock
+  severity: high
+  decision: accept
+  owner: Product Marketing Lead
+  mitigation: Name the Product Marketing Lead as the single submitter of one consolidated package by 02-12,
+    gated on PRO-2. Reframe PR-4 as an input due 02-10 and LEG-3 as Legal intake and acknowledgement.
+    Set an escalation trigger if PRO-2 slips past 02-08, and agree Legal's handling of late changes in
+    advance.
+- id: R6
+  title: The entire Regional workstream, including launch-day publishing, has no named owner
+  severity: high
+  decision: accept
+  owner: Program manager
+  mitigation: The program manager appoints a Regional workstream lead by 02-01 and accountable owners
+    for REG-1 through REG-6 by 02-05. Hold a weekly check-in until launch.
+- id: R7
+  title: Some asks and flagged needs have no matching task
+  severity: medium
+  decision: accept
+  owner: Program manager
+  mitigation: 'Add four tasks with owners: a Legal task for per-region regulatory review, due 02-26; a
+    Legal task for batched disclaimer release; a PR task to hand off locked copy to Regional on 03-05;
+    and a PR/Product task for the 03-17 browser announcement, shipped together with REG-4''s localized
+    follow-up.'
