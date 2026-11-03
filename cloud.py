@@ -154,9 +154,18 @@ def read_decisions(path: Path, report: RiskReport) -> dict:
     return decisions
 
 
+def pending_runs() -> List[Path]:
+    """Runs whose review was merged but that have no status yet."""
+    return [d for d in sorted(RUNS.iterdir()) if (d / "review.yaml").exists() and (d / "state.json").exists()
+            and json.loads((d / "state.json").read_text()).get("status") is None]
+
+
+def cmd_pending(args) -> None:
+    print(len(pending_runs()))
+
+
 def cmd_finalize(args) -> None:
-    pending = [d for d in sorted(RUNS.iterdir()) if (d / "review.yaml").exists() and (d / "state.json").exists()
-               and json.loads((d / "state.json").read_text()).get("status") is None]
+    pending = pending_runs()
     if not pending:
         print("no runs waiting on finalize")
         return
@@ -189,8 +198,9 @@ def main() -> None:
     f.add_argument("--reviewer", default="")
     f.add_argument("--review-url", default="")
     f.add_argument("--replay", action="store_true")
+    sub.add_parser("pending", help="print how many reviewed runs are waiting on finalize")
     args = ap.parse_args()
-    {"plan": cmd_plan, "finalize": cmd_finalize}[args.cmd](args)
+    {"plan": cmd_plan, "finalize": cmd_finalize, "pending": cmd_pending}[args.cmd](args)
 
 
 if __name__ == "__main__":

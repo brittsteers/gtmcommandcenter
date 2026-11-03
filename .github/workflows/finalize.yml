@@ -31,7 +31,14 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - uses: ./.github/actions/anthropic-federation
+      # A push can touch review.yaml without a review to act on (for example, the finished
+      # sample run). Skip sign-in and the agents unless a reviewed run is waiting on a status.
+      - name: Check for reviewed runs
+        id: pending
+        run: echo "count=$(python cloud.py pending)" >> "$GITHUB_OUTPUT"
+
+      - if: steps.pending.outputs.count != '0'
+        uses: ./.github/actions/anthropic-federation
         with:
           federation-rule-id: ${{ vars.ANTHROPIC_FEDERATION_RULE_ID }}
           organization-id: ${{ vars.ANTHROPIC_ORGANIZATION_ID }}
@@ -39,6 +46,7 @@ jobs:
           workspace-id: ${{ vars.ANTHROPIC_WORKSPACE_ID }}
 
       - name: Find the merged review PR
+        if: steps.pending.outputs.count != '0'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -46,9 +54,11 @@ jobs:
           echo "PR_URL=$PR_URL" >> "$GITHUB_ENV"
 
       - name: Run the Synthesizer
+        if: steps.pending.outputs.count != '0'
         run: python cloud.py finalize --reviewer "$GITHUB_ACTOR" --review-url "$PR_URL"
 
       - name: Commit the status
+        if: steps.pending.outputs.count != '0'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
