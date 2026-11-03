@@ -9,7 +9,7 @@ risks:
   title: Embargo lift falls on 2024-09-10 local time in APAC, so 'Sep 9' regional publishing would break
     it
   severity: high
-  decision: accept
+  decision: reject
   owner: Media Relations Manager (with Regional Comms Manager)
   mitigation: Publish one embargo table with the exact local publish time per market (for example, China
     and Australia/NZ go live on Sep 10 local time, not Sep 9). Have each market sign off that its CMS
@@ -44,7 +44,7 @@ risks:
 - id: R5
   title: Gating tasks have no owner
   severity: high
-  decision: accept
+  decision: reject
   owner: Program Manager
   mitigation: 'Assign named role owners by 2024-08-28: Advertising/Claims Counsel for LEG-5, a Product
     Manager or AI Quality Lead for PRO-3, and the Regional Comms Manager for REG-3. Confirm each owner''s
@@ -96,7 +96,7 @@ risks:
 - id: R12
   title: Two parallel availability matrices may diverge
   severity: low
-  decision: accept
+  decision: reject
   owner: Product Manager, Apple Intelligence
   mitigation: Make REG-1 a regional view derived from PRO-2. Set PRO-2 as the only source that PR, Legal
     and Regional cite.
