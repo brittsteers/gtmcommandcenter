@@ -1,5 +1,7 @@
 # Launch Command Center
 
+**[Open the live dashboard](https://brittsteers.github.io/gtmcommandcenter/)**
+
 A multi-agent orchestrator for model go-to-market launches. It takes a launch brief and produces a workback schedule, four cross-functional workstream plans, a cross-team risk review, and a one-page leadership status. A program manager approves the risks before anything final is written.
 
 It runs two ways:
