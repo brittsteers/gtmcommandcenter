@@ -568,7 +568,49 @@
       }
     ]
   },
-  "status": null,
+  "status": {
+    "headline": "The iPhone 16 campaign promises Apple Intelligence, but the phones ship 2024-09-20 without it and the first features arrive 2024-10-28 in beta, US English only, so messaging, ads and regional rules must be fixed and cleared before the 2024-09-09 keynote.",
+    "overall_rag": "red",
+    "workstreams": [
+      {
+        "team": "PR",
+        "rag": "red",
+        "summary": "Messaging locks 08-30, before Legal reviews the spots, and the personal Siri TV spots show a feature with no ship date."
+      },
+      {
+        "team": "Product",
+        "rag": "yellow",
+        "summary": "The 'Available now' banner fix and its Legal review fall on the same day, and Sep 20 in-product messaging is due on the sale date."
+      },
+      {
+        "team": "Regional",
+        "rag": "red",
+        "summary": "EU and China variants are due 09-06, too late for Legal to approve, though the campaign is planned in 50+ markets where Apple Intelligence is unavailable or undated."
+      },
+      {
+        "team": "Legal",
+        "rag": "yellow",
+        "summary": "Reviews land after the messaging lock, the press release, blog and creator kit have no review task, and the notification summary labeling is decided before red team findings."
+      }
+    ],
+    "top_risk_ids": [
+      "R2",
+      "R3",
+      "R4",
+      "R6",
+      "R7"
+    ],
+    "decisions_needed": [
+      "Make the 08-30 messaging lock provisional, with final lock gated on Legal's spot review (LEG-1).",
+      "Pull the personal Siri TV spots by default unless Legal clears them, and approve a re-cut without it or with a 'coming later' super now.",
+      "Approve a default hardware-led, no-Apple-Intelligence campaign for the EU and mainland China that runs automatically if variants are not approved by 09-06.",
+      "Move REG-2, LEG-4 and LEG-5 earlier (to 09-03 or 09-04) and make them dependencies of PR-4.",
+      "Remove the 'Available now' banner in all locales until Legal approves corrected copy, and move PRO-1 to 09-02.",
+      "Move PRO-4 Sep 20 sale messaging to 09-10 and name Product as owner of the iOS 18.2 and localized English dates.",
+      "Add a Legal task to review the press release, blog and creator kit, and one to review the red team findings on news app summaries by 10-14."
+    ],
+    "rejected_risk_note": "The program manager rejected three risks, which are not treated as live here: R1 (embargo lift falls on Sep 10 local time in APAC), R5 (gating tasks with no owner) and R12 (two availability matrices may diverge)."
+  },
   "events": [
     {
       "ts": 1793740173.0573664,
@@ -1316,6 +1358,167 @@
       "from_agent": null,
       "to_agent": null,
       "summary": "Risk review pull request opened",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793740612.3433292,
+      "kind": "gate_closed",
+      "agent": null,
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "9 accepted, 3 rejected by brittsteers",
+      "key": null,
+      "data": {
+        "accepted": [
+          "R2",
+          "R3",
+          "R4",
+          "R6",
+          "R7",
+          "R8",
+          "R9",
+          "R10",
+          "R11"
+        ],
+        "rejected": [
+          "R1",
+          "R5",
+          "R12"
+        ],
+        "decisions": {
+          "R1": {
+            "accepted": false,
+            "mitigation": null
+          },
+          "R2": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R3": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R4": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R5": {
+            "accepted": false,
+            "mitigation": null
+          },
+          "R6": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R7": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R8": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R9": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R10": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R11": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R12": {
+            "accepted": false,
+            "mitigation": null
+          }
+        },
+        "reviewer": "brittsteers",
+        "review_url": "https://github.com/brittsteers/gtmcommandcenter/pull/3"
+      }
+    },
+    {
+      "ts": 1793740612.3434227,
+      "kind": "handoff",
+      "agent": null,
+      "from_agent": "Program manager",
+      "to_agent": "Synthesizer",
+      "summary": "plans + approved risks",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793740612.343442,
+      "kind": "agent_start",
+      "agent": "Synthesizer",
+      "from_agent": "Program manager",
+      "to_agent": "Synthesizer",
+      "summary": "",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793740619.2726877,
+      "kind": "agent_done",
+      "agent": "Synthesizer",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "Overall RED",
+      "key": "status",
+      "data": {
+        "headline": "The iPhone 16 campaign promises Apple Intelligence, but the phones ship 2024-09-20 without it and the first features arrive 2024-10-28 in beta, US English only, so messaging, ads and regional rules must be fixed and cleared before the 2024-09-09 keynote.",
+        "overall_rag": "red",
+        "workstreams": [
+          {
+            "team": "PR",
+            "rag": "red",
+            "summary": "Messaging locks 08-30, before Legal reviews the spots, and the personal Siri TV spots show a feature with no ship date."
+          },
+          {
+            "team": "Product",
+            "rag": "yellow",
+            "summary": "The 'Available now' banner fix and its Legal review fall on the same day, and Sep 20 in-product messaging is due on the sale date."
+          },
+          {
+            "team": "Regional",
+            "rag": "red",
+            "summary": "EU and China variants are due 09-06, too late for Legal to approve, though the campaign is planned in 50+ markets where Apple Intelligence is unavailable or undated."
+          },
+          {
+            "team": "Legal",
+            "rag": "yellow",
+            "summary": "Reviews land after the messaging lock, the press release, blog and creator kit have no review task, and the notification summary labeling is decided before red team findings."
+          }
+        ],
+        "top_risk_ids": [
+          "R2",
+          "R3",
+          "R4",
+          "R6",
+          "R7"
+        ],
+        "decisions_needed": [
+          "Make the 08-30 messaging lock provisional, with final lock gated on Legal's spot review (LEG-1).",
+          "Pull the personal Siri TV spots by default unless Legal clears them, and approve a re-cut without it or with a 'coming later' super now.",
+          "Approve a default hardware-led, no-Apple-Intelligence campaign for the EU and mainland China that runs automatically if variants are not approved by 09-06.",
+          "Move REG-2, LEG-4 and LEG-5 earlier (to 09-03 or 09-04) and make them dependencies of PR-4.",
+          "Remove the 'Available now' banner in all locales until Legal approves corrected copy, and move PRO-1 to 09-02.",
+          "Move PRO-4 Sep 20 sale messaging to 09-10 and name Product as owner of the iOS 18.2 and localized English dates.",
+          "Add a Legal task to review the press release, blog and creator kit, and one to review the red team findings on news app summaries by 10-14."
+        ],
+        "rejected_risk_note": "The program manager rejected three risks, which are not treated as live here: R1 (embargo lift falls on Sep 10 local time in APAC), R5 (gating tasks with no owner) and R12 (two availability matrices may diverge)."
+      }
+    },
+    {
+      "ts": 1793740619.272742,
+      "kind": "run_done",
+      "agent": null,
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "Status ready. Nothing was sent externally.",
       "key": null,
       "data": null
     }
