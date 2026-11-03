@@ -1,0 +1,1328 @@
+{
+  "run_id": "20261103-1948-4",
+  "source": "live",
+  "created_at": "2026-11-03T19:50:12+00:00",
+  "brief": {
+    "disclaimer": "Entirely fictional. 'Lumen' and 'Nova 2' are invented for this demo and do not describe any real company or product.",
+    "company": "Lumen (fictional)",
+    "launch_name": "Nova 2 model launch",
+    "launch_date": "2027-03-10",
+    "embargo_lifts": "2027-03-10T09:00:00-08:00",
+    "summary": "Nova 2 is a new multimodal model powering the Lumen assistant app. Launch includes a press announcement, an early access creator program, assistant app rollout in 14 regions, and a browser integration.",
+    "kickoff": "2027-01-11",
+    "workstreams": [
+      "PR",
+      "Product",
+      "Regional",
+      "Legal"
+    ],
+    "facts": [
+      "Press announcement and blog post go live when the embargo lifts at 09:00 PT on launch day.",
+      "Early access creator program is planned to open 2027-02-01 with ~200 creators under NDA.",
+      "Red team sign-off is currently scheduled for 2027-02-08.",
+      "Legal review of all performance and safety claims takes 10 business days from submission.",
+      "Marketing copy lock is 5 calendar days before launch.",
+      "Regional teams publish at 09:00 local time on launch day across 14 regions, including Japan (JST, UTC+9) and Australia (AEDT, UTC+11).",
+      "The browser integration is expected to ship 2027-03-17, one week after launch.",
+      "The press release draft says the assistant is 'available in the browser today'.",
+      "Localized safety disclaimers need Legal-approved wording before translation starts. No Regional owner is assigned for this yet."
+    ]
+  },
+  "schedule": {
+    "launch_date": "2027-03-10",
+    "embargo_lifts": "2027-03-10T09:00:00-08:00",
+    "milestones": [
+      {
+        "name": "Program kickoff",
+        "date": "2027-01-11",
+        "owner_team": "Product",
+        "note": "All four workstreams (PR, Product, Regional, Legal) start."
+      },
+      {
+        "name": "Early access creator program opens (~200 creators, NDA)",
+        "date": "2027-02-01",
+        "owner_team": "Product",
+        "note": "TENSION: opens 7 days before red team sign-off (2027-02-08). Creators get access to a model that has not cleared red team. Decide whether to move opening to on or after 02-08 or to accept the risk."
+      },
+      {
+        "name": "Red team sign-off",
+        "date": "2027-02-08",
+        "owner_team": "Product",
+        "note": "Scheduled date per brief. Legal submission depends on its results."
+      },
+      {
+        "name": "Legal submission of performance and safety claims",
+        "date": "2027-02-09",
+        "owner_team": "Legal",
+        "note": "Starts the 10-business-day review. Latest submission that still clears before copy lock is 2027-02-19."
+      },
+      {
+        "name": "Assign Regional owner for localized safety disclaimers",
+        "date": "2027-02-12",
+        "owner_team": "Regional",
+        "note": "GAP: no owner is assigned today. Must be named before Legal approval so translation can start on time."
+      },
+      {
+        "name": "Legal approval of claims and safety disclaimer wording",
+        "date": "2027-02-23",
+        "owner_team": "Legal",
+        "note": "10 business days from the 02-09 submission, not counting holidays such as US Presidents' Day on 02-15, which could push this to 02-24. Translation cannot start before this."
+      },
+      {
+        "name": "Translation of localized safety disclaimers starts",
+        "date": "2027-02-23",
+        "owner_team": "Regional",
+        "note": "Blocked until Legal-approved wording exists. Roughly 10 days remain before copy lock for 14 regions."
+      },
+      {
+        "name": "Fix press release draft: remove 'available in the browser today'",
+        "date": "2027-03-03",
+        "owner_team": "PR",
+        "note": "TENSION: browser integration ships 2027-03-17, a week after launch, so the claim is false at launch. Reword to 'coming March 17', or pull the ship date forward. Must be resolved before copy lock."
+      },
+      {
+        "name": "Marketing copy lock",
+        "date": "2027-03-05",
+        "owner_team": "PR",
+        "note": "5 calendar days before launch. All copy must use Legal-approved claims and the corrected browser wording."
+      },
+      {
+        "name": "Regional publish: Australia (AEDT, UTC+11), 09:00 local",
+        "date": "2027-03-10",
+        "owner_team": "Regional",
+        "note": "TENSION: 09:00 AEDT on 03-10 is 14:00 PT on 03-09, about 19 hours before the 09:00 PT embargo lift. Publishing at local time breaks the embargo. Needs a decision: hold until the embargo lifts, or move the embargo."
+      },
+      {
+        "name": "Regional publish: Japan (JST, UTC+9), 09:00 local",
+        "date": "2027-03-10",
+        "owner_team": "Regional",
+        "note": "TENSION: 09:00 JST on 03-10 is 16:00 PT on 03-09, about 17 hours before the embargo lift. Same decision as Australia. The other 12 regions publish at 09:00 local on 03-10, with times to be checked against the embargo."
+      },
+      {
+        "name": "Embargo lifts: press announcement and blog post live",
+        "date": "2027-03-10",
+        "owner_team": "PR",
+        "note": "09:00 PT (2027-03-10T09:00:00-08:00). Launch day, assistant app rollout in 14 regions."
+      },
+      {
+        "name": "Browser integration ships",
+        "date": "2027-03-17",
+        "owner_team": "Product",
+        "note": "One week after launch. Launch-day messaging must not claim browser availability."
+      }
+    ]
+  },
+  "plans": [
+    {
+      "team": "PR",
+      "tasks": [
+        {
+          "id": "PR-1",
+          "title": "Resolve embargo vs regional publish conflict: Australia (09:00 AEDT = 14:00 PT on 03-09) and Japan (09:00 JST = 16:00 PT on 03-09) would publish ~17-19 hours before the 09:00 PT embargo lift. Decide hold regional publishing until lift or move embargo, then brief media and regions on the final timing",
+          "due": "2027-02-12",
+          "owner": "TBD",
+          "depends_on": []
+        },
+        {
+          "id": "PR-2",
+          "title": "Set creator program comms and NDA/embargo guidance for ~200 creators, flagging that the 02-01 opening precedes red team sign-off (02-08); align messaging with Product's decision to move the opening or accept the risk",
+          "due": "2027-01-28",
+          "owner": "TBD",
+          "depends_on": []
+        },
+        {
+          "id": "PR-3",
+          "title": "Draft press announcement and blog post using only claims pending Legal approval; submit performance and safety claims to Legal for review (latest submission to clear before copy lock is 02-19)",
+          "due": "2027-02-09",
+          "owner": "TBD",
+          "depends_on": []
+        },
+        {
+          "id": "PR-4",
+          "title": "Fix press release: remove 'available in the browser today' (browser ships 03-17, a week after launch); reword to 'coming March 17' unless Product pulls the ship date forward",
+          "due": "2027-03-03",
+          "owner": "TBD",
+          "depends_on": [
+            "PR-3"
+          ]
+        },
+        {
+          "id": "PR-5",
+          "title": "Marketing copy lock: finalize press release, blog post and media briefing materials with Legal-approved claims and corrected browser wording",
+          "due": "2027-03-05",
+          "owner": "TBD",
+          "depends_on": [
+            "PR-3",
+            "PR-4"
+          ]
+        },
+        {
+          "id": "PR-6",
+          "title": "Run embargo lift at 09:00 PT on 03-10: publish press announcement and blog post, execute media briefings and creator comms, coordinate with regions on timing per PR-1 decision",
+          "due": "2027-03-10",
+          "owner": "TBD",
+          "depends_on": [
+            "PR-1",
+            "PR-5"
+          ]
+        }
+      ],
+      "asks": [
+        {
+          "to_team": "Product",
+          "request": "Decide whether to move the early access creator program opening to on or after 02-08 (red team sign-off) or accept the risk of creators accessing a model that has not cleared red team",
+          "needed_by": "2027-01-25"
+        },
+        {
+          "to_team": "Product",
+          "request": "Confirm the browser integration ship date stays 2027-03-17 or is pulled forward, so launch copy can be worded accurately",
+          "needed_by": "2027-03-01"
+        },
+        {
+          "to_team": "Product",
+          "request": "Deliver red team results to support the claims submission to Legal",
+          "needed_by": "2027-02-09"
+        },
+        {
+          "to_team": "Legal",
+          "request": "Complete review of performance and safety claims and approve wording; note US Presidents' Day (02-15) may push approval from 02-23 to 02-24",
+          "needed_by": "2027-02-24"
+        },
+        {
+          "to_team": "Regional",
+          "request": "Decide jointly with PR whether Australia and Japan hold publishing until the 09:00 PT embargo lift or the embargo moves, and confirm the other 12 regions' local publish times against the embargo",
+          "needed_by": "2027-02-12"
+        },
+        {
+          "to_team": "Regional",
+          "request": "Name an owner for localized safety disclaimers (currently unassigned) so translation can start once Legal approves wording",
+          "needed_by": "2027-02-12"
+        }
+      ]
+    },
+    {
+      "team": "Product",
+      "tasks": [
+        {
+          "id": "PRO-1",
+          "title": "Decide early access timing: move creator program opening to on/after red team sign-off (2027-02-08) or document risk acceptance, since the current 02-01 opening precedes sign-off by 7 days",
+          "due": "2027-01-22",
+          "owner": "TBD",
+          "depends_on": []
+        },
+        {
+          "id": "PRO-2",
+          "title": "Complete red team testing and sign-off on Nova 2 (scheduled 2027-02-08); share results with Legal for claims submission",
+          "due": "2027-02-08",
+          "owner": "TBD",
+          "depends_on": []
+        },
+        {
+          "id": "PRO-3",
+          "title": "Open early access creator program (~200 creators, NDA) on the date decided in PRO-1",
+          "due": "2027-02-08",
+          "owner": "TBD",
+          "depends_on": [
+            "PRO-1",
+            "PRO-2"
+          ]
+        },
+        {
+          "id": "PRO-4",
+          "title": "Confirm browser integration ship date of 2027-03-17 (or a pulled-forward date) and give PR a written statement of availability at launch: not available on 03-10",
+          "due": "2027-02-26",
+          "owner": "TBD",
+          "depends_on": []
+        },
+        {
+          "id": "PRO-5",
+          "title": "Finalize in-product launch moments and feature availability list for 03-10 (assistant app rollout in 14 regions; browser marked 'coming March 17'), aligned to Legal-approved claims",
+          "due": "2027-03-04",
+          "owner": "TBD",
+          "depends_on": [
+            "PRO-4"
+          ]
+        },
+        {
+          "id": "PRO-6",
+          "title": "Ship browser integration and activate in-product browser announcement",
+          "due": "2027-03-17",
+          "owner": "TBD",
+          "depends_on": [
+            "PRO-4",
+            "PRO-5"
+          ]
+        }
+      ],
+      "asks": [
+        {
+          "to_team": "Legal",
+          "request": "Submit performance and safety claims for review right after red team sign-off (02-09); latest submission that still clears before copy lock is 02-19. Note Presidents' Day 02-15 may push approval to 02-24.",
+          "needed_by": "2027-02-09"
+        },
+        {
+          "to_team": "PR",
+          "request": "Remove 'available in the browser today' from the press release draft and reword to 'coming March 17' unless the ship date moves up; must be done before copy lock on 03-05.",
+          "needed_by": "2027-03-03"
+        },
+        {
+          "to_team": "Regional",
+          "request": "Name an owner for localized safety disclaimers (currently unassigned) and confirm 14-region in-app rollout timing against the 09:00 PT embargo. Australia and Japan local 09:00 publish times fall before the embargo lifts.",
+          "needed_by": "2027-02-12"
+        },
+        {
+          "to_team": "PR",
+          "request": "Decide with Regional whether to hold APAC publishing until the embargo lifts or move the embargo, so in-product launch moments can be timed.",
+          "needed_by": "2027-02-19"
+        }
+      ]
+    },
+    {
+      "team": "Regional",
+      "tasks": [
+        {
+          "id": "REG-1",
+          "title": "Name a Regional owner for localized safety disclaimers (currently unassigned) and confirm translation vendor capacity for 14 regions",
+          "due": "2027-02-12",
+          "owner": "TBD",
+          "depends_on": []
+        },
+        {
+          "id": "REG-2",
+          "title": "Resolve publish timing conflict: 09:00 local in Australia (AEDT) and Japan (JST) falls ~19h and ~17h before the 09:00 PT embargo lift. Recommend holding all regions until the embargo lifts (or an agreed embargo change); check the other 12 regions' 09:00 local times against the embargo and publish a per-region schedule",
+          "due": "2027-02-19",
+          "owner": "TBD",
+          "depends_on": []
+        },
+        {
+          "id": "REG-3",
+          "title": "Start translation of localized safety disclaimers for 14 regions using Legal-approved wording (about 10 days before copy lock; flag risk if Legal approval slips to 02-24 due to Presidents' Day)",
+          "due": "2027-02-23",
+          "owner": "TBD",
+          "depends_on": [
+            "REG-1"
+          ]
+        },
+        {
+          "id": "REG-4",
+          "title": "Localize press and social copy with corrected browser wording ('coming March 17', not 'available today') and Legal-approved claims; complete in-region review and lock with marketing copy lock",
+          "due": "2027-03-05",
+          "owner": "TBD",
+          "depends_on": [
+            "REG-3"
+          ]
+        },
+        {
+          "id": "REG-5",
+          "title": "Prepare and schedule local press and social publishing per the approved timing decision, with regional embargo briefings and publish checklists",
+          "due": "2027-03-08",
+          "owner": "TBD",
+          "depends_on": [
+            "REG-2",
+            "REG-4"
+          ]
+        },
+        {
+          "id": "REG-6",
+          "title": "Execute launch-day regional publish in 14 regions and monitor local press and social",
+          "due": "2027-03-10",
+          "owner": "TBD",
+          "depends_on": [
+            "REG-5"
+          ]
+        }
+      ],
+      "asks": [
+        {
+          "to_team": "PR",
+          "request": "Decide whether Australia and Japan hold until the 09:00 PT embargo lift or the embargo moves, and confirm the embargo terms for all 14 regions",
+          "needed_by": "2027-02-19"
+        },
+        {
+          "to_team": "Legal",
+          "request": "Deliver approved claims and safety disclaimer wording by 02-23; tell us immediately if Presidents' Day pushes approval to 02-24",
+          "needed_by": "2027-02-23"
+        },
+        {
+          "to_team": "Legal",
+          "request": "Submit performance and safety claims by 02-09 (latest 02-19 to clear before copy lock) so translation can start",
+          "needed_by": "2027-02-09"
+        },
+        {
+          "to_team": "PR",
+          "request": "Fix the press release draft, removing 'available in the browser today' in favor of 'coming March 17', and share final English copy for localization",
+          "needed_by": "2027-03-03"
+        },
+        {
+          "to_team": "Product",
+          "request": "Confirm the browser integration ship date of 03-17 and confirm the red team sign-off outcome that gates Legal submission",
+          "needed_by": "2027-02-08"
+        }
+      ]
+    },
+    {
+      "team": "Legal",
+      "tasks": [
+        {
+          "id": "LEG-1",
+          "title": "Prepare NDA terms and early-access creator agreement for ~200 creators; flag that the 02-01 opening precedes red team sign-off (02-08) and add pre-red-team-model risk disclosure and confidentiality language",
+          "due": "2027-01-29",
+          "owner": "TBD",
+          "depends_on": []
+        },
+        {
+          "id": "LEG-2",
+          "title": "Draft claims substantiation package and safety disclaimer wording for submission, with source evidence for each performance and safety claim",
+          "due": "2027-02-08",
+          "owner": "TBD",
+          "depends_on": [
+            "LEG-1"
+          ]
+        },
+        {
+          "id": "LEG-3",
+          "title": "Submit performance and safety claims to Legal review once red team results are in (starts 10-business-day clock; latest submission that clears before copy lock is 02-19)",
+          "due": "2027-02-09",
+          "owner": "TBD",
+          "depends_on": [
+            "LEG-2"
+          ]
+        },
+        {
+          "id": "LEG-4",
+          "title": "Approve claims and release Legal-approved safety disclaimer wording to Regional for translation (02-23 target; may slip to 02-24 because of Presidents' Day 02-15)",
+          "due": "2027-02-23",
+          "owner": "TBD",
+          "depends_on": [
+            "LEG-3"
+          ]
+        },
+        {
+          "id": "LEG-5",
+          "title": "Review corrected press release and launch copy: confirm 'available in the browser today' is removed (browser ships 03-17) and all claims match approved wording",
+          "due": "2027-03-04",
+          "owner": "TBD",
+          "depends_on": [
+            "LEG-4"
+          ]
+        },
+        {
+          "id": "LEG-6",
+          "title": "Advise on embargo conflict: Australia and Japan 09:00 local publish falls 17-19 hours before the 09:00 PT embargo lift; confirm legal and contractual embargo obligations and review regional regulatory requirements across 14 regions",
+          "due": "2027-02-26",
+          "owner": "TBD",
+          "depends_on": [
+            "LEG-4"
+          ]
+        }
+      ],
+      "asks": [
+        {
+          "to_team": "Product",
+          "request": "Decide whether to move early access opening to on or after 02-08 or accept the risk of opening before red team sign-off, and confirm red team results by 02-08 so Legal can submit on 02-09",
+          "needed_by": "2027-01-22"
+        },
+        {
+          "to_team": "Regional",
+          "request": "Name an owner for localized safety disclaimers (currently unassigned) so translation can start as soon as Legal approves wording",
+          "needed_by": "2027-02-12"
+        },
+        {
+          "to_team": "PR",
+          "request": "Remove or reword 'available in the browser today' (for example 'coming March 17') and send the revised draft to Legal for review before copy lock",
+          "needed_by": "2027-03-03"
+        },
+        {
+          "to_team": "Regional",
+          "request": "Provide confirmed publish times for all 14 regions converted to PT, and a decision with PR on holding Australia and Japan until the embargo lifts or moving the embargo",
+          "needed_by": "2027-02-19"
+        },
+        {
+          "to_team": "Product",
+          "request": "Provide the claims list with supporting evidence and red team findings for Legal submission",
+          "needed_by": "2027-02-09"
+        }
+      ]
+    }
+  ],
+  "risks": {
+    "risks": [
+      {
+        "id": "R1",
+        "title": "Regional 09:00-local publishing breaks the 09:00 PT embargo, starting with Australia and Japan and likely affecting most of the 14 regions",
+        "severity": "high",
+        "teams": [
+          "Regional",
+          "PR",
+          "Legal"
+        ],
+        "evidence": "The embargo lifts 2027-03-10T09:00-08:00 (17:00 UTC). US DST does not start until 03-14, so PT is UTC-8. The Australia milestone is 09:00 AEDT on 03-10, which is 22:00 UTC / 14:00 PT on 03-09, 19h early. The Japan milestone is 09:00 JST on 03-10, which is 00:00 UTC / 16:00 PT on 03-09, 17h early. 09:00 local in any time zone east of PT falls before 09:00 PT. So the 'other 12 regions' that the schedule leaves 'to be checked' will also break the embargo unless they are at UTC-8 or further west. Example: 09:00 GMT is 01:00 PT. REG-6 executes publishing on 03-10 with no time guard.",
+        "mitigation": "Make one decision by 2027-02-12 and pick one of two options. (a) Hold all regional publishing until 17:00 UTC on 03-10, which is 04:00 AEDT and 02:00 JST on 03-11. (b) Move the global embargo earlier, for example to 2027-03-09T14:00-08:00, so APAC 09:00 local on 03-10 is compliant, and re-brief media. Then publish a per-region UTC/PT schedule for all 14 regions. Add a publish-time check to the REG-5 checklists and the creator NDA guidance (PR-2).",
+        "owner": "PR lead (decision), with Regional lead executing the per-region schedule"
+      },
+      {
+        "id": "R2",
+        "title": "Early access creator program opens to ~200 creators before red team sign-off",
+        "severity": "high",
+        "teams": [
+          "Product",
+          "Legal",
+          "PR"
+        ],
+        "evidence": "The schedule still shows the creator program opening 2027-02-01, 7 days before red team sign-off on 2027-02-08. The plans disagree with it: PRO-3 is due 02-08 and depends on PRO-2 (red team). LEG-1 (due 01-29) adds 'pre-red-team-model risk disclosure', and PR-2 (due 01-28) drafts comms for either outcome. The PRO-1 decision is due 01-22, but the PR ask is dated 01-25, so the dates are inconsistent. Two outcomes are possible: external users get an un-cleared model, or the schedule and comms announce the wrong date.",
+        "mitigation": "Product decides by 01-22 (PRO-1) and records the decision in the master schedule. Recommended: open on or after a passed red team sign-off (no earlier than 02-09). If Product instead accepts the risk, it needs written sign-off from the Product exec and Legal, LEG-1 disclosure language, and usage limits. Align PR-2 and LEG-1 to the chosen date by 01-25.",
+        "owner": "Product lead (PRO-1)"
+      },
+      {
+        "id": "R3",
+        "title": "Every task in all four workstreams has owner 'TBD', including the unassigned localized safety disclaimer owner",
+        "severity": "high",
+        "teams": [
+          "PR",
+          "Product",
+          "Regional",
+          "Legal"
+        ],
+        "evidence": "All 24 tasks (PR-1 to PR-6, PRO-1 to PRO-6, REG-1 to REG-6, LEG-1 to LEG-6) list owner 'TBD'. The brief states 'No Regional owner is assigned' for localized safety disclaimers. REG-1, due 02-12, is itself unowned, and REG-3 (translation start 02-23) depends on it. Early tasks are due within 2 weeks of the 01-11 kickoff: PRO-1 on 01-22, PR-2 on 01-28, LEG-1 on 01-29.",
+        "mitigation": "At or immediately after kickoff (by 2027-01-15), each workstream lead names an individual owner for every task. Bring the date for naming the disclaimer translation owner forward from 02-12 to 01-22 so vendor capacity for 14 regions can be booked before Legal approval. The program manager tracks owner coverage in the weekly review.",
+        "owner": "Program manager, with each workstream lead"
+      },
+      {
+        "id": "R4",
+        "title": "Claims review and translation chain has no buffer: red team, Legal approval, 14-region translation and copy lock are back-to-back",
+        "severity": "high",
+        "teams": [
+          "Legal",
+          "Product",
+          "Regional",
+          "PR"
+        ],
+        "evidence": "The chain runs as follows:\n- Red team sign-off on 02-08 (Mon) is followed by Legal submission on 02-09 (Tue) with zero buffer.\n- LEG-2 (substantiation package) is due 02-08, the same day as red team. It depends on LEG-1 (NDA), not PRO-2, so red team findings cannot be reflected.\n- 10 business days from 02-09, excluding Presidents' Day 02-15, lands on 02-24 (Wed), not 02-23.\n- That leaves 8 business days (02-24 to 03-05) for translation of 14 regions plus REG-4 in-region review before copy lock.\n- The schedule's 'latest submission 02-19' would yield approval on 03-05, the copy lock day itself, leaving zero translation time.\n- REG-3 depends only on REG-1, not LEG-4, so translation could start on unapproved wording.\n- No task has Legal review the translated disclaimers.",
+        "mitigation": "Re-baseline Legal approval to 02-24 and remove the misleading '02-19 latest' note. The real latest submission is about 02-09. Have Legal pre-review safety disclaimer wording before red team, since it is less dependent on red team results, and submit it around 02-01 so translation can start around 02-16. Make LEG-2 depend on PRO-2 and REG-3 depend on LEG-4. Add a Legal spot-check task for translated disclaimers by 03-04. Pre-book translation vendors for 14 regions with a rush option.",
+        "owner": "Legal lead, with Regional disclaimer owner"
+      },
+      {
+        "id": "R5",
+        "title": "False 'available in the browser today' claim could survive into launch copy due to late fix and missing dependencies",
+        "severity": "high",
+        "teams": [
+          "PR",
+          "Legal",
+          "Regional",
+          "Product"
+        ],
+        "evidence": "The press release draft says 'available in the browser today', but the browser ships 2027-03-17 (PRO-6), a week after the 03-10 launch.\n- The fix (PR-4) is not due until 03-03, while PR-3 submits draft claims to Legal on 02-09, possibly with the false claim.\n- LEG-5 re-review is due 03-04 but depends only on LEG-4, not PR-4.\n- PR-5 copy lock (03-05) does not depend on LEG-5, so copy can lock without Legal confirming the fix.\n- REG-4 (localized press copy, due 03-05) depends only on REG-3, not PR-4. Regional receives corrected English copy on 03-03, leaving 2 days to localize and review 14 regions.\n- The replacement 'coming March 17' becomes false again if PRO-6 slips.",
+        "mitigation": "Remove the browser claim from the draft now and before the 02-09 Legal submission, not on 03-03. Use 'coming soon' or 'coming next week' unless Product commits in writing (PRO-4, moved earlier) to 03-17. Add dependencies: PR-5 on LEG-5, LEG-5 on PR-4, and REG-4 on PR-4 and LEG-4. Deliver final English copy to Regional by 02-26.",
+        "owner": "PR lead"
+      },
+      {
+        "id": "R6",
+        "title": "Embargo decision has conflicting deadlines and owners, and Legal's embargo advice arrives after the decision",
+        "severity": "medium",
+        "teams": [
+          "PR",
+          "Regional",
+          "Legal",
+          "Product"
+        ],
+        "evidence": "The same decision has four different dates:\n- PR-1 decides by 02-12, and PR's ask to Regional is dated 02-12.\n- REG-2 decides by 02-19, and Regional's ask to PR is dated 02-19.\n- Product's ask to PR is dated 02-19.\n- LEG-6 (legal and contractual embargo obligations) is due 02-26 and depends on LEG-4 (claims approval), which is unrelated. Its advice therefore comes 1-2 weeks after the decision.\nBoth PR-1 and REG-2 claim the decision, and both have owner TBD.",
+        "mitigation": "Assign a single decision owner (PR) with Regional and Legal as consulted parties, and set one deadline of 02-12. Remove LEG-6's dependency on LEG-4 and move it to 02-10 so legal advice informs the decision. Communicate the outcome to Product for in-product timing (PRO-5).",
+        "owner": "PR lead"
+      },
+      {
+        "id": "R7",
+        "title": "Unclear who prepares and submits the performance/safety claims package to Legal",
+        "severity": "medium",
+        "teams": [
+          "PR",
+          "Legal",
+          "Product",
+          "Regional"
+        ],
+        "evidence": "PR-3 says PR submits claims to Legal by 02-09. LEG-3 says Legal 'submit[s]...to Legal review' on 02-09. Product and Regional both ask Legal to submit. Legal asks Product to 'provide the claims list with supporting evidence' by 02-09, but no Product task covers that; PRO-2 only shares red team results. Three teams assume another is assembling the package, all due 02-09, the day after red team.",
+        "mitigation": "Define a RACI by 01-22:\n- PR authors the claims list (from the drafts).\n- Product supplies evidence and red team results (add a PRO task due 02-08).\n- Legal receives and reviews.\nRewrite LEG-3 as 'receive submission and start 10-business-day clock'.",
+        "owner": "Program manager, with Legal lead"
+      },
+      {
+        "id": "R8",
+        "title": "No task covers executing or timing the 14-region assistant app rollout against the embargo",
+        "severity": "medium",
+        "teams": [
+          "Product",
+          "Regional"
+        ],
+        "evidence": "The brief says the launch includes 'assistant app rollout in 14 regions'. Product's ask to Regional asks to 'confirm 14-region in-app rollout timing against the 09:00 PT embargo', but no task covers this. REG-2 covers press and social publish timing only, and PRO-5 only finalizes the availability list. No PRO or REG task executes the rollout on 03-10. A rollout at local time in APAC would expose Nova 2 about 17-19h before the embargo.",
+        "mitigation": "Add a Product task (due 02-26) for the per-region rollout plan, gated to the R1 embargo decision. Add a 03-10 execution task with a kill switch and monitoring, owned jointly with Regional.",
+        "owner": "Product lead"
+      },
+      {
+        "id": "R9",
+        "title": "Cross-team asks with mismatched dates or no matching task",
+        "severity": "low",
+        "teams": [
+          "Regional",
+          "Product",
+          "PR"
+        ],
+        "evidence": "Three asks have no matching task or a later date:\n- Regional asks Product to confirm the browser ship date by 02-08, but PRO-4 is due 02-26. PR's matching ask is dated 03-01.\n- Regional asks PR to share final English copy for localization by 03-03, but no PR task covers the handoff. PR-4 only fixes the draft.\n- Regional's ask to Legal to 'submit claims' duplicates PR-3 and LEG-3.",
+        "mitigation": "Move PRO-4 to 02-12 so Regional and PR plan with a confirmed date. Add a PR task 'hand off final English copy to Regional' due 02-26. Close the duplicate submission asks once the R7 RACI is set.",
+        "owner": "Program manager"
+      }
+    ]
+  },
+  "status": null,
+  "events": [
+    {
+      "ts": 1793735307.7529364,
+      "kind": "run_start",
+      "agent": null,
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "Nova 2 model launch",
+      "key": null,
+      "data": {
+        "brief": {
+          "disclaimer": "Entirely fictional. 'Lumen' and 'Nova 2' are invented for this demo and do not describe any real company or product.",
+          "company": "Lumen (fictional)",
+          "launch_name": "Nova 2 model launch",
+          "launch_date": "2027-03-10",
+          "embargo_lifts": "2027-03-10T09:00:00-08:00",
+          "summary": "Nova 2 is a new multimodal model powering the Lumen assistant app. Launch includes a press announcement, an early access creator program, assistant app rollout in 14 regions, and a browser integration.",
+          "kickoff": "2027-01-11",
+          "workstreams": [
+            "PR",
+            "Product",
+            "Regional",
+            "Legal"
+          ],
+          "facts": [
+            "Press announcement and blog post go live when the embargo lifts at 09:00 PT on launch day.",
+            "Early access creator program is planned to open 2027-02-01 with ~200 creators under NDA.",
+            "Red team sign-off is currently scheduled for 2027-02-08.",
+            "Legal review of all performance and safety claims takes 10 business days from submission.",
+            "Marketing copy lock is 5 calendar days before launch.",
+            "Regional teams publish at 09:00 local time on launch day across 14 regions, including Japan (JST, UTC+9) and Australia (AEDT, UTC+11).",
+            "The browser integration is expected to ship 2027-03-17, one week after launch.",
+            "The press release draft says the assistant is 'available in the browser today'.",
+            "Localized safety disclaimers need Legal-approved wording before translation starts. No Regional owner is assigned for this yet."
+          ]
+        }
+      }
+    },
+    {
+      "ts": 1793735307.7530384,
+      "kind": "agent_start",
+      "agent": "Planner",
+      "from_agent": "orchestrator",
+      "to_agent": "Planner",
+      "summary": "",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793735325.311599,
+      "kind": "agent_done",
+      "agent": "Planner",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "13 milestones, launch 2027-03-10",
+      "key": "schedule",
+      "data": {
+        "launch_date": "2027-03-10",
+        "embargo_lifts": "2027-03-10T09:00:00-08:00",
+        "milestones": [
+          {
+            "name": "Program kickoff",
+            "date": "2027-01-11",
+            "owner_team": "Product",
+            "note": "All four workstreams (PR, Product, Regional, Legal) start."
+          },
+          {
+            "name": "Early access creator program opens (~200 creators, NDA)",
+            "date": "2027-02-01",
+            "owner_team": "Product",
+            "note": "TENSION: opens 7 days before red team sign-off (2027-02-08). Creators get access to a model that has not cleared red team. Decide whether to move opening to on or after 02-08 or to accept the risk."
+          },
+          {
+            "name": "Red team sign-off",
+            "date": "2027-02-08",
+            "owner_team": "Product",
+            "note": "Scheduled date per brief. Legal submission depends on its results."
+          },
+          {
+            "name": "Legal submission of performance and safety claims",
+            "date": "2027-02-09",
+            "owner_team": "Legal",
+            "note": "Starts the 10-business-day review. Latest submission that still clears before copy lock is 2027-02-19."
+          },
+          {
+            "name": "Assign Regional owner for localized safety disclaimers",
+            "date": "2027-02-12",
+            "owner_team": "Regional",
+            "note": "GAP: no owner is assigned today. Must be named before Legal approval so translation can start on time."
+          },
+          {
+            "name": "Legal approval of claims and safety disclaimer wording",
+            "date": "2027-02-23",
+            "owner_team": "Legal",
+            "note": "10 business days from the 02-09 submission, not counting holidays such as US Presidents' Day on 02-15, which could push this to 02-24. Translation cannot start before this."
+          },
+          {
+            "name": "Translation of localized safety disclaimers starts",
+            "date": "2027-02-23",
+            "owner_team": "Regional",
+            "note": "Blocked until Legal-approved wording exists. Roughly 10 days remain before copy lock for 14 regions."
+          },
+          {
+            "name": "Fix press release draft: remove 'available in the browser today'",
+            "date": "2027-03-03",
+            "owner_team": "PR",
+            "note": "TENSION: browser integration ships 2027-03-17, a week after launch, so the claim is false at launch. Reword to 'coming March 17', or pull the ship date forward. Must be resolved before copy lock."
+          },
+          {
+            "name": "Marketing copy lock",
+            "date": "2027-03-05",
+            "owner_team": "PR",
+            "note": "5 calendar days before launch. All copy must use Legal-approved claims and the corrected browser wording."
+          },
+          {
+            "name": "Regional publish: Australia (AEDT, UTC+11), 09:00 local",
+            "date": "2027-03-10",
+            "owner_team": "Regional",
+            "note": "TENSION: 09:00 AEDT on 03-10 is 14:00 PT on 03-09, about 19 hours before the 09:00 PT embargo lift. Publishing at local time breaks the embargo. Needs a decision: hold until the embargo lifts, or move the embargo."
+          },
+          {
+            "name": "Regional publish: Japan (JST, UTC+9), 09:00 local",
+            "date": "2027-03-10",
+            "owner_team": "Regional",
+            "note": "TENSION: 09:00 JST on 03-10 is 16:00 PT on 03-09, about 17 hours before the embargo lift. Same decision as Australia. The other 12 regions publish at 09:00 local on 03-10, with times to be checked against the embargo."
+          },
+          {
+            "name": "Embargo lifts: press announcement and blog post live",
+            "date": "2027-03-10",
+            "owner_team": "PR",
+            "note": "09:00 PT (2027-03-10T09:00:00-08:00). Launch day, assistant app rollout in 14 regions."
+          },
+          {
+            "name": "Browser integration ships",
+            "date": "2027-03-17",
+            "owner_team": "Product",
+            "note": "One week after launch. Launch-day messaging must not claim browser availability."
+          }
+        ]
+      }
+    },
+    {
+      "ts": 1793735325.311654,
+      "kind": "handoff",
+      "agent": null,
+      "from_agent": "Planner",
+      "to_agent": "PR agent",
+      "summary": "brief + master schedule",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793735325.3116648,
+      "kind": "handoff",
+      "agent": null,
+      "from_agent": "Planner",
+      "to_agent": "Product agent",
+      "summary": "brief + master schedule",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793735325.3116722,
+      "kind": "handoff",
+      "agent": null,
+      "from_agent": "Planner",
+      "to_agent": "Regional agent",
+      "summary": "brief + master schedule",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793735325.3116786,
+      "kind": "handoff",
+      "agent": null,
+      "from_agent": "Planner",
+      "to_agent": "Legal agent",
+      "summary": "brief + master schedule",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793735325.3119454,
+      "kind": "agent_start",
+      "agent": "PR agent",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793735325.314017,
+      "kind": "agent_start",
+      "agent": "Product agent",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793735325.3156064,
+      "kind": "agent_start",
+      "agent": "Regional agent",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793735325.3172593,
+      "kind": "agent_start",
+      "agent": "Legal agent",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793735333.7221231,
+      "kind": "agent_done",
+      "agent": "Regional agent",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "6 tasks, 5 asks of other teams",
+      "key": "plan:Regional",
+      "data": {
+        "team": "Regional",
+        "tasks": [
+          {
+            "id": "REG-1",
+            "title": "Name a Regional owner for localized safety disclaimers (currently unassigned) and confirm translation vendor capacity for 14 regions",
+            "due": "2027-02-12",
+            "owner": "TBD",
+            "depends_on": []
+          },
+          {
+            "id": "REG-2",
+            "title": "Resolve publish timing conflict: 09:00 local in Australia (AEDT) and Japan (JST) falls ~19h and ~17h before the 09:00 PT embargo lift. Recommend holding all regions until the embargo lifts (or an agreed embargo change); check the other 12 regions' 09:00 local times against the embargo and publish a per-region schedule",
+            "due": "2027-02-19",
+            "owner": "TBD",
+            "depends_on": []
+          },
+          {
+            "id": "REG-3",
+            "title": "Start translation of localized safety disclaimers for 14 regions using Legal-approved wording (about 10 days before copy lock; flag risk if Legal approval slips to 02-24 due to Presidents' Day)",
+            "due": "2027-02-23",
+            "owner": "TBD",
+            "depends_on": [
+              "REG-1"
+            ]
+          },
+          {
+            "id": "REG-4",
+            "title": "Localize press and social copy with corrected browser wording ('coming March 17', not 'available today') and Legal-approved claims; complete in-region review and lock with marketing copy lock",
+            "due": "2027-03-05",
+            "owner": "TBD",
+            "depends_on": [
+              "REG-3"
+            ]
+          },
+          {
+            "id": "REG-5",
+            "title": "Prepare and schedule local press and social publishing per the approved timing decision, with regional embargo briefings and publish checklists",
+            "due": "2027-03-08",
+            "owner": "TBD",
+            "depends_on": [
+              "REG-2",
+              "REG-4"
+            ]
+          },
+          {
+            "id": "REG-6",
+            "title": "Execute launch-day regional publish in 14 regions and monitor local press and social",
+            "due": "2027-03-10",
+            "owner": "TBD",
+            "depends_on": [
+              "REG-5"
+            ]
+          }
+        ],
+        "asks": [
+          {
+            "to_team": "PR",
+            "request": "Decide whether Australia and Japan hold until the 09:00 PT embargo lift or the embargo moves, and confirm the embargo terms for all 14 regions",
+            "needed_by": "2027-02-19"
+          },
+          {
+            "to_team": "Legal",
+            "request": "Deliver approved claims and safety disclaimer wording by 02-23; tell us immediately if Presidents' Day pushes approval to 02-24",
+            "needed_by": "2027-02-23"
+          },
+          {
+            "to_team": "Legal",
+            "request": "Submit performance and safety claims by 02-09 (latest 02-19 to clear before copy lock) so translation can start",
+            "needed_by": "2027-02-09"
+          },
+          {
+            "to_team": "PR",
+            "request": "Fix the press release draft, removing 'available in the browser today' in favor of 'coming March 17', and share final English copy for localization",
+            "needed_by": "2027-03-03"
+          },
+          {
+            "to_team": "Product",
+            "request": "Confirm the browser integration ship date of 03-17 and confirm the red team sign-off outcome that gates Legal submission",
+            "needed_by": "2027-02-08"
+          }
+        ]
+      }
+    },
+    {
+      "ts": 1793735333.8897693,
+      "kind": "agent_done",
+      "agent": "Product agent",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "6 tasks, 4 asks of other teams",
+      "key": "plan:Product",
+      "data": {
+        "team": "Product",
+        "tasks": [
+          {
+            "id": "PRO-1",
+            "title": "Decide early access timing: move creator program opening to on/after red team sign-off (2027-02-08) or document risk acceptance, since the current 02-01 opening precedes sign-off by 7 days",
+            "due": "2027-01-22",
+            "owner": "TBD",
+            "depends_on": []
+          },
+          {
+            "id": "PRO-2",
+            "title": "Complete red team testing and sign-off on Nova 2 (scheduled 2027-02-08); share results with Legal for claims submission",
+            "due": "2027-02-08",
+            "owner": "TBD",
+            "depends_on": []
+          },
+          {
+            "id": "PRO-3",
+            "title": "Open early access creator program (~200 creators, NDA) on the date decided in PRO-1",
+            "due": "2027-02-08",
+            "owner": "TBD",
+            "depends_on": [
+              "PRO-1",
+              "PRO-2"
+            ]
+          },
+          {
+            "id": "PRO-4",
+            "title": "Confirm browser integration ship date of 2027-03-17 (or a pulled-forward date) and give PR a written statement of availability at launch: not available on 03-10",
+            "due": "2027-02-26",
+            "owner": "TBD",
+            "depends_on": []
+          },
+          {
+            "id": "PRO-5",
+            "title": "Finalize in-product launch moments and feature availability list for 03-10 (assistant app rollout in 14 regions; browser marked 'coming March 17'), aligned to Legal-approved claims",
+            "due": "2027-03-04",
+            "owner": "TBD",
+            "depends_on": [
+              "PRO-4"
+            ]
+          },
+          {
+            "id": "PRO-6",
+            "title": "Ship browser integration and activate in-product browser announcement",
+            "due": "2027-03-17",
+            "owner": "TBD",
+            "depends_on": [
+              "PRO-4",
+              "PRO-5"
+            ]
+          }
+        ],
+        "asks": [
+          {
+            "to_team": "Legal",
+            "request": "Submit performance and safety claims for review right after red team sign-off (02-09); latest submission that still clears before copy lock is 02-19. Note Presidents' Day 02-15 may push approval to 02-24.",
+            "needed_by": "2027-02-09"
+          },
+          {
+            "to_team": "PR",
+            "request": "Remove 'available in the browser today' from the press release draft and reword to 'coming March 17' unless the ship date moves up; must be done before copy lock on 03-05.",
+            "needed_by": "2027-03-03"
+          },
+          {
+            "to_team": "Regional",
+            "request": "Name an owner for localized safety disclaimers (currently unassigned) and confirm 14-region in-app rollout timing against the 09:00 PT embargo. Australia and Japan local 09:00 publish times fall before the embargo lifts.",
+            "needed_by": "2027-02-12"
+          },
+          {
+            "to_team": "PR",
+            "request": "Decide with Regional whether to hold APAC publishing until the embargo lifts or move the embargo, so in-product launch moments can be timed.",
+            "needed_by": "2027-02-19"
+          }
+        ]
+      }
+    },
+    {
+      "ts": 1793735334.5305288,
+      "kind": "agent_done",
+      "agent": "Legal agent",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "6 tasks, 5 asks of other teams",
+      "key": "plan:Legal",
+      "data": {
+        "team": "Legal",
+        "tasks": [
+          {
+            "id": "LEG-1",
+            "title": "Prepare NDA terms and early-access creator agreement for ~200 creators; flag that the 02-01 opening precedes red team sign-off (02-08) and add pre-red-team-model risk disclosure and confidentiality language",
+            "due": "2027-01-29",
+            "owner": "TBD",
+            "depends_on": []
+          },
+          {
+            "id": "LEG-2",
+            "title": "Draft claims substantiation package and safety disclaimer wording for submission, with source evidence for each performance and safety claim",
+            "due": "2027-02-08",
+            "owner": "TBD",
+            "depends_on": [
+              "LEG-1"
+            ]
+          },
+          {
+            "id": "LEG-3",
+            "title": "Submit performance and safety claims to Legal review once red team results are in (starts 10-business-day clock; latest submission that clears before copy lock is 02-19)",
+            "due": "2027-02-09",
+            "owner": "TBD",
+            "depends_on": [
+              "LEG-2"
+            ]
+          },
+          {
+            "id": "LEG-4",
+            "title": "Approve claims and release Legal-approved safety disclaimer wording to Regional for translation (02-23 target; may slip to 02-24 because of Presidents' Day 02-15)",
+            "due": "2027-02-23",
+            "owner": "TBD",
+            "depends_on": [
+              "LEG-3"
+            ]
+          },
+          {
+            "id": "LEG-5",
+            "title": "Review corrected press release and launch copy: confirm 'available in the browser today' is removed (browser ships 03-17) and all claims match approved wording",
+            "due": "2027-03-04",
+            "owner": "TBD",
+            "depends_on": [
+              "LEG-4"
+            ]
+          },
+          {
+            "id": "LEG-6",
+            "title": "Advise on embargo conflict: Australia and Japan 09:00 local publish falls 17-19 hours before the 09:00 PT embargo lift; confirm legal and contractual embargo obligations and review regional regulatory requirements across 14 regions",
+            "due": "2027-02-26",
+            "owner": "TBD",
+            "depends_on": [
+              "LEG-4"
+            ]
+          }
+        ],
+        "asks": [
+          {
+            "to_team": "Product",
+            "request": "Decide whether to move early access opening to on or after 02-08 or accept the risk of opening before red team sign-off, and confirm red team results by 02-08 so Legal can submit on 02-09",
+            "needed_by": "2027-01-22"
+          },
+          {
+            "to_team": "Regional",
+            "request": "Name an owner for localized safety disclaimers (currently unassigned) so translation can start as soon as Legal approves wording",
+            "needed_by": "2027-02-12"
+          },
+          {
+            "to_team": "PR",
+            "request": "Remove or reword 'available in the browser today' (for example 'coming March 17') and send the revised draft to Legal for review before copy lock",
+            "needed_by": "2027-03-03"
+          },
+          {
+            "to_team": "Regional",
+            "request": "Provide confirmed publish times for all 14 regions converted to PT, and a decision with PR on holding Australia and Japan until the embargo lifts or moving the embargo",
+            "needed_by": "2027-02-19"
+          },
+          {
+            "to_team": "Product",
+            "request": "Provide the claims list with supporting evidence and red team findings for Legal submission",
+            "needed_by": "2027-02-09"
+          }
+        ]
+      }
+    },
+    {
+      "ts": 1793735335.0217378,
+      "kind": "agent_done",
+      "agent": "PR agent",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "6 tasks, 6 asks of other teams",
+      "key": "plan:PR",
+      "data": {
+        "team": "PR",
+        "tasks": [
+          {
+            "id": "PR-1",
+            "title": "Resolve embargo vs regional publish conflict: Australia (09:00 AEDT = 14:00 PT on 03-09) and Japan (09:00 JST = 16:00 PT on 03-09) would publish ~17-19 hours before the 09:00 PT embargo lift. Decide hold regional publishing until lift or move embargo, then brief media and regions on the final timing",
+            "due": "2027-02-12",
+            "owner": "TBD",
+            "depends_on": []
+          },
+          {
+            "id": "PR-2",
+            "title": "Set creator program comms and NDA/embargo guidance for ~200 creators, flagging that the 02-01 opening precedes red team sign-off (02-08); align messaging with Product's decision to move the opening or accept the risk",
+            "due": "2027-01-28",
+            "owner": "TBD",
+            "depends_on": []
+          },
+          {
+            "id": "PR-3",
+            "title": "Draft press announcement and blog post using only claims pending Legal approval; submit performance and safety claims to Legal for review (latest submission to clear before copy lock is 02-19)",
+            "due": "2027-02-09",
+            "owner": "TBD",
+            "depends_on": []
+          },
+          {
+            "id": "PR-4",
+            "title": "Fix press release: remove 'available in the browser today' (browser ships 03-17, a week after launch); reword to 'coming March 17' unless Product pulls the ship date forward",
+            "due": "2027-03-03",
+            "owner": "TBD",
+            "depends_on": [
+              "PR-3"
+            ]
+          },
+          {
+            "id": "PR-5",
+            "title": "Marketing copy lock: finalize press release, blog post and media briefing materials with Legal-approved claims and corrected browser wording",
+            "due": "2027-03-05",
+            "owner": "TBD",
+            "depends_on": [
+              "PR-3",
+              "PR-4"
+            ]
+          },
+          {
+            "id": "PR-6",
+            "title": "Run embargo lift at 09:00 PT on 03-10: publish press announcement and blog post, execute media briefings and creator comms, coordinate with regions on timing per PR-1 decision",
+            "due": "2027-03-10",
+            "owner": "TBD",
+            "depends_on": [
+              "PR-1",
+              "PR-5"
+            ]
+          }
+        ],
+        "asks": [
+          {
+            "to_team": "Product",
+            "request": "Decide whether to move the early access creator program opening to on or after 02-08 (red team sign-off) or accept the risk of creators accessing a model that has not cleared red team",
+            "needed_by": "2027-01-25"
+          },
+          {
+            "to_team": "Product",
+            "request": "Confirm the browser integration ship date stays 2027-03-17 or is pulled forward, so launch copy can be worded accurately",
+            "needed_by": "2027-03-01"
+          },
+          {
+            "to_team": "Product",
+            "request": "Deliver red team results to support the claims submission to Legal",
+            "needed_by": "2027-02-09"
+          },
+          {
+            "to_team": "Legal",
+            "request": "Complete review of performance and safety claims and approve wording; note US Presidents' Day (02-15) may push approval from 02-23 to 02-24",
+            "needed_by": "2027-02-24"
+          },
+          {
+            "to_team": "Regional",
+            "request": "Decide jointly with PR whether Australia and Japan hold publishing until the 09:00 PT embargo lift or the embargo moves, and confirm the other 12 regions' local publish times against the embargo",
+            "needed_by": "2027-02-12"
+          },
+          {
+            "to_team": "Regional",
+            "request": "Name an owner for localized safety disclaimers (currently unassigned) so translation can start once Legal approves wording",
+            "needed_by": "2027-02-12"
+          }
+        ]
+      }
+    },
+    {
+      "ts": 1793735335.0222178,
+      "kind": "handoff",
+      "agent": null,
+      "from_agent": "4 workstream agents",
+      "to_agent": "Risk agent",
+      "summary": "24 tasks across 4 plans",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793735335.0222485,
+      "kind": "agent_start",
+      "agent": "Risk agent",
+      "from_agent": "workstreams",
+      "to_agent": "Risk agent",
+      "summary": "",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793735412.4382963,
+      "kind": "agent_done",
+      "agent": "Risk agent",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "9 risks (5 high)",
+      "key": "risks",
+      "data": {
+        "risks": [
+          {
+            "id": "R1",
+            "title": "Regional 09:00-local publishing breaks the 09:00 PT embargo, starting with Australia and Japan and likely affecting most of the 14 regions",
+            "severity": "high",
+            "teams": [
+              "Regional",
+              "PR",
+              "Legal"
+            ],
+            "evidence": "The embargo lifts 2027-03-10T09:00-08:00 (17:00 UTC). US DST does not start until 03-14, so PT is UTC-8. The Australia milestone is 09:00 AEDT on 03-10, which is 22:00 UTC / 14:00 PT on 03-09, 19h early. The Japan milestone is 09:00 JST on 03-10, which is 00:00 UTC / 16:00 PT on 03-09, 17h early. 09:00 local in any time zone east of PT falls before 09:00 PT. So the 'other 12 regions' that the schedule leaves 'to be checked' will also break the embargo unless they are at UTC-8 or further west. Example: 09:00 GMT is 01:00 PT. REG-6 executes publishing on 03-10 with no time guard.",
+            "mitigation": "Make one decision by 2027-02-12 and pick one of two options. (a) Hold all regional publishing until 17:00 UTC on 03-10, which is 04:00 AEDT and 02:00 JST on 03-11. (b) Move the global embargo earlier, for example to 2027-03-09T14:00-08:00, so APAC 09:00 local on 03-10 is compliant, and re-brief media. Then publish a per-region UTC/PT schedule for all 14 regions. Add a publish-time check to the REG-5 checklists and the creator NDA guidance (PR-2).",
+            "owner": "PR lead (decision), with Regional lead executing the per-region schedule"
+          },
+          {
+            "id": "R2",
+            "title": "Early access creator program opens to ~200 creators before red team sign-off",
+            "severity": "high",
+            "teams": [
+              "Product",
+              "Legal",
+              "PR"
+            ],
+            "evidence": "The schedule still shows the creator program opening 2027-02-01, 7 days before red team sign-off on 2027-02-08. The plans disagree with it: PRO-3 is due 02-08 and depends on PRO-2 (red team). LEG-1 (due 01-29) adds 'pre-red-team-model risk disclosure', and PR-2 (due 01-28) drafts comms for either outcome. The PRO-1 decision is due 01-22, but the PR ask is dated 01-25, so the dates are inconsistent. Two outcomes are possible: external users get an un-cleared model, or the schedule and comms announce the wrong date.",
+            "mitigation": "Product decides by 01-22 (PRO-1) and records the decision in the master schedule. Recommended: open on or after a passed red team sign-off (no earlier than 02-09). If Product instead accepts the risk, it needs written sign-off from the Product exec and Legal, LEG-1 disclosure language, and usage limits. Align PR-2 and LEG-1 to the chosen date by 01-25.",
+            "owner": "Product lead (PRO-1)"
+          },
+          {
+            "id": "R3",
+            "title": "Every task in all four workstreams has owner 'TBD', including the unassigned localized safety disclaimer owner",
+            "severity": "high",
+            "teams": [
+              "PR",
+              "Product",
+              "Regional",
+              "Legal"
+            ],
+            "evidence": "All 24 tasks (PR-1 to PR-6, PRO-1 to PRO-6, REG-1 to REG-6, LEG-1 to LEG-6) list owner 'TBD'. The brief states 'No Regional owner is assigned' for localized safety disclaimers. REG-1, due 02-12, is itself unowned, and REG-3 (translation start 02-23) depends on it. Early tasks are due within 2 weeks of the 01-11 kickoff: PRO-1 on 01-22, PR-2 on 01-28, LEG-1 on 01-29.",
+            "mitigation": "At or immediately after kickoff (by 2027-01-15), each workstream lead names an individual owner for every task. Bring the date for naming the disclaimer translation owner forward from 02-12 to 01-22 so vendor capacity for 14 regions can be booked before Legal approval. The program manager tracks owner coverage in the weekly review.",
+            "owner": "Program manager, with each workstream lead"
+          },
+          {
+            "id": "R4",
+            "title": "Claims review and translation chain has no buffer: red team, Legal approval, 14-region translation and copy lock are back-to-back",
+            "severity": "high",
+            "teams": [
+              "Legal",
+              "Product",
+              "Regional",
+              "PR"
+            ],
+            "evidence": "The chain runs as follows:\n- Red team sign-off on 02-08 (Mon) is followed by Legal submission on 02-09 (Tue) with zero buffer.\n- LEG-2 (substantiation package) is due 02-08, the same day as red team. It depends on LEG-1 (NDA), not PRO-2, so red team findings cannot be reflected.\n- 10 business days from 02-09, excluding Presidents' Day 02-15, lands on 02-24 (Wed), not 02-23.\n- That leaves 8 business days (02-24 to 03-05) for translation of 14 regions plus REG-4 in-region review before copy lock.\n- The schedule's 'latest submission 02-19' would yield approval on 03-05, the copy lock day itself, leaving zero translation time.\n- REG-3 depends only on REG-1, not LEG-4, so translation could start on unapproved wording.\n- No task has Legal review the translated disclaimers.",
+            "mitigation": "Re-baseline Legal approval to 02-24 and remove the misleading '02-19 latest' note. The real latest submission is about 02-09. Have Legal pre-review safety disclaimer wording before red team, since it is less dependent on red team results, and submit it around 02-01 so translation can start around 02-16. Make LEG-2 depend on PRO-2 and REG-3 depend on LEG-4. Add a Legal spot-check task for translated disclaimers by 03-04. Pre-book translation vendors for 14 regions with a rush option.",
+            "owner": "Legal lead, with Regional disclaimer owner"
+          },
+          {
+            "id": "R5",
+            "title": "False 'available in the browser today' claim could survive into launch copy due to late fix and missing dependencies",
+            "severity": "high",
+            "teams": [
+              "PR",
+              "Legal",
+              "Regional",
+              "Product"
+            ],
+            "evidence": "The press release draft says 'available in the browser today', but the browser ships 2027-03-17 (PRO-6), a week after the 03-10 launch.\n- The fix (PR-4) is not due until 03-03, while PR-3 submits draft claims to Legal on 02-09, possibly with the false claim.\n- LEG-5 re-review is due 03-04 but depends only on LEG-4, not PR-4.\n- PR-5 copy lock (03-05) does not depend on LEG-5, so copy can lock without Legal confirming the fix.\n- REG-4 (localized press copy, due 03-05) depends only on REG-3, not PR-4. Regional receives corrected English copy on 03-03, leaving 2 days to localize and review 14 regions.\n- The replacement 'coming March 17' becomes false again if PRO-6 slips.",
+            "mitigation": "Remove the browser claim from the draft now and before the 02-09 Legal submission, not on 03-03. Use 'coming soon' or 'coming next week' unless Product commits in writing (PRO-4, moved earlier) to 03-17. Add dependencies: PR-5 on LEG-5, LEG-5 on PR-4, and REG-4 on PR-4 and LEG-4. Deliver final English copy to Regional by 02-26.",
+            "owner": "PR lead"
+          },
+          {
+            "id": "R6",
+            "title": "Embargo decision has conflicting deadlines and owners, and Legal's embargo advice arrives after the decision",
+            "severity": "medium",
+            "teams": [
+              "PR",
+              "Regional",
+              "Legal",
+              "Product"
+            ],
+            "evidence": "The same decision has four different dates:\n- PR-1 decides by 02-12, and PR's ask to Regional is dated 02-12.\n- REG-2 decides by 02-19, and Regional's ask to PR is dated 02-19.\n- Product's ask to PR is dated 02-19.\n- LEG-6 (legal and contractual embargo obligations) is due 02-26 and depends on LEG-4 (claims approval), which is unrelated. Its advice therefore comes 1-2 weeks after the decision.\nBoth PR-1 and REG-2 claim the decision, and both have owner TBD.",
+            "mitigation": "Assign a single decision owner (PR) with Regional and Legal as consulted parties, and set one deadline of 02-12. Remove LEG-6's dependency on LEG-4 and move it to 02-10 so legal advice informs the decision. Communicate the outcome to Product for in-product timing (PRO-5).",
+            "owner": "PR lead"
+          },
+          {
+            "id": "R7",
+            "title": "Unclear who prepares and submits the performance/safety claims package to Legal",
+            "severity": "medium",
+            "teams": [
+              "PR",
+              "Legal",
+              "Product",
+              "Regional"
+            ],
+            "evidence": "PR-3 says PR submits claims to Legal by 02-09. LEG-3 says Legal 'submit[s]...to Legal review' on 02-09. Product and Regional both ask Legal to submit. Legal asks Product to 'provide the claims list with supporting evidence' by 02-09, but no Product task covers that; PRO-2 only shares red team results. Three teams assume another is assembling the package, all due 02-09, the day after red team.",
+            "mitigation": "Define a RACI by 01-22:\n- PR authors the claims list (from the drafts).\n- Product supplies evidence and red team results (add a PRO task due 02-08).\n- Legal receives and reviews.\nRewrite LEG-3 as 'receive submission and start 10-business-day clock'.",
+            "owner": "Program manager, with Legal lead"
+          },
+          {
+            "id": "R8",
+            "title": "No task covers executing or timing the 14-region assistant app rollout against the embargo",
+            "severity": "medium",
+            "teams": [
+              "Product",
+              "Regional"
+            ],
+            "evidence": "The brief says the launch includes 'assistant app rollout in 14 regions'. Product's ask to Regional asks to 'confirm 14-region in-app rollout timing against the 09:00 PT embargo', but no task covers this. REG-2 covers press and social publish timing only, and PRO-5 only finalizes the availability list. No PRO or REG task executes the rollout on 03-10. A rollout at local time in APAC would expose Nova 2 about 17-19h before the embargo.",
+            "mitigation": "Add a Product task (due 02-26) for the per-region rollout plan, gated to the R1 embargo decision. Add a 03-10 execution task with a kill switch and monitoring, owned jointly with Regional.",
+            "owner": "Product lead"
+          },
+          {
+            "id": "R9",
+            "title": "Cross-team asks with mismatched dates or no matching task",
+            "severity": "low",
+            "teams": [
+              "Regional",
+              "Product",
+              "PR"
+            ],
+            "evidence": "Three asks have no matching task or a later date:\n- Regional asks Product to confirm the browser ship date by 02-08, but PRO-4 is due 02-26. PR's matching ask is dated 03-01.\n- Regional asks PR to share final English copy for localization by 03-03, but no PR task covers the handoff. PR-4 only fixes the draft.\n- Regional's ask to Legal to 'submit claims' duplicates PR-3 and LEG-3.",
+            "mitigation": "Move PRO-4 to 02-12 so Regional and PR plan with a confirmed date. Add a PR task 'hand off final English copy to Regional' due 02-26. Close the duplicate submission asks once the R7 RACI is set.",
+            "owner": "Program manager"
+          }
+        ]
+      }
+    },
+    {
+      "ts": 1793735412.4383826,
+      "kind": "gate_open",
+      "agent": null,
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "Risk review pull request opened",
+      "key": null,
+      "data": null
+    }
+  ],
+  "github_run_url": "https://github.com/brittsteers/gtmcommandcenter/actions/runs/41706627757"
+}
