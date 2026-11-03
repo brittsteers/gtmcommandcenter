@@ -89,7 +89,7 @@ risks:
 - id: R9
   title: Cross-team asks with mismatched dates or no matching task
   severity: low
-  decision: accept
+  decision: reject
   owner: Program manager
   mitigation: Move PRO-4 to 02-12 so Regional and PR plan with a confirmed date. Add a PR task 'hand off
     final English copy to Regional' due 02-26. Close the duplicate submission asks once the R7 RACI is
