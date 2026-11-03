@@ -1,0 +1,96 @@
+# Risk review for run 20261103-1948-4
+#
+# For each risk, set `decision` to accept or reject. You can also rewrite the mitigation.
+# Merging this pull request is the approval: the Synthesizer runs only after the merge.
+# Close the pull request without merging to discard the run.
+
+risks:
+- id: R1
+  title: Regional 09:00-local publishing breaks the 09:00 PT embargo, starting with Australia and Japan
+    and likely affecting most of the 14 regions
+  severity: high
+  decision: accept
+  owner: PR lead (decision), with Regional lead executing the per-region schedule
+  mitigation: Make one decision by 2027-02-12 and pick one of two options. (a) Hold all regional publishing
+    until 17:00 UTC on 03-10, which is 04:00 AEDT and 02:00 JST on 03-11. (b) Move the global embargo
+    earlier, for example to 2027-03-09T14:00-08:00, so APAC 09:00 local on 03-10 is compliant, and re-brief
+    media. Then publish a per-region UTC/PT schedule for all 14 regions. Add a publish-time check to the
+    REG-5 checklists and the creator NDA guidance (PR-2).
+- id: R2
+  title: Early access creator program opens to ~200 creators before red team sign-off
+  severity: high
+  decision: accept
+  owner: Product lead (PRO-1)
+  mitigation: 'Product decides by 01-22 (PRO-1) and records the decision in the master schedule. Recommended:
+    open on or after a passed red team sign-off (no earlier than 02-09). If Product instead accepts the
+    risk, it needs written sign-off from the Product exec and Legal, LEG-1 disclosure language, and usage
+    limits. Align PR-2 and LEG-1 to the chosen date by 01-25.'
+- id: R3
+  title: Every task in all four workstreams has owner 'TBD', including the unassigned localized safety
+    disclaimer owner
+  severity: high
+  decision: accept
+  owner: Program manager, with each workstream lead
+  mitigation: At or immediately after kickoff (by 2027-01-15), each workstream lead names an individual
+    owner for every task. Bring the date for naming the disclaimer translation owner forward from 02-12
+    to 01-22 so vendor capacity for 14 regions can be booked before Legal approval. The program manager
+    tracks owner coverage in the weekly review.
+- id: R4
+  title: 'Claims review and translation chain has no buffer: red team, Legal approval, 14-region translation
+    and copy lock are back-to-back'
+  severity: high
+  decision: accept
+  owner: Legal lead, with Regional disclaimer owner
+  mitigation: Re-baseline Legal approval to 02-24 and remove the misleading '02-19 latest' note. The real
+    latest submission is about 02-09. Have Legal pre-review safety disclaimer wording before red team,
+    since it is less dependent on red team results, and submit it around 02-01 so translation can start
+    around 02-16. Make LEG-2 depend on PRO-2 and REG-3 depend on LEG-4. Add a Legal spot-check task for
+    translated disclaimers by 03-04. Pre-book translation vendors for 14 regions with a rush option.
+- id: R5
+  title: False 'available in the browser today' claim could survive into launch copy due to late fix and
+    missing dependencies
+  severity: high
+  decision: accept
+  owner: PR lead
+  mitigation: 'Remove the browser claim from the draft now and before the 02-09 Legal submission, not
+    on 03-03. Use ''coming soon'' or ''coming next week'' unless Product commits in writing (PRO-4, moved
+    earlier) to 03-17. Add dependencies: PR-5 on LEG-5, LEG-5 on PR-4, and REG-4 on PR-4 and LEG-4. Deliver
+    final English copy to Regional by 02-26.'
+- id: R6
+  title: Embargo decision has conflicting deadlines and owners, and Legal's embargo advice arrives after
+    the decision
+  severity: medium
+  decision: accept
+  owner: PR lead
+  mitigation: Assign a single decision owner (PR) with Regional and Legal as consulted parties, and set
+    one deadline of 02-12. Remove LEG-6's dependency on LEG-4 and move it to 02-10 so legal advice informs
+    the decision. Communicate the outcome to Product for in-product timing (PRO-5).
+- id: R7
+  title: Unclear who prepares and submits the performance/safety claims package to Legal
+  severity: medium
+  decision: accept
+  owner: Program manager, with Legal lead
+  mitigation: 'Define a RACI by 01-22:
+
+    - PR authors the claims list (from the drafts).
+
+    - Product supplies evidence and red team results (add a PRO task due 02-08).
+
+    - Legal receives and reviews.
+
+    Rewrite LEG-3 as ''receive submission and start 10-business-day clock''.'
+- id: R8
+  title: No task covers executing or timing the 14-region assistant app rollout against the embargo
+  severity: medium
+  decision: accept
+  owner: Product lead
+  mitigation: Add a Product task (due 02-26) for the per-region rollout plan, gated to the R1 embargo
+    decision. Add a 03-10 execution task with a kill switch and monitoring, owned jointly with Regional.
+- id: R9
+  title: Cross-team asks with mismatched dates or no matching task
+  severity: low
+  decision: reject
+  owner: Program manager
+  mitigation: Move PRO-4 to 02-12 so Regional and PR plan with a confirmed date. Add a PR task 'hand off
+    final English copy to Regional' due 02-26. Close the duplicate submission asks once the R7 RACI is
+    set.
