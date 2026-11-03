@@ -34,13 +34,15 @@ You need an Anthropic Console account with billing set up and the admin or owner
    | Field | Value |
    |---|---|
    | Issuer URL | `https://token.actions.githubusercontent.com` (prefilled) |
-   | Subject prefix | `repo:brittsteers/gtmcommandcenter:ref:refs/heads/main` |
+   | Subject prefix | `repo:brittsteers@200021320/gtmcommandcenter@1444697016:ref:refs/heads/main` |
    | Audience | `https://api.anthropic.com` |
    | Claim `repository_owner` | `brittsteers` |
    | Scope | `workspace:developer` (prefilled) |
    | Token lifetime | `600` seconds (prefilled) |
 
    The subject prefix only trusts workflow runs on `main` in this one repository. Pull requests from forks can't get a token.
+
+   New GitHub repos use immutable subject claims, which add the owner and repo numeric IDs after an `@`. The IDs mean a renamed or re-registered repo can't reuse this rule. Check the exact prefix at `https://api.github.com/repos/brittsteers/gtmcommandcenter/actions/oidc/customization/sub` (the `sub_claim_prefix` field).
 
 3. Note the **federation rule ID** (`fdrl_...`) and **service account ID** (`svac_...`) the wizard creates. Your **organization ID** is on platform.claude.com/settings/organization.
 
@@ -67,7 +69,7 @@ The wizard listens for a successful sign-in for 15 minutes. Starting step 5 with
 ## If something fails
 
 - **"Missing repository variables"**: step 4 isn't finished.
-- **401 `Authentication failed`**: open the authentication history tab on the Console's Workload identity page. `match_subject_prefix` usually means the username or repo name in the subject prefix doesn't match exactly.
+- **401 `Authentication failed`**: open the authentication history tab on the Console's Workload identity page. `match_subject_prefix` means the subject prefix doesn't match GitHub's token. Compare it with `sub_claim_prefix` from the URL in step 4.
 - **"GitHub Actions is not permitted to create pull requests"**: the checkbox in step 3 is off.
 - **The dashboard 404s**: Pages source isn't set to GitHub Actions. Then run **3 · Publish dashboard** once by hand.
 
