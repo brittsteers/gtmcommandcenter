@@ -34,3 +34,23 @@ Not affiliated with or endorsed by Apple. Facts marked `[assumed]` in the brief 
 For each outcome, check whether a risk in the run predicted it and cites evidence from the brief, not from hindsight.
 
 One limitation: Claude's training data covers these events, so a model could "remember" an outcome instead of reasoning to it. The brief tells the agents to plan only from facts as of 2024-08-26. Give credit only to risks whose evidence comes from the brief's facts.
+
+## Scorecard: run 20261103-2109-7
+
+The agents found 12 risks. None of the evidence cites anything after 2024-08-26; every risk points to brief facts or plan task IDs.
+
+| Outcome | Predicted? | Risk |
+|---|---|---|
+| 3. Siri ad pulled, fine print added | Yes | R3: TV spots show a feature with no ship date. Default to pulling them unless Legal clears them, or add a "coming later" super |
+| 5. NAD on "Available now" | Yes | R6: remove the banner from every locale by default until approved copy exists |
+| 4. False advertising class action | Yes, indirectly | R3 and R6 cover the same claims exposure. R9 adds that no Legal task reviews press release availability language |
+| 2. News summary errors, labels added | Partly | R7: Legal decides AI-generated and beta labels and news publisher issues before the red team on news summaries reports. It flagged the right feature and the right fix, but as a sequencing gap, not a predicted failure |
+| 6 and 7. EU and China delays | Partly | R4: the campaign runs in the EU and China, where Apple Intelligence isn't available. It calls for a hardware-led default variant there. It flags that no date exists but can't predict how long the delays will last |
+| 1. On-time US and December launches | Not a risk | R10 flags that the December dates have no owner |
+
+**Caveat:** the two strongest hits, R3 and R6, rest on `[assumed]` facts about the TV spot and the web banner. Apple really did run both, but those facts were added to the brief knowing they mattered. The fair claim: given the real campaign plan, the system flagged the claims risk six months before Apple pulled the ad and eight months before the NAD ruling.
+
+**Noise, worth rejecting at review:**
+- R1 embargo time zones. The keynote is a global livestream, so APAC press publishing on Sep 10 local time is expected.
+- R5 unowned tasks. That follows from the brief's own note that owner names aren't public.
+- R12 duplicate availability matrices. It's minor.
