@@ -570,7 +570,48 @@
       }
     ]
   },
-  "status": null,
+  "status": {
+    "headline": "Nova 2 launch on 2027-03-10 is at high risk: the embargo, early access timing, owner gaps, and a tight Legal-to-translation chain all need decisions within weeks.",
+    "overall_rag": "red",
+    "workstreams": [
+      {
+        "team": "PR",
+        "rag": "red",
+        "summary": "Press release still says 'available in the browser today' (browser ships 03-17), and PR must own the embargo decision and the claims package; no task owners are named."
+      },
+      {
+        "team": "Product",
+        "rag": "red",
+        "summary": "Early access opens 02-01, a week before red team sign-off on 02-08; the browser ship date needs written confirmation and no task covers the 14-region app rollout timing."
+      },
+      {
+        "team": "Regional",
+        "rag": "red",
+        "summary": "Australia and Japan 09:00 local publishing lands 17-19 hours before the embargo lifts, other regions are unchecked, and no owner exists for localized safety disclaimers."
+      },
+      {
+        "team": "Legal",
+        "rag": "yellow",
+        "summary": "Review of claims runs 10 business days from 02-09 and likely lands 02-24, not 02-23, leaving about 8 business days for 14-region translation before copy lock."
+      }
+    ],
+    "top_risk_ids": [
+      "R1",
+      "R2",
+      "R3",
+      "R4",
+      "R5"
+    ],
+    "decisions_needed": [
+      "PR lead to decide by 02-12: hold all regional publishing until the 09:00 PT embargo lift, or move the embargo earlier (e.g. 03-09 14:00 PT) and re-brief media.",
+      "Product lead to decide by 01-22: open early access on or after a passed red team sign-off (no earlier than 02-09), or accept the risk with written Product exec and Legal sign-off.",
+      "Each workstream lead to name an individual owner for every task by 01-15, and the localized safety disclaimer owner by 01-22.",
+      "Product to commit in writing to the browser ship date of 03-17, and PR to remove 'available in the browser today' from the draft before the 02-09 Legal submission.",
+      "Leadership to re-baseline Legal approval to 02-24 and approve pre-booking rush translation vendors for 14 regions.",
+      "Program manager to set who prepares the claims package: PR authors, Product supplies evidence, Legal reviews."
+    ],
+    "rejected_risk_note": "R9 (cross-team asks with mismatched dates or no matching task) was rejected by the program manager and is not treated as a live risk here."
+  },
   "events": [
     {
       "ts": 1793735307.7529364,
@@ -1320,6 +1361,151 @@
       "from_agent": null,
       "to_agent": null,
       "summary": "Risk review pull request opened",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793735839.5231233,
+      "kind": "gate_closed",
+      "agent": null,
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "8 accepted, 1 rejected by brittsteers",
+      "key": null,
+      "data": {
+        "accepted": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7",
+          "R8"
+        ],
+        "rejected": [
+          "R9"
+        ],
+        "decisions": {
+          "R1": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R2": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R3": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R4": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R5": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R6": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R7": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R8": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R9": {
+            "accepted": false,
+            "mitigation": null
+          }
+        },
+        "reviewer": "brittsteers",
+        "review_url": "https://github.com/brittsteers/gtmcommandcenter/pull/1"
+      }
+    },
+    {
+      "ts": 1793735839.5231972,
+      "kind": "handoff",
+      "agent": null,
+      "from_agent": "Program manager",
+      "to_agent": "Synthesizer",
+      "summary": "plans + approved risks",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793735839.5232227,
+      "kind": "agent_start",
+      "agent": "Synthesizer",
+      "from_agent": "Program manager",
+      "to_agent": "Synthesizer",
+      "summary": "",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793735847.8989372,
+      "kind": "agent_done",
+      "agent": "Synthesizer",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "Overall RED",
+      "key": "status",
+      "data": {
+        "headline": "Nova 2 launch on 2027-03-10 is at high risk: the embargo, early access timing, owner gaps, and a tight Legal-to-translation chain all need decisions within weeks.",
+        "overall_rag": "red",
+        "workstreams": [
+          {
+            "team": "PR",
+            "rag": "red",
+            "summary": "Press release still says 'available in the browser today' (browser ships 03-17), and PR must own the embargo decision and the claims package; no task owners are named."
+          },
+          {
+            "team": "Product",
+            "rag": "red",
+            "summary": "Early access opens 02-01, a week before red team sign-off on 02-08; the browser ship date needs written confirmation and no task covers the 14-region app rollout timing."
+          },
+          {
+            "team": "Regional",
+            "rag": "red",
+            "summary": "Australia and Japan 09:00 local publishing lands 17-19 hours before the embargo lifts, other regions are unchecked, and no owner exists for localized safety disclaimers."
+          },
+          {
+            "team": "Legal",
+            "rag": "yellow",
+            "summary": "Review of claims runs 10 business days from 02-09 and likely lands 02-24, not 02-23, leaving about 8 business days for 14-region translation before copy lock."
+          }
+        ],
+        "top_risk_ids": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5"
+        ],
+        "decisions_needed": [
+          "PR lead to decide by 02-12: hold all regional publishing until the 09:00 PT embargo lift, or move the embargo earlier (e.g. 03-09 14:00 PT) and re-brief media.",
+          "Product lead to decide by 01-22: open early access on or after a passed red team sign-off (no earlier than 02-09), or accept the risk with written Product exec and Legal sign-off.",
+          "Each workstream lead to name an individual owner for every task by 01-15, and the localized safety disclaimer owner by 01-22.",
+          "Product to commit in writing to the browser ship date of 03-17, and PR to remove 'available in the browser today' from the draft before the 02-09 Legal submission.",
+          "Leadership to re-baseline Legal approval to 02-24 and approve pre-booking rush translation vendors for 14 regions.",
+          "Program manager to set who prepares the claims package: PR authors, Product supplies evidence, Legal reviews."
+        ],
+        "rejected_risk_note": "R9 (cross-team asks with mismatched dates or no matching task) was rejected by the program manager and is not treated as a live risk here."
+      }
+    },
+    {
+      "ts": 1793735847.898985,
+      "kind": "run_done",
+      "agent": null,
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "Status ready. Nothing was sent externally.",
       "key": null,
       "data": null
     }
