@@ -1,0 +1,102 @@
+# Risk review for run 20261103-2109-7
+#
+# For each risk, set `decision` to accept or reject. You can also rewrite the mitigation.
+# Merging this pull request is the approval: the Synthesizer runs only after the merge.
+# Close the pull request without merging to discard the run.
+
+risks:
+- id: R1
+  title: Embargo lift falls on 2024-09-10 local time in APAC, so 'Sep 9' regional publishing would break
+    it
+  severity: high
+  decision: accept
+  owner: Media Relations Manager (with Regional Comms Manager)
+  mitigation: Publish one embargo table with the exact local publish time per market (for example, China
+    and Australia/NZ go live on Sep 10 local time, not Sep 9). Have each market sign off that its CMS
+    schedules and press-note send times are locked to 17:00 UTC. Name a single owner for REG-3 and add
+    the table to the PR-3 embargo kit.
+- id: R2
+  title: Messaging lock and ad finalization happen before Legal and Regional sign-off, with only a weekend
+    left before the keynote
+  severity: high
+  decision: accept
+  owner: Program Manager (escalation to Head of Marketing Communications)
+  mitigation: Make PR-1 a provisional lock on 08-30, with final lock gated on LEG-1. Move LEG-4, LEG-5
+    and REG-2 to 2024-09-04, and add LEG-4, LEG-5 and REG-2 as dependencies of PR-4. Hold any spot or
+    variant without written Legal clearance by 09-06, and fall back to hardware-led creative for that
+    spot or variant.
+- id: R3
+  title: TV spots and web feature list claim features that ship after launch or have no ship date
+  severity: high
+  decision: accept
+  owner: Advertising Lead
+  mitigation: Pre-produce a re-cut without personal Siri, or with a 'coming later' super, in parallel
+    now so it is ready if LEG-1 rules against the original. Set the default to pull the personal Siri
+    spots unless Legal clears them. Tie every feature claim to the PRO-2 availability matrix.
+- id: R4
+  title: EU and China campaign variants are defined too late for Legal to approve before the Sep 20 sale
+  severity: high
+  decision: accept
+  owner: Regional Marketing Lead
+  mitigation: Move REG-2 to 2024-09-03 so LEG-4 has 2-3 days to review. Agree now on a default hardware-led,
+    no-Apple-Intelligence variant for the EU and mainland China. It runs automatically if variants are
+    not approved by 09-06.
+- id: R5
+  title: Gating tasks have no owner
+  severity: high
+  decision: accept
+  owner: Program Manager
+  mitigation: 'Assign named role owners by 2024-08-28: Advertising/Claims Counsel for LEG-5, a Product
+    Manager or AI Quality Lead for PRO-3, and the Regional Comms Manager for REG-3. Confirm each owner''s
+    capacity against the due dates.'
+- id: R6
+  title: Web page banner fix, Legal review and the copy hand-off are mis-sequenced
+  severity: medium
+  decision: accept
+  owner: Product Marketing Lead (web page owner)
+  mitigation: Move PRO-1 to 2024-09-02 and keep LEG-2 on 2024-09-03. Add a task for Regional to localize
+    the approved page by 2024-09-06. Remove the 'Available now' banner from all locales by default until
+    approved copy exists.
+- id: R7
+  title: Legal decides notification summary labeling before the red team produces findings
+  severity: medium
+  decision: accept
+  owner: Product/IP Counsel
+  mitigation: Add a Legal task to review the PRO-3 findings by 2024-10-14, and treat LEG-3 as a provisional
+    decision. Start PRO-3 now so issues surface before the RC freeze.
+- id: R8
+  title: No slack between the iOS 18.1 RC check and launch comms and legal sign-off
+  severity: medium
+  decision: accept
+  owner: QA / Release Manager
+  mitigation: Pull PRO-5 to 2024-10-17. Add PRO-5 as a dependency of PR-5, REG-4 and LEG-6. Move PR-5
+    and REG-4 final copy to 2024-10-23, after LEG-6.
+- id: R9
+  title: No Legal task covers the PR asks on press release and blog language
+  severity: medium
+  decision: accept
+  owner: Advertising/Claims Counsel
+  mitigation: Add a Legal task to review the PR-2 and PR-3 materials on 2024-09-05, owned by Advertising/Claims
+    Counsel, and make it a dependency of PR-3.
+- id: R10
+  title: The December and 2025 dates have no owner because the asks run in a circle
+  severity: medium
+  decision: accept
+  owner: Product Manager, Apple Intelligence
+  mitigation: Make Product the owner of the release dates. Add a Product task to confirm the iOS 18.2
+    and localized English dates by 2024-11-01. Until then, all comms say 'December' and '2025' without
+    specific days.
+- id: R11
+  title: In-product messaging for the Sep 20 sale is due on the sale date
+  severity: medium
+  decision: accept
+  owner: Product Manager, Apple Intelligence
+  mitigation: Split PRO-4. Move Sep 20 sale messaging (retail, store and setup copy) to 2024-09-10, and
+    keep the iOS 18.1 onboarding work for the RC.
+- id: R12
+  title: Two parallel availability matrices may diverge
+  severity: low
+  decision: accept
+  owner: Product Manager, Apple Intelligence
+  mitigation: Make REG-1 a regional view derived from PRO-2. Set PRO-2 as the only source that PR, Legal
+    and Regional cite.
