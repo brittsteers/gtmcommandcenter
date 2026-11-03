@@ -203,5 +203,20 @@ def main() -> None:
     {"plan": cmd_plan, "finalize": cmd_finalize, "pending": cmd_pending}[args.cmd](args)
 
 
+def annotate_failure(message: str) -> None:
+    """On GitHub Actions, surface the error on the run summary page, which needs no sign-in to read."""
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        flat = message.replace("%", "%25").replace("\r", "").replace("\n", "%0A")
+        print(f"::error title=cloud.py failed::{flat[:4000]}", flush=True)
+
+
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except SystemExit as e:
+        if e.code not in (0, None):
+            annotate_failure(str(e.code))
+        raise
+    except Exception as e:
+        annotate_failure(f"{type(e).__name__}: {e}")
+        raise
