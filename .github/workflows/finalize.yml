@@ -1,0 +1,66 @@
+name: 2 · Finalize launch status
+
+# Merging a risk review PR pushes runs/<id>/review.yaml to main. This reads the program manager's
+# decisions, runs the Synthesizer, commits the status, and republishes the dashboard.
+on:
+  push:
+    branches: [main]
+    paths: ["runs/*/review.yaml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write        # commit the finished status
+  pull-requests: read    # find which PR was merged
+  id-token: write        # GitHub OIDC token for Anthropic federation
+
+concurrency:
+  group: launch-finalize
+  cancel-in-progress: false
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - uses: ./.github/actions/anthropic-federation
+        with:
+          federation-rule-id: ${{ vars.ANTHROPIC_FEDERATION_RULE_ID }}
+          organization-id: ${{ vars.ANTHROPIC_ORGANIZATION_ID }}
+          service-account-id: ${{ vars.ANTHROPIC_SERVICE_ACCOUNT_ID }}
+          workspace-id: ${{ vars.ANTHROPIC_WORKSPACE_ID }}
+
+      - name: Find the merged review PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          PR_URL=$(gh api "repos/$GITHUB_REPOSITORY/commits/$GITHUB_SHA/pulls" --jq '.[0].html_url // ""' || true)
+          echo "PR_URL=$PR_URL" >> "$GITHUB_ENV"
+
+      - name: Run the Synthesizer
+        run: python cloud.py finalize --reviewer "$GITHUB_ACTOR" --review-url "$PR_URL"
+
+      - name: Commit the status
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add runs
+          if git diff --cached --quiet; then echo "Nothing to commit"; exit 0; fi
+          git commit -m "Launch status for reviewed runs"
+          git push origin HEAD:main
+
+  publish:
+    needs: finalize
+    uses: ./.github/workflows/site.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

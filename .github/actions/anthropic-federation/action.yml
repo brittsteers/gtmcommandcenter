@@ -1,0 +1,59 @@
+name: Anthropic workload identity federation
+description: >-
+  Configures the Anthropic SDK to exchange this job's GitHub OIDC token for a short-lived Claude API
+  token. No API key is stored anywhere. Requires `permissions: id-token: write` on the job.
+
+inputs:
+  federation-rule-id:
+    required: true
+  organization-id:
+    required: true
+  service-account-id:
+    required: true
+  workspace-id:
+    required: false
+    default: ""
+
+runs:
+  using: composite
+  steps:
+    - name: Configure federation
+      shell: bash
+      env:
+        RULE_ID: ${{ inputs.federation-rule-id }}
+        ORG_ID: ${{ inputs.organization-id }}
+        SA_ID: ${{ inputs.service-account-id }}
+        WS_ID: ${{ inputs.workspace-id }}
+      run: |
+        missing=""
+        [ -n "$RULE_ID" ] || missing="$missing ANTHROPIC_FEDERATION_RULE_ID"
+        [ -n "$ORG_ID" ]  || missing="$missing ANTHROPIC_ORGANIZATION_ID"
+        [ -n "$SA_ID" ]   || missing="$missing ANTHROPIC_SERVICE_ACCOUNT_ID"
+        if [ -n "$missing" ]; then
+          echo "::error::Missing repository variables:$missing. See SETUP.md, step 4."
+          exit 1
+        fi
+        if [ -z "${ACTIONS_ID_TOKEN_REQUEST_URL:-}" ]; then
+          echo "::error::This job can't request an OIDC token. Add 'permissions: id-token: write'."
+          exit 1
+        fi
+
+        token_file="$RUNNER_TEMP/gha-jwt"
+        {
+          echo "ANTHROPIC_FEDERATION_RULE_ID=$RULE_ID"
+          echo "ANTHROPIC_ORGANIZATION_ID=$ORG_ID"
+          echo "ANTHROPIC_SERVICE_ACCOUNT_ID=$SA_ID"
+          echo "ANTHROPIC_IDENTITY_TOKEN_FILE=$token_file"
+          if [ -n "$WS_ID" ]; then echo "ANTHROPIC_WORKSPACE_ID=$WS_ID"; fi
+        } >> "$GITHUB_ENV"
+
+        # GitHub's token lasts ~5 minutes and Anthropic accepts each token only once, while the SDK
+        # re-reads the file whenever it refreshes. Keep a fresh token in the file for the whole job.
+        nohup bash "$GITHUB_ACTION_PATH/refresh-token.sh" "$token_file" > "$RUNNER_TEMP/token-refresh.log" 2>&1 &
+        for _ in $(seq 1 20); do [ -s "$token_file" ] && break; sleep 1; done
+        if [ ! -s "$token_file" ]; then
+          cat "$RUNNER_TEMP/token-refresh.log"
+          echo "::error::Could not fetch a GitHub OIDC token."
+          exit 1
+        fi
+        echo "Federation configured. The SDK will exchange the GitHub token on its first request."

@@ -1,0 +1,66 @@
+name: 1 · Plan launch
+
+# Runs the Planner, the four workstream agents and the Risk agent, then opens a pull request for
+# the program manager's risk review. Merging that PR starts "2 · Finalize launch status".
+on:
+  workflow_dispatch:
+    inputs:
+      brief:
+        description: Launch brief (a .json file under data/)
+        default: data/sample_brief.json
+
+permissions:
+  contents: write        # push the review branch
+  pull-requests: write   # open the review PR
+  id-token: write        # GitHub OIDC token for Anthropic federation
+
+concurrency:
+  group: launch-plan
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    # The federation rule only trusts runs on main, so fail fast anywhere else.
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      BRIEF: ${{ inputs.brief }}
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - uses: ./.github/actions/anthropic-federation
+        with:
+          federation-rule-id: ${{ vars.ANTHROPIC_FEDERATION_RULE_ID }}
+          organization-id: ${{ vars.ANTHROPIC_ORGANIZATION_ID }}
+          service-account-id: ${{ vars.ANTHROPIC_SERVICE_ACCOUNT_ID }}
+          workspace-id: ${{ vars.ANTHROPIC_WORKSPACE_ID }}
+
+      - name: Run planning agents
+        run: |
+          RUN_ID="$(date -u +%Y%m%d-%H%M)-${GITHUB_RUN_NUMBER}"
+          echo "RUN_ID=$RUN_ID" >> "$GITHUB_ENV"
+          python cloud.py plan --brief "$BRIEF" --run-id "$RUN_ID" \
+            --branch "risk-review/$RUN_ID" --pr-body "$RUNNER_TEMP/pr_body.md"
+
+      - name: Open risk review pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "risk-review/$RUN_ID"
+          git add "runs/$RUN_ID"
+          git commit -m "Risk review for run $RUN_ID"
+          git push origin "risk-review/$RUN_ID"
+          LAUNCH=$(python -c "import json; print(json.load(open('runs/$RUN_ID/state.json'))['brief']['launch_name'])")
+          gh pr create --base main --head "risk-review/$RUN_ID" \
+            --title "Risk review: $LAUNCH ($RUN_ID)" --body-file "$RUNNER_TEMP/pr_body.md"

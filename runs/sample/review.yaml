@@ -1,0 +1,46 @@
+# Risk review for run sample
+#
+# For each risk, set `decision` to accept or reject. You can also rewrite the mitigation.
+# Merging this pull request is the approval: the Synthesizer runs only after the merge.
+# Close the pull request without merging to discard the run.
+
+risks:
+- id: R1
+  title: Asia-Pacific publishes before the embargo lifts
+  severity: high
+  decision: accept
+  owner: Regional Marketing Lead
+  mitigation: Hold APAC publish until 2027-03-11 02:00 JST / 04:00 AEDT, or move the embargo earlier for
+    all regions. Decide by 2027-02-20.
+- id: R2
+  title: Legal review finishes after copy lock
+  severity: high
+  decision: accept
+  owner: Comms Lead
+  mitigation: Move PR-2 submission to 2027-02-15 (the Planner date) so approval lands 03-01; pre-clear
+    the top 5 claims in a fast-track review.
+- id: R3
+  title: Press release claims browser availability on launch day
+  severity: high
+  decision: accept
+  owner: Comms Lead
+  mitigation: Change copy to 'coming to the browser next week', or pull PRD-4 into the launch date if
+    Product confirms feasibility.
+- id: R4
+  title: Creators get access before red team sign-off
+  severity: medium
+  decision: accept
+  owner: EA Program Lead
+  mitigation: Open early access 2027-02-09, or give creators a red-teamed checkpoint only.
+- id: R5
+  title: No owner for localized safety disclaimers
+  severity: medium
+  decision: accept
+  owner: Regional Marketing Lead
+  mitigation: Assign a Regional PMM owner this week and pair with Policy Counsel.
+- id: R6
+  title: Two days for translation across 14 regions
+  severity: low
+  decision: reject
+  owner: Regional PMM
+  mitigation: Pre-translate non-claim copy from the 03-01 draft.

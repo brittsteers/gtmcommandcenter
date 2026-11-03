@@ -1,0 +1,21 @@
+{
+  "disclaimer": "Entirely fictional. 'Lumen' and 'Nova 2' are invented for this demo and do not describe any real company or product.",
+  "company": "Lumen (fictional)",
+  "launch_name": "Nova 2 model launch",
+  "launch_date": "2027-03-10",
+  "embargo_lifts": "2027-03-10T09:00:00-08:00",
+  "summary": "Nova 2 is a new multimodal model powering the Lumen assistant app. Launch includes a press announcement, an early access creator program, assistant app rollout in 14 regions, and a browser integration.",
+  "kickoff": "2027-01-11",
+  "workstreams": ["PR", "Product", "Regional", "Legal"],
+  "facts": [
+    "Press announcement and blog post go live when the embargo lifts at 09:00 PT on launch day.",
+    "Early access creator program is planned to open 2027-02-01 with ~200 creators under NDA.",
+    "Red team sign-off is currently scheduled for 2027-02-08.",
+    "Legal review of all performance and safety claims takes 10 business days from submission.",
+    "Marketing copy lock is 5 calendar days before launch.",
+    "Regional teams publish at 09:00 local time on launch day across 14 regions, including Japan (JST, UTC+9) and Australia (AEDT, UTC+11).",
+    "The browser integration is expected to ship 2027-03-17, one week after launch.",
+    "The press release draft says the assistant is 'available in the browser today'.",
+    "Localized safety disclaimers need Legal-approved wording before translation starts. No Regional owner is assigned for this yet."
+  ]
+}
