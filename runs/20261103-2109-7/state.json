@@ -1,0 +1,1527 @@
+{
+  "run_id": "20261103-2109-7",
+  "source": "live",
+  "created_at": "2026-11-03T21:10:52+00:00",
+  "brief": {
+    "disclaimer": "Case study built from public reporting, as the plan stood on 2024-08-26. Facts marked [assumed] reconstruct internal plans and are not Apple documents. Not affiliated with or endorsed by Apple. Sources: cases/apple_intelligence.md in the repo.",
+    "as_of": "2024-08-26",
+    "planning_rule": "Plan only from the facts below, as of the as_of date. Do not use knowledge of anything that happened after that date.",
+    "company": "Apple",
+    "launch_name": "Apple Intelligence first wave (case study)",
+    "launch_date": "2024-10-28",
+    "embargo_lifts": "2024-09-09T10:00:00-07:00",
+    "summary": "Apple Intelligence is Apple's generative AI system for iPhone, iPad and Mac. The iPhone 16 is announced at a keynote on 2024-09-09 and marketed around Apple Intelligence, but the first wave of features ships later in iOS 18.1, in beta and in US English only, with more features, languages and regions rolling out over the following year.",
+    "kickoff": "2024-06-10",
+    "workstreams": [
+      "PR",
+      "Product",
+      "Regional",
+      "Legal"
+    ],
+    "facts": [
+      "Apple announced Apple Intelligence at WWDC on 2024-06-10: Writing Tools, notification summaries, Image Playground, Genmoji, ChatGPT access in Siri, and a more personal Siri with personal context, onscreen awareness and in-app actions. Apple said it would arrive in beta in US English in the fall, with some features, languages and platforms coming over the course of the next year.",
+      "Apple Intelligence requires an iPhone 15 Pro, iPhone 15 Pro Max or iPhone 16 model, or an iPad or Mac with Apple silicon.",
+      "The iPhone 16 keynote is 2024-09-09 at 10:00 PT. The phones go on sale 2024-09-20 without Apple Intelligence. The first features arrive in iOS 18.1, targeted for 2024-10-28.",
+      "iOS 18.1 ships Writing Tools, the Clean Up photo tool, notification summaries and a redesigned Siri, all labeled beta. Image Playground, Genmoji and ChatGPT in Siri follow in iOS 18.2 in December. The more personal Siri features have no ship date.",
+      "Notification summaries condense stacked notifications from any app, including news apps, into one AI-generated line. The summary appears on the Lock Screen under the source app's name and icon.",
+      "[assumed] The iPhone 16 campaign is built around Apple Intelligence, including TV spots that demonstrate the more personal Siri answering questions from the user's own emails and calendar.",
+      "[assumed] The Apple Intelligence web page shows an 'Available now' banner at the top, above the full list of features, including features that ship later.",
+      "At launch, Apple Intelligence works only with the device and Siri language set to US English. Localized English for the UK, Canada, Australia, New Zealand and South Africa is planned for December. Other languages, including Chinese, French, German, Japanese and Spanish, are planned for 2025.",
+      "On 2024-06-21 Apple said Apple Intelligence will not launch in the EU in 2024, citing regulatory uncertainty under the Digital Markets Act. There is no EU date.",
+      "Generative AI services in mainland China need approval from the Cyberspace Administration of China. Apple has not announced a local model partner or a China date.",
+      "[assumed] The iPhone 16 goes on sale on 2024-09-20 in more than 50 markets, including the EU and mainland China, under the same Apple Intelligence campaign.",
+      "[assumed] Owner names are not public. Assign owners as roles."
+    ]
+  },
+  "schedule": {
+    "launch_date": "2024-10-28",
+    "embargo_lifts": "2024-09-09T10:00:00-07:00",
+    "milestones": [
+      {
+        "name": "Kickoff: Apple Intelligence program (announced at WWDC)",
+        "date": "2024-06-10",
+        "owner_team": "PR",
+        "note": "WWDC announcement: beta, US English only in the fall, more features, languages and platforms over the next year."
+      },
+      {
+        "name": "EU decision announced: no Apple Intelligence in EU in 2024",
+        "date": "2024-06-21",
+        "owner_team": "Legal",
+        "note": "Citing DMA regulatory uncertainty. No EU date exists."
+      },
+      {
+        "name": "Messaging lock: iPhone 16 campaign vs. Apple Intelligence availability",
+        "date": "2024-08-30",
+        "owner_team": "PR",
+        "note": "Tension: campaign is built around Apple Intelligence, but phones ship 2024-09-20 without it and features arrive 2024-10-28 in iOS 18.1 (beta, US English). The TV spots show the more personal Siri, which has no ship date. Needs a decision before the keynote."
+      },
+      {
+        "name": "Web page copy review: 'Available now' banner and feature list",
+        "date": "2024-09-03",
+        "owner_team": "Product",
+        "note": "Banner sits above features that ship later (iOS 18.2 in December, personal Siri undated). Not accurate on 2024-09-09 since nothing ships until 2024-10-28. Schedule fix or label before publish."
+      },
+      {
+        "name": "Legal review: ad claims and Siri personal-context spots",
+        "date": "2024-09-05",
+        "owner_team": "Legal",
+        "note": "Review spots showing features with no ship date, and the notification summary treatment of news apps' names and icons."
+      },
+      {
+        "name": "Regional publish rules: EU and mainland China",
+        "date": "2024-09-06",
+        "owner_team": "Regional",
+        "note": "Brief assumes the iPhone 16 campaign runs in 50+ markets including the EU and China, but Apple Intelligence is not available in the EU in 2024 and China has no date (CAC approval needed, no local model partner announced). Regional campaign variants or disclaimers are needed or the plan conflicts with the facts."
+      },
+      {
+        "name": "Embargo lifts: iPhone 16 keynote",
+        "date": "2024-09-09",
+        "owner_team": "PR",
+        "note": "10:00 PT keynote. Announce iPhone 16 and Apple Intelligence requirements: iPhone 15 Pro, 15 Pro Max or iPhone 16, and iPads or Macs with Apple silicon."
+      },
+      {
+        "name": "iPhone 16 on sale (without Apple Intelligence)",
+        "date": "2024-09-20",
+        "owner_team": "Product",
+        "note": "On sale in 50+ markets [assumed], no Apple Intelligence at launch."
+      },
+      {
+        "name": "iOS 18.1 release candidate and beta labeling check",
+        "date": "2024-10-21",
+        "owner_team": "Product",
+        "note": "Writing Tools, Clean Up, notification summaries and redesigned Siri, all labeled beta."
+      },
+      {
+        "name": "Launch: iOS 18.1 with Apple Intelligence first wave (US English only)",
+        "date": "2024-10-28",
+        "owner_team": "Product",
+        "note": "Works only with device and Siri language set to US English. Not in EU or mainland China."
+      },
+      {
+        "name": "Comms: iOS 18.1 launch announcement and beta/language caveats",
+        "date": "2024-10-28",
+        "owner_team": "PR",
+        "note": "State beta status, US English only, and what is still to come."
+      },
+      {
+        "name": "Localized English (UK, Canada, Australia, NZ, South Africa)",
+        "date": "2024-12-01",
+        "owner_team": "Regional",
+        "note": "Planned for December. Exact day not given; 2024-12-01 is a placeholder."
+      },
+      {
+        "name": "iOS 18.2: Image Playground, Genmoji, ChatGPT in Siri",
+        "date": "2024-12-01",
+        "owner_team": "Product",
+        "note": "Planned for December. Exact day not given; 2024-12-01 is a placeholder."
+      },
+      {
+        "name": "Other languages (Chinese, French, German, Japanese, Spanish)",
+        "date": "2025-01-01",
+        "owner_team": "Regional",
+        "note": "Planned for 2025, no specific date. Placeholder only."
+      }
+    ]
+  },
+  "plans": [
+    {
+      "team": "PR",
+      "tasks": [
+        {
+          "id": "PR-1",
+          "title": "Decide and lock iPhone 16 messaging: reframe campaign so Apple Intelligence is 'coming' (iOS 18.1 beta, US English, 2024-10-28), and pull or re-cut TV spots showing the undated personal Siri. Escalate unresolved conflict to program leadership before the keynote.",
+          "due": "2024-08-30",
+          "owner": "PR Lead / Head of Marketing Communications",
+          "depends_on": []
+        },
+        {
+          "id": "PR-2",
+          "title": "Draft keynote press release, blog post and media briefing notes for 2024-09-09 with accurate availability: phones on sale 2024-09-20 without Apple Intelligence, device requirements, beta and US English at launch, EU and China not available, no date for personal Siri.",
+          "due": "2024-09-04",
+          "owner": "PR Lead",
+          "depends_on": [
+            "PR-1"
+          ]
+        },
+        {
+          "id": "PR-3",
+          "title": "Finalize embargo management and creator/influencer comms: embargo lifts 2024-09-09 10:00 PT; creator briefing kit and disclosure guidance carry the same availability caveats; no demos of unshipped features presented as available.",
+          "due": "2024-09-06",
+          "owner": "Media Relations Manager",
+          "depends_on": [
+            "PR-2"
+          ]
+        },
+        {
+          "id": "PR-4",
+          "title": "Launch advertising revision: finalize ad creative and regional variants or disclaimers (EU, mainland China, 'beta', 'US English') pending Legal and Regional input; hold spots if claims are not cleared.",
+          "due": "2024-09-06",
+          "owner": "Advertising Lead",
+          "depends_on": [
+            "PR-1"
+          ]
+        },
+        {
+          "id": "PR-5",
+          "title": "Prepare iOS 18.1 launch announcement for 2024-10-28 stating beta status, US English only, not in EU or mainland China, and what is still to come (iOS 18.2 in December, 2025 languages, personal Siri undated).",
+          "due": "2024-10-21",
+          "owner": "PR Lead",
+          "depends_on": [
+            "PR-2"
+          ]
+        }
+      ],
+      "asks": [
+        {
+          "to_team": "Product",
+          "request": "Fix or relabel the 'Available now' banner on the Apple Intelligence web page, which is inaccurate on 2024-09-09 since nothing ships until 2024-10-28, and confirm a ship-date position for personal Siri so PR can describe it as undated.",
+          "needed_by": "2024-09-03"
+        },
+        {
+          "to_team": "Legal",
+          "request": "Complete review of ad claims, Siri personal-context spots, and notification summary treatment of news apps' names and icons; approve press release and blog language on availability.",
+          "needed_by": "2024-09-05"
+        },
+        {
+          "to_team": "Regional",
+          "request": "Provide EU and mainland China publish rules and approved campaign variants or disclaimers, as the iPhone 16 campaign is assumed to run in the EU and China where Apple Intelligence is unavailable in 2024.",
+          "needed_by": "2024-09-06"
+        },
+        {
+          "to_team": "Product",
+          "request": "Confirm iOS 18.1 release candidate and beta labeling check results so launch comms use accurate feature names and beta labels.",
+          "needed_by": "2024-10-21"
+        }
+      ]
+    },
+    {
+      "team": "Product",
+      "tasks": [
+        {
+          "id": "PRO-1",
+          "title": "Fix 'Available now' banner on Apple Intelligence web page: remove it or label each feature by ship status (iOS 18.1 beta Oct 28, iOS 18.2 Dec, personal Siri undated) before the page publishes. The banner is inaccurate on 2024-09-09 because nothing ships until 2024-10-28.",
+          "due": "2024-09-03",
+          "owner": "Product Marketing Lead (web page owner)",
+          "depends_on": []
+        },
+        {
+          "id": "PRO-2",
+          "title": "Publish a feature availability matrix as the single source of truth: feature, iOS version, date, language, region, device requirement (iPhone 15 Pro/15 Pro Max/iPhone 16, Apple silicon iPad/Mac), beta label, and 'no date' for personal Siri. Mark EU as not in 2024 and mainland China as no date.",
+          "due": "2024-08-30",
+          "owner": "Product Manager, Apple Intelligence",
+          "depends_on": []
+        },
+        {
+          "id": "PRO-3",
+          "title": "Red team notification summaries on news apps (summaries shown under the source app's name and icon) and the redesigned Siri; log issues and decide mitigations or in-product disclaimers before iOS 18.1 RC.",
+          "due": "2024-10-11",
+          "owner": "TBD",
+          "depends_on": []
+        },
+        {
+          "id": "PRO-4",
+          "title": "Plan staged rollout and in-product launch moments for iOS 18.1: US English-only language gating, setup and onboarding screens, beta labels on every feature, and clear messaging for unsupported devices, languages and regions. Include the Sep 20 iPhone 16 sale without Apple Intelligence.",
+          "due": "2024-09-20",
+          "owner": "Product Manager, Apple Intelligence",
+          "depends_on": [
+            "PRO-2"
+          ]
+        },
+        {
+          "id": "PRO-5",
+          "title": "Run iOS 18.1 release candidate and beta labeling check across Writing Tools, Clean Up, notification summaries and Siri. Confirm gating works for non-US English, the EU and mainland China, and that no 18.2 or personal Siri features are exposed.",
+          "due": "2024-10-21",
+          "owner": "QA / Release Manager",
+          "depends_on": [
+            "PRO-3",
+            "PRO-4"
+          ]
+        },
+        {
+          "id": "PRO-6",
+          "title": "Early access and integrations readiness: confirm beta feedback loop for the 18.1 developer/public beta, and ChatGPT integration plan with partner for iOS 18.2 in December (date still a placeholder). Note that personal Siri has no ship date, so no integration work is scheduled.",
+          "due": "2024-10-14",
+          "owner": "Partnerships and Developer Relations Lead",
+          "depends_on": [
+            "PRO-2"
+          ]
+        }
+      ],
+      "asks": [
+        {
+          "to_team": "PR",
+          "request": "Decide the campaign messaging conflict before the keynote. The iPhone 16 campaign is built around Apple Intelligence, but phones ship Sep 20 without it, features arrive Oct 28 in beta in US English only, and the personal Siri TV spots show a feature with no ship date. Adopt availability language from the PRO-2 matrix.",
+          "needed_by": "2024-08-30"
+        },
+        {
+          "to_team": "Legal",
+          "request": "Review the web page copy, the personal Siri spots, and the news app name and icon treatment on notification summaries. Confirm the disclaimers needed for the beta status and the undated features.",
+          "needed_by": "2024-09-05"
+        },
+        {
+          "to_team": "Regional",
+          "request": "Confirm campaign variants or disclaimers for the EU (no Apple Intelligence in 2024, no date) and mainland China (no date, CAC approval needed). Both are in the 50+ markets for the Sep 20 sale. Also provide the confirmed December date for localized English.",
+          "needed_by": "2024-09-06"
+        }
+      ]
+    },
+    {
+      "team": "Regional",
+      "tasks": [
+        {
+          "id": "REG-1",
+          "title": "Build market availability matrix for Apple Intelligence (US English at launch 2024-10-28; UK/CA/AU/NZ/ZA English planned Dec, date TBC; EU no 2024 date; mainland China no date, CAC approval pending; other languages 2025 undated)",
+          "due": "2024-08-30",
+          "owner": "Regional Marketing Lead",
+          "depends_on": []
+        },
+        {
+          "id": "REG-2",
+          "title": "Decide and publish regional rules for EU and mainland China: the brief assumes the iPhone 16 Apple Intelligence campaign runs in 50+ markets including EU and China, which conflicts with the facts. Define campaign variants (iPhone 16 hardware-led, no Apple Intelligence claims) or disclaimers for these markets and any non-US-English markets",
+          "due": "2024-09-06",
+          "owner": "Regional Marketing Lead",
+          "depends_on": [
+            "REG-1"
+          ]
+        },
+        {
+          "id": "REG-3",
+          "title": "Localize and adapt keynote-day assets, local press notes and social for 2024-09-09 10:00 PT embargo lift per market: remove or caveat the personal Siri spots (no ship date) and the 'Available now' banner for all markets; state beta and language limits; no Apple Intelligence availability claims for EU/China",
+          "due": "2024-09-08",
+          "owner": "TBD",
+          "depends_on": [
+            "REG-2"
+          ]
+        },
+        {
+          "id": "REG-4",
+          "title": "Prepare 2024-10-28 iOS 18.1 local publish timing and messaging: US English only, beta label, not available in EU/China; local-language pages must not imply availability for devices set to other languages",
+          "due": "2024-10-21",
+          "owner": "Regional Comms Manager",
+          "depends_on": [
+            "REG-2"
+          ]
+        },
+        {
+          "id": "REG-5",
+          "title": "Plan localized English rollout (UK, Canada, Australia, NZ, South Africa) for December with placeholder date 2024-12-01, and a 2025 translation/localization plan for Chinese, French, German, Japanese, Spanish; confirm dates once Product gives exact days",
+          "due": "2024-11-15",
+          "owner": "Localization Program Manager",
+          "depends_on": [
+            "REG-1"
+          ]
+        }
+      ],
+      "asks": [
+        {
+          "to_team": "PR",
+          "request": "Messaging lock decision on iPhone 16 campaign vs. Apple Intelligence availability, including whether Siri personal-context TV spots run anywhere; regional variants depend on it",
+          "needed_by": "2024-08-30"
+        },
+        {
+          "to_team": "Product",
+          "request": "Fix or label the 'Available now' banner and feature list on the Apple Intelligence page, with localized versions following the same fix",
+          "needed_by": "2024-09-03"
+        },
+        {
+          "to_team": "Legal",
+          "request": "Confirm EU and mainland China position (DMA, CAC approval) and approve regional disclaimer wording and ad claims for those markets",
+          "needed_by": "2024-09-05"
+        },
+        {
+          "to_team": "Product",
+          "request": "Exact dates for December localized English and iOS 18.2, and any 2025 language dates, to replace placeholders",
+          "needed_by": "2024-11-01"
+        }
+      ]
+    },
+    {
+      "team": "Legal",
+      "tasks": [
+        {
+          "id": "LEG-1",
+          "title": "Review Siri personal-context TV spots: features have no ship date and are not in iOS 18.1. Decide on removal, 'coming later' supers, or availability disclaimers",
+          "due": "2024-09-05",
+          "owner": "Advertising/Claims Counsel",
+          "depends_on": []
+        },
+        {
+          "id": "LEG-2",
+          "title": "Review the Apple Intelligence web page 'Available now' banner and feature list. Not accurate on 2024-09-09, since nothing ships until 2024-10-28 and some features come in December or have no date. Require corrected wording or per-feature availability labels before publish",
+          "due": "2024-09-03",
+          "owner": "Advertising/Claims Counsel",
+          "depends_on": []
+        },
+        {
+          "id": "LEG-3",
+          "title": "Legal review of notification summaries: AI-generated lines for news apps shown under the source app's name and icon. Assess attribution, accuracy and misrepresentation risk, and decide on an AI-generated or beta label and any news publisher considerations",
+          "due": "2024-09-05",
+          "owner": "Product/IP Counsel",
+          "depends_on": []
+        },
+        {
+          "id": "LEG-4",
+          "title": "Define regional disclaimer and claims rules for the EU (no Apple Intelligence in 2024, no date, DMA) and mainland China (CAC approval needed, no date). Approve variants or disclaimers for the 50+ market campaign. Do not promise dates for either region",
+          "due": "2024-09-06",
+          "owner": "Regulatory Counsel",
+          "depends_on": [
+            "LEG-1",
+            "LEG-2"
+          ]
+        },
+        {
+          "id": "LEG-5",
+          "title": "Approve standard disclaimer set (beta, US English only, device requirements, features rolling out over time) for the keynote, ads, web and the iOS 18.1 launch. Confirm any early-access/press NDA terms ahead of the embargo lift",
+          "due": "2024-09-06",
+          "owner": "TBD",
+          "depends_on": [
+            "LEG-1",
+            "LEG-2",
+            "LEG-4"
+          ]
+        },
+        {
+          "id": "LEG-6",
+          "title": "Final legal check of iOS 18.1 launch copy and beta labeling against the release candidate",
+          "due": "2024-10-22",
+          "owner": "Advertising/Claims Counsel",
+          "depends_on": [
+            "LEG-5"
+          ]
+        }
+      ],
+      "asks": [
+        {
+          "to_team": "PR",
+          "request": "Decide whether the Siri personal-context spots run unchanged, are edited, or get 'coming later' language. Needed before the 2024-08-30 messaging lock and before keynote, as the lock date falls before Legal's 2024-09-05 review. Legal flags that a lock before review is a sequencing conflict",
+          "needed_by": "2024-09-04"
+        },
+        {
+          "to_team": "Product",
+          "request": "Fix or label the 'Available now' banner and per-feature availability, and send the final web page copy to Legal",
+          "needed_by": "2024-09-02"
+        },
+        {
+          "to_team": "Regional",
+          "request": "Confirm the market list for the campaign and the EU and China variants so Legal can approve disclaimers. The brief assumes the campaign runs in the EU and China, which conflicts with availability",
+          "needed_by": "2024-09-05"
+        },
+        {
+          "to_team": "Product",
+          "request": "Provide the iOS 18.1 release candidate feature and beta label list",
+          "needed_by": "2024-10-21"
+        }
+      ]
+    }
+  ],
+  "risks": {
+    "risks": [
+      {
+        "id": "R1",
+        "title": "Embargo lift falls on 2024-09-10 local time in APAC, so 'Sep 9' regional publishing would break it",
+        "severity": "high",
+        "teams": [
+          "PR",
+          "Regional"
+        ],
+        "evidence": "The embargo lifts 2024-09-09T10:00-07:00 (17:00 UTC). In local time that is 19:00 CEST Sep 9 in the EU, 01:00 Sep 10 in Beijing, 03:00 AEST Sep 10 in Sydney and 05:00 NZST Sep 10 in Auckland. REG-3 localizes keynote-day assets and local press notes 'for 2024-09-09' across 50+ markets, is due 2024-09-08 and has owner 'TBD'. PR-3 states the time only in PT. No task converts the embargo into local publish times.",
+        "mitigation": "Publish one embargo table with the exact local publish time per market (for example, China and Australia/NZ go live on Sep 10 local time, not Sep 9). Have each market sign off that its CMS schedules and press-note send times are locked to 17:00 UTC. Name a single owner for REG-3 and add the table to the PR-3 embargo kit.",
+        "owner": "Media Relations Manager (with Regional Comms Manager)"
+      },
+      {
+        "id": "R2",
+        "title": "Messaging lock and ad finalization happen before Legal and Regional sign-off, with only a weekend left before the keynote",
+        "severity": "high",
+        "teams": [
+          "PR",
+          "Legal",
+          "Regional"
+        ],
+        "evidence": "PR-1 locks messaging on 2024-08-30, but Legal's spot review (LEG-1) is not due until 2024-09-05. Legal's own ask flags this as a sequencing conflict. PR-4 finalizes ad creative and regional variants on 2024-09-06 and depends only on PR-1. It is due the same day as LEG-4 (regional claims), LEG-5 (disclaimer set) and REG-2 (EU/China rules). REG-3 must localize all of this by 2024-09-08, a Sunday, for the 2024-09-09 keynote.",
+        "mitigation": "Make PR-1 a provisional lock on 08-30, with final lock gated on LEG-1. Move LEG-4, LEG-5 and REG-2 to 2024-09-04, and add LEG-4, LEG-5 and REG-2 as dependencies of PR-4. Hold any spot or variant without written Legal clearance by 09-06, and fall back to hardware-led creative for that spot or variant.",
+        "owner": "Program Manager (escalation to Head of Marketing Communications)"
+      },
+      {
+        "id": "R3",
+        "title": "TV spots and web feature list claim features that ship after launch or have no ship date",
+        "severity": "high",
+        "teams": [
+          "PR",
+          "Legal",
+          "Product"
+        ],
+        "evidence": "[assumed] The TV spots show the more personal Siri answering questions from email and calendar. That feature has no ship date, and PRO-6 notes no integration work is scheduled for it. The web page lists Image Playground, Genmoji and ChatGPT in Siri, which ship in iOS 18.2 in December. LEG-1 only decides 'removal, coming later supers, or disclaimers' on 2024-09-05. That leaves 4 days, including a weekend, to re-cut and re-traffic spots before the keynote and the 2024-09-20 on-sale date in 50+ markets.",
+        "mitigation": "Pre-produce a re-cut without personal Siri, or with a 'coming later' super, in parallel now so it is ready if LEG-1 rules against the original. Set the default to pull the personal Siri spots unless Legal clears them. Tie every feature claim to the PRO-2 availability matrix.",
+        "owner": "Advertising Lead"
+      },
+      {
+        "id": "R4",
+        "title": "EU and China campaign variants are defined too late for Legal to approve before the Sep 20 sale",
+        "severity": "high",
+        "teams": [
+          "Regional",
+          "Legal",
+          "PR"
+        ],
+        "evidence": "Legal asks Regional for the market list and EU/China variants by 2024-09-05. REG-2, which defines those variants, is due 2024-09-06. LEG-4 approves EU/China disclaimers on that same day, 2024-09-06. [assumed] The iPhone 16 goes on sale 2024-09-20 in 50+ markets including the EU and mainland China under the same Apple Intelligence campaign. Apple Intelligence is not in the EU in 2024 and has no China date (CAC approval needed).",
+        "mitigation": "Move REG-2 to 2024-09-03 so LEG-4 has 2-3 days to review. Agree now on a default hardware-led, no-Apple-Intelligence variant for the EU and mainland China. It runs automatically if variants are not approved by 09-06.",
+        "owner": "Regional Marketing Lead"
+      },
+      {
+        "id": "R5",
+        "title": "Gating tasks have no owner",
+        "severity": "high",
+        "teams": [
+          "Legal",
+          "Product",
+          "Regional"
+        ],
+        "evidence": "LEG-5 is the standard disclaimer set (beta, US English, device requirements, press NDA terms) due 2024-09-06, and every keynote asset depends on it. Its owner is 'TBD'. PRO-3, the notification summary and Siri red team due 2024-10-11, has owner 'TBD', and PRO-5 (the RC check) depends on it. REG-3, the keynote-day localized assets due 2024-09-08, has owner 'TBD'.",
+        "mitigation": "Assign named role owners by 2024-08-28: Advertising/Claims Counsel for LEG-5, a Product Manager or AI Quality Lead for PRO-3, and the Regional Comms Manager for REG-3. Confirm each owner's capacity against the due dates.",
+        "owner": "Program Manager"
+      },
+      {
+        "id": "R6",
+        "title": "Web page banner fix, Legal review and the copy hand-off are mis-sequenced",
+        "severity": "medium",
+        "teams": [
+          "Product",
+          "Legal",
+          "Regional"
+        ],
+        "evidence": "Legal asks for final web copy by 2024-09-02. PRO-1 (the fix) is due 2024-09-03, the same day as LEG-2 (Legal's review), which leaves no review window. Product's ask gives Legal until 2024-09-05 to review the web copy, after LEG-2's due date. Regional also needs localized pages to follow the same fix, but no task covers localizing the corrected page before 2024-09-09.",
+        "mitigation": "Move PRO-1 to 2024-09-02 and keep LEG-2 on 2024-09-03. Add a task for Regional to localize the approved page by 2024-09-06. Remove the 'Available now' banner from all locales by default until approved copy exists.",
+        "owner": "Product Marketing Lead (web page owner)"
+      },
+      {
+        "id": "R7",
+        "title": "Legal decides notification summary labeling before the red team produces findings",
+        "severity": "medium",
+        "teams": [
+          "Legal",
+          "Product"
+        ],
+        "evidence": "LEG-3 decides on AI-generated or beta labels and news publisher considerations by 2024-09-05. PRO-3, the red team on news app summaries shown under the source app's name and icon, isn't due until 2024-10-11 and has no owner. No Legal task reviews the PRO-3 findings before the 2024-10-21 RC (PRO-5).",
+        "mitigation": "Add a Legal task to review the PRO-3 findings by 2024-10-14, and treat LEG-3 as a provisional decision. Start PRO-3 now so issues surface before the RC freeze.",
+        "owner": "Product/IP Counsel"
+      },
+      {
+        "id": "R8",
+        "title": "No slack between the iOS 18.1 RC check and launch comms and legal sign-off",
+        "severity": "medium",
+        "teams": [
+          "Product",
+          "PR",
+          "Regional",
+          "Legal"
+        ],
+        "evidence": "PRO-5 (RC and beta label check) is due 2024-10-21. On that same day PR's ask expects its results, PR-5 (launch announcement) is due and REG-4 (local publish messaging) is due. LEG-6 does the final legal check on 2024-10-22 but depends only on LEG-5, not on PRO-5. The launch is 2024-10-28.",
+        "mitigation": "Pull PRO-5 to 2024-10-17. Add PRO-5 as a dependency of PR-5, REG-4 and LEG-6. Move PR-5 and REG-4 final copy to 2024-10-23, after LEG-6.",
+        "owner": "QA / Release Manager"
+      },
+      {
+        "id": "R9",
+        "title": "No Legal task covers the PR asks on press release and blog language",
+        "severity": "medium",
+        "teams": [
+          "PR",
+          "Legal"
+        ],
+        "evidence": "PR asks Legal to approve press release and blog availability language by 2024-09-05, and PR-2 drafts them by 2024-09-04. None of Legal's tasks LEG-1 to LEG-6 covers review of the press release, blog or briefing notes. PR-3's creator kit (due 2024-09-06) also has no Legal review.",
+        "mitigation": "Add a Legal task to review the PR-2 and PR-3 materials on 2024-09-05, owned by Advertising/Claims Counsel, and make it a dependency of PR-3.",
+        "owner": "Advertising/Claims Counsel"
+      },
+      {
+        "id": "R10",
+        "title": "The December and 2025 dates have no owner because the asks run in a circle",
+        "severity": "medium",
+        "teams": [
+          "Product",
+          "Regional"
+        ],
+        "evidence": "Product asks Regional for the confirmed December localized English date by 2024-09-06. Regional asks Product for the exact December localized English and iOS 18.2 dates by 2024-11-01. REG-5 (due 2024-11-15) waits on Product, and no Product task produces these dates. The schedule shows 2024-12-01 and 2025-01-01 as placeholders only.",
+        "mitigation": "Make Product the owner of the release dates. Add a Product task to confirm the iOS 18.2 and localized English dates by 2024-11-01. Until then, all comms say 'December' and '2025' without specific days.",
+        "owner": "Product Manager, Apple Intelligence"
+      },
+      {
+        "id": "R11",
+        "title": "In-product messaging for the Sep 20 sale is due on the sale date",
+        "severity": "medium",
+        "teams": [
+          "Product"
+        ],
+        "evidence": "PRO-4 covers setup and onboarding messaging for unsupported devices, languages and regions, and the iPhone 16 sale without Apple Intelligence. It is due 2024-09-20, the day phones go on sale in 50+ markets.",
+        "mitigation": "Split PRO-4. Move Sep 20 sale messaging (retail, store and setup copy) to 2024-09-10, and keep the iOS 18.1 onboarding work for the RC.",
+        "owner": "Product Manager, Apple Intelligence"
+      },
+      {
+        "id": "R12",
+        "title": "Two parallel availability matrices may diverge",
+        "severity": "low",
+        "teams": [
+          "Product",
+          "Regional"
+        ],
+        "evidence": "PRO-2 (Product, a 'single source of truth' matrix) and REG-1 (Regional market availability matrix) are both due 2024-08-30, with no dependency between them.",
+        "mitigation": "Make REG-1 a regional view derived from PRO-2. Set PRO-2 as the only source that PR, Legal and Regional cite.",
+        "owner": "Product Manager, Apple Intelligence"
+      }
+    ]
+  },
+  "status": {
+    "headline": "The iPhone 16 campaign promises Apple Intelligence, but the phones ship 2024-09-20 without it and the first features arrive 2024-10-28 in beta, US English only, so messaging, ads and regional rules must be fixed and cleared before the 2024-09-09 keynote.",
+    "overall_rag": "red",
+    "workstreams": [
+      {
+        "team": "PR",
+        "rag": "red",
+        "summary": "Messaging locks 08-30, before Legal reviews the spots, and the personal Siri TV spots show a feature with no ship date."
+      },
+      {
+        "team": "Product",
+        "rag": "yellow",
+        "summary": "The 'Available now' banner fix and its Legal review fall on the same day, and Sep 20 in-product messaging is due on the sale date."
+      },
+      {
+        "team": "Regional",
+        "rag": "red",
+        "summary": "EU and China variants are due 09-06, too late for Legal to approve, though the campaign is planned in 50+ markets where Apple Intelligence is unavailable or undated."
+      },
+      {
+        "team": "Legal",
+        "rag": "yellow",
+        "summary": "Reviews land after the messaging lock, the press release, blog and creator kit have no review task, and the notification summary labeling is decided before red team findings."
+      }
+    ],
+    "top_risk_ids": [
+      "R2",
+      "R3",
+      "R4",
+      "R6",
+      "R7"
+    ],
+    "decisions_needed": [
+      "Make the 08-30 messaging lock provisional, with final lock gated on Legal's spot review (LEG-1).",
+      "Pull the personal Siri TV spots by default unless Legal clears them, and approve a re-cut without it or with a 'coming later' super now.",
+      "Approve a default hardware-led, no-Apple-Intelligence campaign for the EU and mainland China that runs automatically if variants are not approved by 09-06.",
+      "Move REG-2, LEG-4 and LEG-5 earlier (to 09-03 or 09-04) and make them dependencies of PR-4.",
+      "Remove the 'Available now' banner in all locales until Legal approves corrected copy, and move PRO-1 to 09-02.",
+      "Move PRO-4 Sep 20 sale messaging to 09-10 and name Product as owner of the iOS 18.2 and localized English dates.",
+      "Add a Legal task to review the press release, blog and creator kit, and one to review the red team findings on news app summaries by 10-14."
+    ],
+    "rejected_risk_note": "The program manager rejected three risks, which are not treated as live here: R1 (embargo lift falls on Sep 10 local time in APAC), R5 (gating tasks with no owner) and R12 (two availability matrices may diverge)."
+  },
+  "events": [
+    {
+      "ts": 1793740173.0573664,
+      "kind": "run_start",
+      "agent": null,
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "Apple Intelligence first wave (case study)",
+      "key": null,
+      "data": {
+        "brief": {
+          "disclaimer": "Case study built from public reporting, as the plan stood on 2024-08-26. Facts marked [assumed] reconstruct internal plans and are not Apple documents. Not affiliated with or endorsed by Apple. Sources: cases/apple_intelligence.md in the repo.",
+          "as_of": "2024-08-26",
+          "planning_rule": "Plan only from the facts below, as of the as_of date. Do not use knowledge of anything that happened after that date.",
+          "company": "Apple",
+          "launch_name": "Apple Intelligence first wave (case study)",
+          "launch_date": "2024-10-28",
+          "embargo_lifts": "2024-09-09T10:00:00-07:00",
+          "summary": "Apple Intelligence is Apple's generative AI system for iPhone, iPad and Mac. The iPhone 16 is announced at a keynote on 2024-09-09 and marketed around Apple Intelligence, but the first wave of features ships later in iOS 18.1, in beta and in US English only, with more features, languages and regions rolling out over the following year.",
+          "kickoff": "2024-06-10",
+          "workstreams": [
+            "PR",
+            "Product",
+            "Regional",
+            "Legal"
+          ],
+          "facts": [
+            "Apple announced Apple Intelligence at WWDC on 2024-06-10: Writing Tools, notification summaries, Image Playground, Genmoji, ChatGPT access in Siri, and a more personal Siri with personal context, onscreen awareness and in-app actions. Apple said it would arrive in beta in US English in the fall, with some features, languages and platforms coming over the course of the next year.",
+            "Apple Intelligence requires an iPhone 15 Pro, iPhone 15 Pro Max or iPhone 16 model, or an iPad or Mac with Apple silicon.",
+            "The iPhone 16 keynote is 2024-09-09 at 10:00 PT. The phones go on sale 2024-09-20 without Apple Intelligence. The first features arrive in iOS 18.1, targeted for 2024-10-28.",
+            "iOS 18.1 ships Writing Tools, the Clean Up photo tool, notification summaries and a redesigned Siri, all labeled beta. Image Playground, Genmoji and ChatGPT in Siri follow in iOS 18.2 in December. The more personal Siri features have no ship date.",
+            "Notification summaries condense stacked notifications from any app, including news apps, into one AI-generated line. The summary appears on the Lock Screen under the source app's name and icon.",
+            "[assumed] The iPhone 16 campaign is built around Apple Intelligence, including TV spots that demonstrate the more personal Siri answering questions from the user's own emails and calendar.",
+            "[assumed] The Apple Intelligence web page shows an 'Available now' banner at the top, above the full list of features, including features that ship later.",
+            "At launch, Apple Intelligence works only with the device and Siri language set to US English. Localized English for the UK, Canada, Australia, New Zealand and South Africa is planned for December. Other languages, including Chinese, French, German, Japanese and Spanish, are planned for 2025.",
+            "On 2024-06-21 Apple said Apple Intelligence will not launch in the EU in 2024, citing regulatory uncertainty under the Digital Markets Act. There is no EU date.",
+            "Generative AI services in mainland China need approval from the Cyberspace Administration of China. Apple has not announced a local model partner or a China date.",
+            "[assumed] The iPhone 16 goes on sale on 2024-09-20 in more than 50 markets, including the EU and mainland China, under the same Apple Intelligence campaign.",
+            "[assumed] Owner names are not public. Assign owners as roles."
+          ]
+        }
+      }
+    },
+    {
+      "ts": 1793740173.057455,
+      "kind": "agent_start",
+      "agent": "Planner",
+      "from_agent": "orchestrator",
+      "to_agent": "Planner",
+      "summary": "",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793740183.5279086,
+      "kind": "agent_done",
+      "agent": "Planner",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "14 milestones, launch 2024-10-28",
+      "key": "schedule",
+      "data": {
+        "launch_date": "2024-10-28",
+        "embargo_lifts": "2024-09-09T10:00:00-07:00",
+        "milestones": [
+          {
+            "name": "Kickoff: Apple Intelligence program (announced at WWDC)",
+            "date": "2024-06-10",
+            "owner_team": "PR",
+            "note": "WWDC announcement: beta, US English only in the fall, more features, languages and platforms over the next year."
+          },
+          {
+            "name": "EU decision announced: no Apple Intelligence in EU in 2024",
+            "date": "2024-06-21",
+            "owner_team": "Legal",
+            "note": "Citing DMA regulatory uncertainty. No EU date exists."
+          },
+          {
+            "name": "Messaging lock: iPhone 16 campaign vs. Apple Intelligence availability",
+            "date": "2024-08-30",
+            "owner_team": "PR",
+            "note": "Tension: campaign is built around Apple Intelligence, but phones ship 2024-09-20 without it and features arrive 2024-10-28 in iOS 18.1 (beta, US English). The TV spots show the more personal Siri, which has no ship date. Needs a decision before the keynote."
+          },
+          {
+            "name": "Web page copy review: 'Available now' banner and feature list",
+            "date": "2024-09-03",
+            "owner_team": "Product",
+            "note": "Banner sits above features that ship later (iOS 18.2 in December, personal Siri undated). Not accurate on 2024-09-09 since nothing ships until 2024-10-28. Schedule fix or label before publish."
+          },
+          {
+            "name": "Legal review: ad claims and Siri personal-context spots",
+            "date": "2024-09-05",
+            "owner_team": "Legal",
+            "note": "Review spots showing features with no ship date, and the notification summary treatment of news apps' names and icons."
+          },
+          {
+            "name": "Regional publish rules: EU and mainland China",
+            "date": "2024-09-06",
+            "owner_team": "Regional",
+            "note": "Brief assumes the iPhone 16 campaign runs in 50+ markets including the EU and China, but Apple Intelligence is not available in the EU in 2024 and China has no date (CAC approval needed, no local model partner announced). Regional campaign variants or disclaimers are needed or the plan conflicts with the facts."
+          },
+          {
+            "name": "Embargo lifts: iPhone 16 keynote",
+            "date": "2024-09-09",
+            "owner_team": "PR",
+            "note": "10:00 PT keynote. Announce iPhone 16 and Apple Intelligence requirements: iPhone 15 Pro, 15 Pro Max or iPhone 16, and iPads or Macs with Apple silicon."
+          },
+          {
+            "name": "iPhone 16 on sale (without Apple Intelligence)",
+            "date": "2024-09-20",
+            "owner_team": "Product",
+            "note": "On sale in 50+ markets [assumed], no Apple Intelligence at launch."
+          },
+          {
+            "name": "iOS 18.1 release candidate and beta labeling check",
+            "date": "2024-10-21",
+            "owner_team": "Product",
+            "note": "Writing Tools, Clean Up, notification summaries and redesigned Siri, all labeled beta."
+          },
+          {
+            "name": "Launch: iOS 18.1 with Apple Intelligence first wave (US English only)",
+            "date": "2024-10-28",
+            "owner_team": "Product",
+            "note": "Works only with device and Siri language set to US English. Not in EU or mainland China."
+          },
+          {
+            "name": "Comms: iOS 18.1 launch announcement and beta/language caveats",
+            "date": "2024-10-28",
+            "owner_team": "PR",
+            "note": "State beta status, US English only, and what is still to come."
+          },
+          {
+            "name": "Localized English (UK, Canada, Australia, NZ, South Africa)",
+            "date": "2024-12-01",
+            "owner_team": "Regional",
+            "note": "Planned for December. Exact day not given; 2024-12-01 is a placeholder."
+          },
+          {
+            "name": "iOS 18.2: Image Playground, Genmoji, ChatGPT in Siri",
+            "date": "2024-12-01",
+            "owner_team": "Product",
+            "note": "Planned for December. Exact day not given; 2024-12-01 is a placeholder."
+          },
+          {
+            "name": "Other languages (Chinese, French, German, Japanese, Spanish)",
+            "date": "2025-01-01",
+            "owner_team": "Regional",
+            "note": "Planned for 2025, no specific date. Placeholder only."
+          }
+        ]
+      }
+    },
+    {
+      "ts": 1793740183.5279684,
+      "kind": "handoff",
+      "agent": null,
+      "from_agent": "Planner",
+      "to_agent": "PR agent",
+      "summary": "brief + master schedule",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793740183.5279837,
+      "kind": "handoff",
+      "agent": null,
+      "from_agent": "Planner",
+      "to_agent": "Product agent",
+      "summary": "brief + master schedule",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793740183.5279927,
+      "kind": "handoff",
+      "agent": null,
+      "from_agent": "Planner",
+      "to_agent": "Regional agent",
+      "summary": "brief + master schedule",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793740183.5280013,
+      "kind": "handoff",
+      "agent": null,
+      "from_agent": "Planner",
+      "to_agent": "Legal agent",
+      "summary": "brief + master schedule",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793740183.5284016,
+      "kind": "agent_start",
+      "agent": "PR agent",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793740183.5309494,
+      "kind": "agent_start",
+      "agent": "Product agent",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793740183.5329728,
+      "kind": "agent_start",
+      "agent": "Regional agent",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793740183.535452,
+      "kind": "agent_start",
+      "agent": "Legal agent",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793740191.4147243,
+      "kind": "agent_done",
+      "agent": "Regional agent",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "5 tasks, 4 asks of other teams",
+      "key": "plan:Regional",
+      "data": {
+        "team": "Regional",
+        "tasks": [
+          {
+            "id": "REG-1",
+            "title": "Build market availability matrix for Apple Intelligence (US English at launch 2024-10-28; UK/CA/AU/NZ/ZA English planned Dec, date TBC; EU no 2024 date; mainland China no date, CAC approval pending; other languages 2025 undated)",
+            "due": "2024-08-30",
+            "owner": "Regional Marketing Lead",
+            "depends_on": []
+          },
+          {
+            "id": "REG-2",
+            "title": "Decide and publish regional rules for EU and mainland China: the brief assumes the iPhone 16 Apple Intelligence campaign runs in 50+ markets including EU and China, which conflicts with the facts. Define campaign variants (iPhone 16 hardware-led, no Apple Intelligence claims) or disclaimers for these markets and any non-US-English markets",
+            "due": "2024-09-06",
+            "owner": "Regional Marketing Lead",
+            "depends_on": [
+              "REG-1"
+            ]
+          },
+          {
+            "id": "REG-3",
+            "title": "Localize and adapt keynote-day assets, local press notes and social for 2024-09-09 10:00 PT embargo lift per market: remove or caveat the personal Siri spots (no ship date) and the 'Available now' banner for all markets; state beta and language limits; no Apple Intelligence availability claims for EU/China",
+            "due": "2024-09-08",
+            "owner": "TBD",
+            "depends_on": [
+              "REG-2"
+            ]
+          },
+          {
+            "id": "REG-4",
+            "title": "Prepare 2024-10-28 iOS 18.1 local publish timing and messaging: US English only, beta label, not available in EU/China; local-language pages must not imply availability for devices set to other languages",
+            "due": "2024-10-21",
+            "owner": "Regional Comms Manager",
+            "depends_on": [
+              "REG-2"
+            ]
+          },
+          {
+            "id": "REG-5",
+            "title": "Plan localized English rollout (UK, Canada, Australia, NZ, South Africa) for December with placeholder date 2024-12-01, and a 2025 translation/localization plan for Chinese, French, German, Japanese, Spanish; confirm dates once Product gives exact days",
+            "due": "2024-11-15",
+            "owner": "Localization Program Manager",
+            "depends_on": [
+              "REG-1"
+            ]
+          }
+        ],
+        "asks": [
+          {
+            "to_team": "PR",
+            "request": "Messaging lock decision on iPhone 16 campaign vs. Apple Intelligence availability, including whether Siri personal-context TV spots run anywhere; regional variants depend on it",
+            "needed_by": "2024-08-30"
+          },
+          {
+            "to_team": "Product",
+            "request": "Fix or label the 'Available now' banner and feature list on the Apple Intelligence page, with localized versions following the same fix",
+            "needed_by": "2024-09-03"
+          },
+          {
+            "to_team": "Legal",
+            "request": "Confirm EU and mainland China position (DMA, CAC approval) and approve regional disclaimer wording and ad claims for those markets",
+            "needed_by": "2024-09-05"
+          },
+          {
+            "to_team": "Product",
+            "request": "Exact dates for December localized English and iOS 18.2, and any 2025 language dates, to replace placeholders",
+            "needed_by": "2024-11-01"
+          }
+        ]
+      }
+    },
+    {
+      "ts": 1793740192.204517,
+      "kind": "agent_done",
+      "agent": "Legal agent",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "6 tasks, 4 asks of other teams",
+      "key": "plan:Legal",
+      "data": {
+        "team": "Legal",
+        "tasks": [
+          {
+            "id": "LEG-1",
+            "title": "Review Siri personal-context TV spots: features have no ship date and are not in iOS 18.1. Decide on removal, 'coming later' supers, or availability disclaimers",
+            "due": "2024-09-05",
+            "owner": "Advertising/Claims Counsel",
+            "depends_on": []
+          },
+          {
+            "id": "LEG-2",
+            "title": "Review the Apple Intelligence web page 'Available now' banner and feature list. Not accurate on 2024-09-09, since nothing ships until 2024-10-28 and some features come in December or have no date. Require corrected wording or per-feature availability labels before publish",
+            "due": "2024-09-03",
+            "owner": "Advertising/Claims Counsel",
+            "depends_on": []
+          },
+          {
+            "id": "LEG-3",
+            "title": "Legal review of notification summaries: AI-generated lines for news apps shown under the source app's name and icon. Assess attribution, accuracy and misrepresentation risk, and decide on an AI-generated or beta label and any news publisher considerations",
+            "due": "2024-09-05",
+            "owner": "Product/IP Counsel",
+            "depends_on": []
+          },
+          {
+            "id": "LEG-4",
+            "title": "Define regional disclaimer and claims rules for the EU (no Apple Intelligence in 2024, no date, DMA) and mainland China (CAC approval needed, no date). Approve variants or disclaimers for the 50+ market campaign. Do not promise dates for either region",
+            "due": "2024-09-06",
+            "owner": "Regulatory Counsel",
+            "depends_on": [
+              "LEG-1",
+              "LEG-2"
+            ]
+          },
+          {
+            "id": "LEG-5",
+            "title": "Approve standard disclaimer set (beta, US English only, device requirements, features rolling out over time) for the keynote, ads, web and the iOS 18.1 launch. Confirm any early-access/press NDA terms ahead of the embargo lift",
+            "due": "2024-09-06",
+            "owner": "TBD",
+            "depends_on": [
+              "LEG-1",
+              "LEG-2",
+              "LEG-4"
+            ]
+          },
+          {
+            "id": "LEG-6",
+            "title": "Final legal check of iOS 18.1 launch copy and beta labeling against the release candidate",
+            "due": "2024-10-22",
+            "owner": "Advertising/Claims Counsel",
+            "depends_on": [
+              "LEG-5"
+            ]
+          }
+        ],
+        "asks": [
+          {
+            "to_team": "PR",
+            "request": "Decide whether the Siri personal-context spots run unchanged, are edited, or get 'coming later' language. Needed before the 2024-08-30 messaging lock and before keynote, as the lock date falls before Legal's 2024-09-05 review. Legal flags that a lock before review is a sequencing conflict",
+            "needed_by": "2024-09-04"
+          },
+          {
+            "to_team": "Product",
+            "request": "Fix or label the 'Available now' banner and per-feature availability, and send the final web page copy to Legal",
+            "needed_by": "2024-09-02"
+          },
+          {
+            "to_team": "Regional",
+            "request": "Confirm the market list for the campaign and the EU and China variants so Legal can approve disclaimers. The brief assumes the campaign runs in the EU and China, which conflicts with availability",
+            "needed_by": "2024-09-05"
+          },
+          {
+            "to_team": "Product",
+            "request": "Provide the iOS 18.1 release candidate feature and beta label list",
+            "needed_by": "2024-10-21"
+          }
+        ]
+      }
+    },
+    {
+      "ts": 1793740192.768181,
+      "kind": "agent_done",
+      "agent": "Product agent",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "6 tasks, 3 asks of other teams",
+      "key": "plan:Product",
+      "data": {
+        "team": "Product",
+        "tasks": [
+          {
+            "id": "PRO-1",
+            "title": "Fix 'Available now' banner on Apple Intelligence web page: remove it or label each feature by ship status (iOS 18.1 beta Oct 28, iOS 18.2 Dec, personal Siri undated) before the page publishes. The banner is inaccurate on 2024-09-09 because nothing ships until 2024-10-28.",
+            "due": "2024-09-03",
+            "owner": "Product Marketing Lead (web page owner)",
+            "depends_on": []
+          },
+          {
+            "id": "PRO-2",
+            "title": "Publish a feature availability matrix as the single source of truth: feature, iOS version, date, language, region, device requirement (iPhone 15 Pro/15 Pro Max/iPhone 16, Apple silicon iPad/Mac), beta label, and 'no date' for personal Siri. Mark EU as not in 2024 and mainland China as no date.",
+            "due": "2024-08-30",
+            "owner": "Product Manager, Apple Intelligence",
+            "depends_on": []
+          },
+          {
+            "id": "PRO-3",
+            "title": "Red team notification summaries on news apps (summaries shown under the source app's name and icon) and the redesigned Siri; log issues and decide mitigations or in-product disclaimers before iOS 18.1 RC.",
+            "due": "2024-10-11",
+            "owner": "TBD",
+            "depends_on": []
+          },
+          {
+            "id": "PRO-4",
+            "title": "Plan staged rollout and in-product launch moments for iOS 18.1: US English-only language gating, setup and onboarding screens, beta labels on every feature, and clear messaging for unsupported devices, languages and regions. Include the Sep 20 iPhone 16 sale without Apple Intelligence.",
+            "due": "2024-09-20",
+            "owner": "Product Manager, Apple Intelligence",
+            "depends_on": [
+              "PRO-2"
+            ]
+          },
+          {
+            "id": "PRO-5",
+            "title": "Run iOS 18.1 release candidate and beta labeling check across Writing Tools, Clean Up, notification summaries and Siri. Confirm gating works for non-US English, the EU and mainland China, and that no 18.2 or personal Siri features are exposed.",
+            "due": "2024-10-21",
+            "owner": "QA / Release Manager",
+            "depends_on": [
+              "PRO-3",
+              "PRO-4"
+            ]
+          },
+          {
+            "id": "PRO-6",
+            "title": "Early access and integrations readiness: confirm beta feedback loop for the 18.1 developer/public beta, and ChatGPT integration plan with partner for iOS 18.2 in December (date still a placeholder). Note that personal Siri has no ship date, so no integration work is scheduled.",
+            "due": "2024-10-14",
+            "owner": "Partnerships and Developer Relations Lead",
+            "depends_on": [
+              "PRO-2"
+            ]
+          }
+        ],
+        "asks": [
+          {
+            "to_team": "PR",
+            "request": "Decide the campaign messaging conflict before the keynote. The iPhone 16 campaign is built around Apple Intelligence, but phones ship Sep 20 without it, features arrive Oct 28 in beta in US English only, and the personal Siri TV spots show a feature with no ship date. Adopt availability language from the PRO-2 matrix.",
+            "needed_by": "2024-08-30"
+          },
+          {
+            "to_team": "Legal",
+            "request": "Review the web page copy, the personal Siri spots, and the news app name and icon treatment on notification summaries. Confirm the disclaimers needed for the beta status and the undated features.",
+            "needed_by": "2024-09-05"
+          },
+          {
+            "to_team": "Regional",
+            "request": "Confirm campaign variants or disclaimers for the EU (no Apple Intelligence in 2024, no date) and mainland China (no date, CAC approval needed). Both are in the 50+ markets for the Sep 20 sale. Also provide the confirmed December date for localized English.",
+            "needed_by": "2024-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "ts": 1793740192.8461418,
+      "kind": "agent_done",
+      "agent": "PR agent",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "5 tasks, 4 asks of other teams",
+      "key": "plan:PR",
+      "data": {
+        "team": "PR",
+        "tasks": [
+          {
+            "id": "PR-1",
+            "title": "Decide and lock iPhone 16 messaging: reframe campaign so Apple Intelligence is 'coming' (iOS 18.1 beta, US English, 2024-10-28), and pull or re-cut TV spots showing the undated personal Siri. Escalate unresolved conflict to program leadership before the keynote.",
+            "due": "2024-08-30",
+            "owner": "PR Lead / Head of Marketing Communications",
+            "depends_on": []
+          },
+          {
+            "id": "PR-2",
+            "title": "Draft keynote press release, blog post and media briefing notes for 2024-09-09 with accurate availability: phones on sale 2024-09-20 without Apple Intelligence, device requirements, beta and US English at launch, EU and China not available, no date for personal Siri.",
+            "due": "2024-09-04",
+            "owner": "PR Lead",
+            "depends_on": [
+              "PR-1"
+            ]
+          },
+          {
+            "id": "PR-3",
+            "title": "Finalize embargo management and creator/influencer comms: embargo lifts 2024-09-09 10:00 PT; creator briefing kit and disclosure guidance carry the same availability caveats; no demos of unshipped features presented as available.",
+            "due": "2024-09-06",
+            "owner": "Media Relations Manager",
+            "depends_on": [
+              "PR-2"
+            ]
+          },
+          {
+            "id": "PR-4",
+            "title": "Launch advertising revision: finalize ad creative and regional variants or disclaimers (EU, mainland China, 'beta', 'US English') pending Legal and Regional input; hold spots if claims are not cleared.",
+            "due": "2024-09-06",
+            "owner": "Advertising Lead",
+            "depends_on": [
+              "PR-1"
+            ]
+          },
+          {
+            "id": "PR-5",
+            "title": "Prepare iOS 18.1 launch announcement for 2024-10-28 stating beta status, US English only, not in EU or mainland China, and what is still to come (iOS 18.2 in December, 2025 languages, personal Siri undated).",
+            "due": "2024-10-21",
+            "owner": "PR Lead",
+            "depends_on": [
+              "PR-2"
+            ]
+          }
+        ],
+        "asks": [
+          {
+            "to_team": "Product",
+            "request": "Fix or relabel the 'Available now' banner on the Apple Intelligence web page, which is inaccurate on 2024-09-09 since nothing ships until 2024-10-28, and confirm a ship-date position for personal Siri so PR can describe it as undated.",
+            "needed_by": "2024-09-03"
+          },
+          {
+            "to_team": "Legal",
+            "request": "Complete review of ad claims, Siri personal-context spots, and notification summary treatment of news apps' names and icons; approve press release and blog language on availability.",
+            "needed_by": "2024-09-05"
+          },
+          {
+            "to_team": "Regional",
+            "request": "Provide EU and mainland China publish rules and approved campaign variants or disclaimers, as the iPhone 16 campaign is assumed to run in the EU and China where Apple Intelligence is unavailable in 2024.",
+            "needed_by": "2024-09-06"
+          },
+          {
+            "to_team": "Product",
+            "request": "Confirm iOS 18.1 release candidate and beta labeling check results so launch comms use accurate feature names and beta labels.",
+            "needed_by": "2024-10-21"
+          }
+        ]
+      }
+    },
+    {
+      "ts": 1793740192.8466005,
+      "kind": "handoff",
+      "agent": null,
+      "from_agent": "4 workstream agents",
+      "to_agent": "Risk agent",
+      "summary": "22 tasks across 4 plans",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793740192.8466332,
+      "kind": "agent_start",
+      "agent": "Risk agent",
+      "from_agent": "workstreams",
+      "to_agent": "Risk agent",
+      "summary": "",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793740252.9634788,
+      "kind": "agent_done",
+      "agent": "Risk agent",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "12 risks (5 high)",
+      "key": "risks",
+      "data": {
+        "risks": [
+          {
+            "id": "R1",
+            "title": "Embargo lift falls on 2024-09-10 local time in APAC, so 'Sep 9' regional publishing would break it",
+            "severity": "high",
+            "teams": [
+              "PR",
+              "Regional"
+            ],
+            "evidence": "The embargo lifts 2024-09-09T10:00-07:00 (17:00 UTC). In local time that is 19:00 CEST Sep 9 in the EU, 01:00 Sep 10 in Beijing, 03:00 AEST Sep 10 in Sydney and 05:00 NZST Sep 10 in Auckland. REG-3 localizes keynote-day assets and local press notes 'for 2024-09-09' across 50+ markets, is due 2024-09-08 and has owner 'TBD'. PR-3 states the time only in PT. No task converts the embargo into local publish times.",
+            "mitigation": "Publish one embargo table with the exact local publish time per market (for example, China and Australia/NZ go live on Sep 10 local time, not Sep 9). Have each market sign off that its CMS schedules and press-note send times are locked to 17:00 UTC. Name a single owner for REG-3 and add the table to the PR-3 embargo kit.",
+            "owner": "Media Relations Manager (with Regional Comms Manager)"
+          },
+          {
+            "id": "R2",
+            "title": "Messaging lock and ad finalization happen before Legal and Regional sign-off, with only a weekend left before the keynote",
+            "severity": "high",
+            "teams": [
+              "PR",
+              "Legal",
+              "Regional"
+            ],
+            "evidence": "PR-1 locks messaging on 2024-08-30, but Legal's spot review (LEG-1) is not due until 2024-09-05. Legal's own ask flags this as a sequencing conflict. PR-4 finalizes ad creative and regional variants on 2024-09-06 and depends only on PR-1. It is due the same day as LEG-4 (regional claims), LEG-5 (disclaimer set) and REG-2 (EU/China rules). REG-3 must localize all of this by 2024-09-08, a Sunday, for the 2024-09-09 keynote.",
+            "mitigation": "Make PR-1 a provisional lock on 08-30, with final lock gated on LEG-1. Move LEG-4, LEG-5 and REG-2 to 2024-09-04, and add LEG-4, LEG-5 and REG-2 as dependencies of PR-4. Hold any spot or variant without written Legal clearance by 09-06, and fall back to hardware-led creative for that spot or variant.",
+            "owner": "Program Manager (escalation to Head of Marketing Communications)"
+          },
+          {
+            "id": "R3",
+            "title": "TV spots and web feature list claim features that ship after launch or have no ship date",
+            "severity": "high",
+            "teams": [
+              "PR",
+              "Legal",
+              "Product"
+            ],
+            "evidence": "[assumed] The TV spots show the more personal Siri answering questions from email and calendar. That feature has no ship date, and PRO-6 notes no integration work is scheduled for it. The web page lists Image Playground, Genmoji and ChatGPT in Siri, which ship in iOS 18.2 in December. LEG-1 only decides 'removal, coming later supers, or disclaimers' on 2024-09-05. That leaves 4 days, including a weekend, to re-cut and re-traffic spots before the keynote and the 2024-09-20 on-sale date in 50+ markets.",
+            "mitigation": "Pre-produce a re-cut without personal Siri, or with a 'coming later' super, in parallel now so it is ready if LEG-1 rules against the original. Set the default to pull the personal Siri spots unless Legal clears them. Tie every feature claim to the PRO-2 availability matrix.",
+            "owner": "Advertising Lead"
+          },
+          {
+            "id": "R4",
+            "title": "EU and China campaign variants are defined too late for Legal to approve before the Sep 20 sale",
+            "severity": "high",
+            "teams": [
+              "Regional",
+              "Legal",
+              "PR"
+            ],
+            "evidence": "Legal asks Regional for the market list and EU/China variants by 2024-09-05. REG-2, which defines those variants, is due 2024-09-06. LEG-4 approves EU/China disclaimers on that same day, 2024-09-06. [assumed] The iPhone 16 goes on sale 2024-09-20 in 50+ markets including the EU and mainland China under the same Apple Intelligence campaign. Apple Intelligence is not in the EU in 2024 and has no China date (CAC approval needed).",
+            "mitigation": "Move REG-2 to 2024-09-03 so LEG-4 has 2-3 days to review. Agree now on a default hardware-led, no-Apple-Intelligence variant for the EU and mainland China. It runs automatically if variants are not approved by 09-06.",
+            "owner": "Regional Marketing Lead"
+          },
+          {
+            "id": "R5",
+            "title": "Gating tasks have no owner",
+            "severity": "high",
+            "teams": [
+              "Legal",
+              "Product",
+              "Regional"
+            ],
+            "evidence": "LEG-5 is the standard disclaimer set (beta, US English, device requirements, press NDA terms) due 2024-09-06, and every keynote asset depends on it. Its owner is 'TBD'. PRO-3, the notification summary and Siri red team due 2024-10-11, has owner 'TBD', and PRO-5 (the RC check) depends on it. REG-3, the keynote-day localized assets due 2024-09-08, has owner 'TBD'.",
+            "mitigation": "Assign named role owners by 2024-08-28: Advertising/Claims Counsel for LEG-5, a Product Manager or AI Quality Lead for PRO-3, and the Regional Comms Manager for REG-3. Confirm each owner's capacity against the due dates.",
+            "owner": "Program Manager"
+          },
+          {
+            "id": "R6",
+            "title": "Web page banner fix, Legal review and the copy hand-off are mis-sequenced",
+            "severity": "medium",
+            "teams": [
+              "Product",
+              "Legal",
+              "Regional"
+            ],
+            "evidence": "Legal asks for final web copy by 2024-09-02. PRO-1 (the fix) is due 2024-09-03, the same day as LEG-2 (Legal's review), which leaves no review window. Product's ask gives Legal until 2024-09-05 to review the web copy, after LEG-2's due date. Regional also needs localized pages to follow the same fix, but no task covers localizing the corrected page before 2024-09-09.",
+            "mitigation": "Move PRO-1 to 2024-09-02 and keep LEG-2 on 2024-09-03. Add a task for Regional to localize the approved page by 2024-09-06. Remove the 'Available now' banner from all locales by default until approved copy exists.",
+            "owner": "Product Marketing Lead (web page owner)"
+          },
+          {
+            "id": "R7",
+            "title": "Legal decides notification summary labeling before the red team produces findings",
+            "severity": "medium",
+            "teams": [
+              "Legal",
+              "Product"
+            ],
+            "evidence": "LEG-3 decides on AI-generated or beta labels and news publisher considerations by 2024-09-05. PRO-3, the red team on news app summaries shown under the source app's name and icon, isn't due until 2024-10-11 and has no owner. No Legal task reviews the PRO-3 findings before the 2024-10-21 RC (PRO-5).",
+            "mitigation": "Add a Legal task to review the PRO-3 findings by 2024-10-14, and treat LEG-3 as a provisional decision. Start PRO-3 now so issues surface before the RC freeze.",
+            "owner": "Product/IP Counsel"
+          },
+          {
+            "id": "R8",
+            "title": "No slack between the iOS 18.1 RC check and launch comms and legal sign-off",
+            "severity": "medium",
+            "teams": [
+              "Product",
+              "PR",
+              "Regional",
+              "Legal"
+            ],
+            "evidence": "PRO-5 (RC and beta label check) is due 2024-10-21. On that same day PR's ask expects its results, PR-5 (launch announcement) is due and REG-4 (local publish messaging) is due. LEG-6 does the final legal check on 2024-10-22 but depends only on LEG-5, not on PRO-5. The launch is 2024-10-28.",
+            "mitigation": "Pull PRO-5 to 2024-10-17. Add PRO-5 as a dependency of PR-5, REG-4 and LEG-6. Move PR-5 and REG-4 final copy to 2024-10-23, after LEG-6.",
+            "owner": "QA / Release Manager"
+          },
+          {
+            "id": "R9",
+            "title": "No Legal task covers the PR asks on press release and blog language",
+            "severity": "medium",
+            "teams": [
+              "PR",
+              "Legal"
+            ],
+            "evidence": "PR asks Legal to approve press release and blog availability language by 2024-09-05, and PR-2 drafts them by 2024-09-04. None of Legal's tasks LEG-1 to LEG-6 covers review of the press release, blog or briefing notes. PR-3's creator kit (due 2024-09-06) also has no Legal review.",
+            "mitigation": "Add a Legal task to review the PR-2 and PR-3 materials on 2024-09-05, owned by Advertising/Claims Counsel, and make it a dependency of PR-3.",
+            "owner": "Advertising/Claims Counsel"
+          },
+          {
+            "id": "R10",
+            "title": "The December and 2025 dates have no owner because the asks run in a circle",
+            "severity": "medium",
+            "teams": [
+              "Product",
+              "Regional"
+            ],
+            "evidence": "Product asks Regional for the confirmed December localized English date by 2024-09-06. Regional asks Product for the exact December localized English and iOS 18.2 dates by 2024-11-01. REG-5 (due 2024-11-15) waits on Product, and no Product task produces these dates. The schedule shows 2024-12-01 and 2025-01-01 as placeholders only.",
+            "mitigation": "Make Product the owner of the release dates. Add a Product task to confirm the iOS 18.2 and localized English dates by 2024-11-01. Until then, all comms say 'December' and '2025' without specific days.",
+            "owner": "Product Manager, Apple Intelligence"
+          },
+          {
+            "id": "R11",
+            "title": "In-product messaging for the Sep 20 sale is due on the sale date",
+            "severity": "medium",
+            "teams": [
+              "Product"
+            ],
+            "evidence": "PRO-4 covers setup and onboarding messaging for unsupported devices, languages and regions, and the iPhone 16 sale without Apple Intelligence. It is due 2024-09-20, the day phones go on sale in 50+ markets.",
+            "mitigation": "Split PRO-4. Move Sep 20 sale messaging (retail, store and setup copy) to 2024-09-10, and keep the iOS 18.1 onboarding work for the RC.",
+            "owner": "Product Manager, Apple Intelligence"
+          },
+          {
+            "id": "R12",
+            "title": "Two parallel availability matrices may diverge",
+            "severity": "low",
+            "teams": [
+              "Product",
+              "Regional"
+            ],
+            "evidence": "PRO-2 (Product, a 'single source of truth' matrix) and REG-1 (Regional market availability matrix) are both due 2024-08-30, with no dependency between them.",
+            "mitigation": "Make REG-1 a regional view derived from PRO-2. Set PRO-2 as the only source that PR, Legal and Regional cite.",
+            "owner": "Product Manager, Apple Intelligence"
+          }
+        ]
+      }
+    },
+    {
+      "ts": 1793740252.9635596,
+      "kind": "gate_open",
+      "agent": null,
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "Risk review pull request opened",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793740612.3433292,
+      "kind": "gate_closed",
+      "agent": null,
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "9 accepted, 3 rejected by brittsteers",
+      "key": null,
+      "data": {
+        "accepted": [
+          "R2",
+          "R3",
+          "R4",
+          "R6",
+          "R7",
+          "R8",
+          "R9",
+          "R10",
+          "R11"
+        ],
+        "rejected": [
+          "R1",
+          "R5",
+          "R12"
+        ],
+        "decisions": {
+          "R1": {
+            "accepted": false,
+            "mitigation": null
+          },
+          "R2": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R3": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R4": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R5": {
+            "accepted": false,
+            "mitigation": null
+          },
+          "R6": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R7": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R8": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R9": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R10": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R11": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R12": {
+            "accepted": false,
+            "mitigation": null
+          }
+        },
+        "reviewer": "brittsteers",
+        "review_url": "https://github.com/brittsteers/gtmcommandcenter/pull/3"
+      }
+    },
+    {
+      "ts": 1793740612.3434227,
+      "kind": "handoff",
+      "agent": null,
+      "from_agent": "Program manager",
+      "to_agent": "Synthesizer",
+      "summary": "plans + approved risks",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793740612.343442,
+      "kind": "agent_start",
+      "agent": "Synthesizer",
+      "from_agent": "Program manager",
+      "to_agent": "Synthesizer",
+      "summary": "",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793740619.2726877,
+      "kind": "agent_done",
+      "agent": "Synthesizer",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "Overall RED",
+      "key": "status",
+      "data": {
+        "headline": "The iPhone 16 campaign promises Apple Intelligence, but the phones ship 2024-09-20 without it and the first features arrive 2024-10-28 in beta, US English only, so messaging, ads and regional rules must be fixed and cleared before the 2024-09-09 keynote.",
+        "overall_rag": "red",
+        "workstreams": [
+          {
+            "team": "PR",
+            "rag": "red",
+            "summary": "Messaging locks 08-30, before Legal reviews the spots, and the personal Siri TV spots show a feature with no ship date."
+          },
+          {
+            "team": "Product",
+            "rag": "yellow",
+            "summary": "The 'Available now' banner fix and its Legal review fall on the same day, and Sep 20 in-product messaging is due on the sale date."
+          },
+          {
+            "team": "Regional",
+            "rag": "red",
+            "summary": "EU and China variants are due 09-06, too late for Legal to approve, though the campaign is planned in 50+ markets where Apple Intelligence is unavailable or undated."
+          },
+          {
+            "team": "Legal",
+            "rag": "yellow",
+            "summary": "Reviews land after the messaging lock, the press release, blog and creator kit have no review task, and the notification summary labeling is decided before red team findings."
+          }
+        ],
+        "top_risk_ids": [
+          "R2",
+          "R3",
+          "R4",
+          "R6",
+          "R7"
+        ],
+        "decisions_needed": [
+          "Make the 08-30 messaging lock provisional, with final lock gated on Legal's spot review (LEG-1).",
+          "Pull the personal Siri TV spots by default unless Legal clears them, and approve a re-cut without it or with a 'coming later' super now.",
+          "Approve a default hardware-led, no-Apple-Intelligence campaign for the EU and mainland China that runs automatically if variants are not approved by 09-06.",
+          "Move REG-2, LEG-4 and LEG-5 earlier (to 09-03 or 09-04) and make them dependencies of PR-4.",
+          "Remove the 'Available now' banner in all locales until Legal approves corrected copy, and move PRO-1 to 09-02.",
+          "Move PRO-4 Sep 20 sale messaging to 09-10 and name Product as owner of the iOS 18.2 and localized English dates.",
+          "Add a Legal task to review the press release, blog and creator kit, and one to review the red team findings on news app summaries by 10-14."
+        ],
+        "rejected_risk_note": "The program manager rejected three risks, which are not treated as live here: R1 (embargo lift falls on Sep 10 local time in APAC), R5 (gating tasks with no owner) and R12 (two availability matrices may diverge)."
+      }
+    },
+    {
+      "ts": 1793740619.272742,
+      "kind": "run_done",
+      "agent": null,
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "Status ready. Nothing was sent externally.",
+      "key": null,
+      "data": null
+    }
+  ],
+  "github_run_url": "https://github.com/brittsteers/gtmcommandcenter/actions/runs/41719170270"
+}
