@@ -1,0 +1,92 @@
+# Risk review for run 20261105-2012-8
+#
+# For each risk, set `decision` to accept or reject. You can also rewrite the mitigation.
+# Merging this pull request is the approval: the Synthesizer runs only after the merge.
+# Close the pull request without merging to discard the run.
+
+risks:
+- id: R1
+  title: Critical launch-blocking red team findings have no fix tasks before early access opens 02-01,
+    and red team sign-off comes after the open
+  severity: high
+  decision: accept
+  owner: Product Lead (with Red Team Lead)
+  mitigation: Make early access open conditional on verified mitigation and retest of F1, F3, F6, F7 and
+    F8. Add an owned task per finding, due 01-29, that retests against the RT-201/202/212, RT-204, RT-207,
+    RT-209 and RT-210 repros. Add a Product task to remove the benchmark from the system prompt and harden
+    it against disclosure. Add a Legal task to confirm no unapproved claims remain in model-visible text.
+    If retests are not green by 01-29, move the PRO-4 open to on or after the 02-08 sign-off.
+- id: R2
+  title: Japan, Australia and other regions east of PT publish before the 09:00 PT embargo lift, and there
+    is no agreed fix
+  severity: high
+  decision: accept
+  owner: PR lead (decision), Regional marketing lead (execution)
+  mitigation: PR, Regional and Legal should decide one embargo rule by 01-29. Either publish in every
+    region at or after 03-10 17:00 UTC (02:00 JST and 04:00 AEDT on 03-11, then amplify at 09:00 local
+    on 03-11), or move the global embargo earlier for all regions. Publish a per-region UTC publish table
+    for all 14 regions. Pull REG-3 forward to 01-29 with a named owner, and lock CMS schedules in REG-4.
+- id: R3
+  title: '''Available in the browser today'' claim appears in both the press release and model output,
+    but the browser ships 03-17'
+  severity: high
+  decision: accept
+  owner: Product Lead (date and model fix), PR lead (copy)
+  mitigation: Product should decide now to keep 03-17, and PR should submit the draft with 'coming March
+    17' by 02-11 per F4, which collapses PR-2 into PR-1. Add a Product task to correct the model and system
+    prompt availability statement and retest RT-205 before 02-01, since creators would see it. Legal should
+    check both the press copy and model-visible text in LEG-4.
+- id: R4
+  title: Browser prompt-injection data leak (F5) has no task, and the 03-10 pull-in option ignores it
+  severity: high
+  decision: accept
+  owner: Product Lead with Security team lead
+  mitigation: 'Add an owned Product and Security task to mitigate F5 by 02-26: treat page content as untrusted,
+    block outbound links that carry user context, and require user confirmation. Retest RT-206 with Security
+    sign-off. Exclude the browser build from the 02-01 creator program. Rule out the 03-10 pull-in unless
+    F5 is signed off.'
+- id: R5
+  title: Localized medical disclaimers (F2) have no owner and no Product fix task
+  severity: high
+  decision: accept
+  owner: Regional lead (owner assignment), Product Lead (trigger fix)
+  mitigation: Name the Regional disclaimer owner by 01-13. Add a Product task to fix the non-English disclaimer
+    trigger and retest RT-203 in ja, ko and the other launch languages before 02-01. Ask Legal to release
+    the disclaimer wording ahead of the full LEG-1 claims review, so translation can start before 02-08.
+- id: R6
+  title: Legal review windows have no slack, or are shorter than the 10-business-day standard
+  severity: high
+  decision: accept
+  owner: Legal lead
+  mitigation: Submit the corrected press draft by 02-11 or earlier. Get Legal to agree in writing that
+    review continues on the revised draft rather than restarting. Confirm whether Legal observes the 02-15
+    holiday. Have Legal sign off on the advertising and creator copy claims set by 02-19 so LEG-6 is a
+    delta check only. Send a supplemental claims package covering F4–F8 by 01-29.
+- id: R7
+  title: Creator program go/no-go decision is scheduled before the facts it depends on exist
+  severity: medium
+  decision: accept
+  owner: Program manager
+  mitigation: Make PRO-4 depend on PRO-2, LEG-2, PR-3 and the R1 retests. Hold a final go/no-go on 01-29
+    that includes all findings, with a default of delaying the open to 02-08 or later.
+- id: R8
+  title: Regional localization finishes before copy lock and has 1 business day for final copy
+  severity: medium
+  decision: accept
+  owner: Regional lead with PR lead
+  mitigation: Have PR deliver a near-final copy freeze to Regional by 02-26, so post-lock changes are
+    deltas only. Add a Legal and Regional spot-check of localized claims and disclaimers on 03-08 and
+    03-09. Define a no-change rule after 03-05.
+- id: R9
+  title: Most tasks have no named owner
+  severity: medium
+  decision: accept
+  owner: Program manager
+  mitigation: Each workstream lead names individual owners by 01-13. Start with the tasks due before 02-05.
+- id: R10
+  title: Cross-team asks with no matching task or mismatched dates
+  severity: low
+  decision: accept
+  owner: Program manager
+  mitigation: Convert each ask into an owned task with a due date that matches the requester's needed_by
+    date. Add a 01-29 supplemental red team package to LEG-1.
