@@ -1,0 +1,107 @@
+# Risk review for run 20261105-2025-9
+#
+# For each risk, set `decision` to accept or reject. You can also rewrite the mitigation.
+# Merging this pull request is the approval: the Synthesizer runs only after the merge.
+# Close the pull request without merging to discard the run.
+
+risks:
+- id: R1
+  title: Launch-blocking red team findings F1, F3, F6 have no fix tasks in any plan
+  severity: high
+  decision: accept
+  owner: Red Team Lead (Product)
+  mitigation: Add Product tasks with named owners. F3 refusal fix plus a retest of RT-204 and its variants,
+    due 2027-01-29. F6 break-character crisis fix plus a T&S retest, due 2027-01-29. F1 grounding fix
+    or disabled news citations, plus an EN/DE repro-rate retest, due 2027-02-05. Make PRO-4 sign-off depend
+    on all three verified fixes. If any fix slips, hold the feature (news citations, image generation,
+    or role-play) or hold the launch.
+- id: R2
+  title: Early access opens 2027-02-01 before red team sign-off and Legal claims approval, with gating
+    findings open and a broken decision sequence
+  severity: high
+  decision: accept
+  owner: Early Access Program Manager (Product)
+  mitigation: Move the early access opening to 2027-02-09, after PRO-4 and LEG-2. Alternatively, open
+    on 2027-02-01 only if F3, F6 and F8 are verified fixed and the F2 interim disclaimer is live, with
+    image generation and role-play disabled otherwise and creator materials limited to cleared claims.
+    Move PRO-2 to 2027-01-26 so PRO-3 can decide on 2027-01-27. Name a single accountable decider.
+- id: R3
+  title: Regional 09:00 local publish and app rollout breach the 09:00 PT embargo in nearly all regions,
+    and the decision is due too late
+  severity: high
+  decision: accept
+  owner: PR Lead
+  mitigation: PR, Legal and Regional should make a single embargo decision by 2027-02-19. Either hold
+    every region's press, social and app rollout until 2027-03-10 17:00 UTC, or move the global embargo
+    earlier, for example to 2027-03-09 22:00 UTC so it precedes Australia. Publish a 14-region UTC timetable.
+    Remove REG-5's dependency on REG-4 and assign owners to REG-5 and PRO-6. Update media embargo guidance
+    by 2027-02-26.
+- id: R4
+  title: No Regional owner for localized safety disclaimers; F2 interim fallback is uncovered
+  severity: high
+  decision: accept
+  owner: Regional Lead
+  mitigation: Regional leadership names the owner by 2027-01-13. Add a task, owned by Product with a Regional
+    reviewer, to ship an interim non-English medical disclaimer by 2027-01-29. Add a 'translations complete
+    and verified in all 14 regions' milestone by 2027-02-26 that feeds LEG-6.
+- id: R5
+  title: Legal review of the corrected browser claim is given 1 day instead of 10 business days
+  severity: high
+  decision: accept
+  owner: PR Lead
+  mitigation: Have PR submit corrected press and blog copy ('coming 2027-03-17') to Legal by 2027-02-05,
+    and no later than 2027-02-19. Move LEG-4 to complete by 2027-03-03. Remove PR-3's dependency on PR-2.
+- id: R6
+  title: Critical browser prompt injection (F5) has no fix task, yet press copy commits to a 2027-03-17
+    browser date
+  severity: high
+  decision: accept
+  owner: Browser Integration PM (Product)
+  mitigation: Add a Product task for the F5 fix plus a Security retest, due 2027-03-03, and make PRO-5
+    and the browser ship depend on it. Until the fix is verified, use non-dated press wording such as
+    'coming soon to the browser'.
+- id: R7
+  title: Unapproved benchmark score in the system prompt (F8) could leak via creators before the embargo
+  severity: high
+  decision: accept
+  owner: Product Marketing Lead (Product)
+  mitigation: Add a Product task to remove the score and harden against prompt disclosure, with a QA retest,
+    due 2027-01-29. Make PR-2 and PRO-3 depend on it.
+- id: R8
+  title: Widespread missing owners and duplicated NDA ownership
+  severity: medium
+  decision: accept
+  owner: Program Manager
+  mitigation: Assign named owners to every LEG, REG and PRO-6 task by 2027-01-13. Make the Creator Program
+    Lead accountable for NDA execution, with Legal (LEG-1) responsible for the NDA template and countersignature
+    only.
+- id: R9
+  title: Model's own false browser availability claim (F4) is not covered
+  severity: medium
+  decision: accept
+  owner: Browser Integration PM (Product)
+  mitigation: Add a Product task for a system prompt fix and QA retest by 2027-02-05, before creators
+    use the model widely. Re-verify at launch.
+- id: R10
+  title: Resume-ranking gender bias (F7) mitigation assigned to Legal but not in Legal's plan
+  severity: medium
+  decision: accept
+  owner: Legal (owner to be named)
+  mitigation: Add a LEG task to update the usage policy by 2027-02-19. Add a Product task to ship employment-decision
+    refusals or warnings by 2027-02-26, plus a tracked post-launch debiasing item.
+- id: R11
+  title: Asks with no matching task or with mismatched dates
+  severity: medium
+  decision: accept
+  owner: Program Manager
+  mitigation: Add a Product task for the regional availability list due 2027-02-19 and a PR task for the
+    creator list due 2027-01-22. Move PRO-2 to 2027-01-26. Align all embargo decision dates to the single
+    2027-02-19 decision in R3.
+- id: R12
+  title: Post-copy-lock localization and final Legal check are compressed into the same day
+  severity: medium
+  decision: accept
+  owner: Regional Lead
+  mitigation: Start localization of approved drafts before copy lock and limit post-lock work to deltas.
+    Move REG-4 to 2027-03-06 and keep LEG-6 at 2027-03-08. Finish REG-6 staging by 2027-03-08 for the
+    early-timezone regions.
