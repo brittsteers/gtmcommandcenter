@@ -1,6 +1,6 @@
 """Runs the agent graph: planner -> 4 workstreams in parallel -> risk -> human gate -> synthesizer.
 If the brief lists red team reports, the triage pipeline runs alongside the planner and its
-escalated findings go to the Risk agent too.
+findings go to the Risk agent too.
 
 The graph is split into two stages around the human gate so the gate can be a live button (local
 dashboard) or a pull request (GitHub Actions, see cloud.py). Every handoff is emitted as an event.
@@ -61,7 +61,7 @@ def stage_plan(llm, brief: dict, emit: Emit) -> Tuple[MasterSchedule, List[Works
     if triaged is not None:
         escalated = [f for f in triaged if f["escalate"]]
         emit("handoff", from_agent="Digest agent", to_agent="Risk agent",
-             summary=f"{len(escalated)} escalated red team findings")
+             summary=f"{len(triaged)} red team findings, {len(escalated)} escalated")
     emit("agent_start", agent="Risk agent", from_agent="workstreams", to_agent="Risk agent")
     report = risk.run(llm, brief, schedule, plans, triaged)
     highs = sum(r.severity == "high" for r in report.risks)

@@ -2,7 +2,7 @@
 
 **[Open the live dashboard](https://brittsteers.github.io/gtmcommandcenter/)**
 
-A multi-agent orchestrator for model go-to-market launches. It takes a launch brief and produces a workback schedule, four cross-functional workstream plans, a cross-team risk review, and a one-page leadership status. A red team triage pipeline turns raw tester reports into scored, routed findings and feeds the serious ones into the risk review. A program manager approves the risks before anything final is written.
+A multi-agent orchestrator for model go-to-market launches. It takes a launch brief and produces a workback schedule, four cross-functional workstream plans, a cross-team risk review, and a one-page leadership status. A red team triage pipeline turns raw tester reports into scored, routed findings and feeds all of them into the risk review. A program manager approves the risks before anything final is written.
 
 It runs two ways:
 
@@ -21,7 +21,7 @@ The sample launch is fictional ("Lumen" and "Nova 2" are invented). A second bri
      ┌─────┬─────┴─────┬───────┐   fan-out           Routing     owner team, next action, date
      PR  Product  Regional  Legal   tasks, asks      Digest      daily summary for leadership
      └─────┴─────┬─────┴───────┘   fan-in               │
-            Risk agent  ◄───────────────────────── escalated findings
+            Risk agent  ◄───────────────────────── triaged findings
                  │              cross-plan conflicts, ranked, with evidence
                  │
       Human approval gate       PM accepts, rejects, or edits mitigations
@@ -63,7 +63,7 @@ A brief opts in with `"red_team_findings": "data/<file>.json"`. The pipeline run
 - **Routing** assigns one owner team, a next action, a needed-by date and a holding line for the tester.
 - **Digest** writes the leadership summary.
 
-Two deterministic rules back up the agents: a finding the Severity agent skips is treated as high and blocking until a person triages it, and any critical or blocking finding escalates to the Risk agent, whatever the Routing agent said. A finding that only affects a post-launch release gates that release instead of blocking launch. The sample uses 12 fictional reports in [data/redteam_nova2.json](data/redteam_nova2.json). The Apple case has no red team data on purpose, since inventing findings for a real launch would plant the answers.
+Two deterministic rules back up the agents: a finding the Severity agent skips is treated as high and blocking until a person triages it, and any critical or blocking finding is escalated to launch leadership, whatever the Routing agent said. The Risk agent sees every finding, so it can still catch a problem with one that wasn't escalated. A finding that only affects a post-launch release gates that release instead of blocking launch. The sample uses 12 fictional reports in [data/redteam_nova2.json](data/redteam_nova2.json). The Apple case has no red team data on purpose, since inventing findings for a real launch would plant the answers.
 
 ## Planted conflicts in the sample brief
 

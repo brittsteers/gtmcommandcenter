@@ -231,7 +231,7 @@ function render() {
     if (!tr) { p.innerHTML = none(S.brief && !S.brief.red_team_findings ? "This launch brief has no red team reports." : "Waiting on red team triage."); return; }
     const dg = tr.digest;
     p.innerHTML = `<div class="status-head">${esc(dg.headline)}</div>
-      <p class="note" style="margin:0 0 12px;font-style:normal">Launch blockers: <b>${esc(dg.launch_blockers.join(", ") || "none")}</b> · escalated findings go to the Risk agent.</p>
+      <p class="note" style="margin:0 0 12px;font-style:normal">Launch blockers: <b>${esc(dg.launch_blockers.join(", ") || "none")}</b> · every finding goes to the Risk agent.</p>
       <div class="scroll"><table><tr><th>ID</th><th>Finding</th><th>Severity</th><th>Owner</th><th>Needed by</th><th></th></tr>
       ${tr.findings.map(f => `<tr class="find"><td class="date">${esc(f.id)}</td>
         <td><b>${esc(f.summary)}</b><div class="meta">${esc(f.harm)} · ${esc(f.source_ids.join(", "))}${f.blocks_launch ? " · blocks launch" : ""}${f.gates_later_release ? ` · gates ${esc(f.gates_later_release)}` : ""}</div>

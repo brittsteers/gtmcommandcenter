@@ -1469,7 +1469,7 @@
       "agent": null,
       "from_agent": "Digest agent",
       "to_agent": "Risk agent",
-      "summary": "7 escalated red team findings",
+      "summary": "8 red team findings, 7 escalated",
       "key": null,
       "data": null
     },
