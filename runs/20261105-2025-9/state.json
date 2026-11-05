@@ -596,7 +596,49 @@
       }
     ]
   },
-  "status": null,
+  "status": {
+    "headline": "Nova 2 is not on track for 2027-03-10: launch-blocking red team findings have no fix tasks, early access opens before sign-off, and regional publishing breaches the embargo.",
+    "overall_rag": "red",
+    "workstreams": [
+      {
+        "team": "PR",
+        "rag": "red",
+        "summary": "Early access opens 2027-02-01 ahead of red team sign-off and Legal approval, the embargo decision is unresolved, and the corrected browser claim gets 1 day of Legal review instead of 10 business days."
+      },
+      {
+        "team": "Product",
+        "rag": "red",
+        "summary": "Launch-blocking findings F1, F3 and F6 have no fix or retest tasks, the F8 benchmark leak, F4 and F5 are uncovered, and the early access go/no-go is scheduled before its inputs exist."
+      },
+      {
+        "team": "Regional",
+        "rag": "red",
+        "summary": "No owner for localized safety disclaimers, all Regional tasks are unowned, and local 09:00 publishing breaches the 09:00 PT embargo in nearly all regions."
+      },
+      {
+        "team": "Legal",
+        "rag": "yellow",
+        "summary": "Claims review is on schedule for 2027-02-08 if submitted 2027-01-25, but the F7 bias mitigation is missing from the plan and final copy review is squeezed into 2027-03-08."
+      }
+    ],
+    "top_risk_ids": [
+      "R1",
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R6",
+      "R7"
+    ],
+    "decisions_needed": [
+      "Decide whether to move early access from 2027-02-01 to 2027-02-09, or open on 2027-02-01 only with F1, F3, F6 and F8 verified fixed, the F2 interim disclaimer live, and creator materials limited to cleared claims.",
+      "Approve and staff fix and retest tasks with named owners for F3, F6 and F1 (due 2027-01-29 and 2027-02-05), and make red team sign-off depend on them; if a fix slips, hold that feature or the launch.",
+      "Make a single embargo decision by 2027-02-19: hold all 14 regions until 2027-03-10 17:00 UTC, or move the global embargo earlier. Update media guidance by 2027-02-26.",
+      "Name a Regional owner for localized safety disclaimers by 2027-01-13 and approve an interim non-English medical disclaimer by 2027-01-29.",
+      "Require PR to submit the corrected browser copy to Legal by 2027-02-05 (no later than 2027-02-19), and use non-dated wording like 'coming soon to the browser' until the F5 fix is verified."
+    ],
+    "rejected_risk_note": "R8 (missing owners across Legal, Regional and PRO-6, and duplicated NDA ownership) was rejected by the program manager and is not treated as a live risk here."
+  },
   "events": [
     {
       "ts": 1793910318.2886193,
@@ -1934,6 +1976,167 @@
       "from_agent": null,
       "to_agent": null,
       "summary": "Risk review pull request opened",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793915041.4783638,
+      "kind": "gate_closed",
+      "agent": null,
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "11 accepted, 1 rejected by brittsteers",
+      "key": null,
+      "data": {
+        "accepted": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7",
+          "R9",
+          "R10",
+          "R11",
+          "R12"
+        ],
+        "rejected": [
+          "R8"
+        ],
+        "decisions": {
+          "R1": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R2": {
+            "accepted": true,
+            "mitigation": "Move the early access opening to 2027-02-09, after PRO-4 and LEG-2. Alternatively, open on 2027-02-01 only if F1, F3, F6 and F8 are verified fixed and the F2 interim disclaimer is live, with news citations, image generation and role-play disabled otherwise and creator materials limited to cleared claims."
+          },
+          "R3": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R4": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R5": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R6": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R7": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R8": {
+            "accepted": false,
+            "mitigation": null
+          },
+          "R9": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R10": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R11": {
+            "accepted": true,
+            "mitigation": null
+          },
+          "R12": {
+            "accepted": true,
+            "mitigation": null
+          }
+        },
+        "reviewer": "brittsteers",
+        "review_url": "https://github.com/brittsteers/gtmcommandcenter/pull/5"
+      }
+    },
+    {
+      "ts": 1793915041.4784453,
+      "kind": "handoff",
+      "agent": null,
+      "from_agent": "Program manager",
+      "to_agent": "Synthesizer",
+      "summary": "plans + approved risks",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793915041.4784548,
+      "kind": "agent_start",
+      "agent": "Synthesizer",
+      "from_agent": "Program manager",
+      "to_agent": "Synthesizer",
+      "summary": "",
+      "key": null,
+      "data": null
+    },
+    {
+      "ts": 1793915048.9444795,
+      "kind": "agent_done",
+      "agent": "Synthesizer",
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "Overall RED",
+      "key": "status",
+      "data": {
+        "headline": "Nova 2 is not on track for 2027-03-10: launch-blocking red team findings have no fix tasks, early access opens before sign-off, and regional publishing breaches the embargo.",
+        "overall_rag": "red",
+        "workstreams": [
+          {
+            "team": "PR",
+            "rag": "red",
+            "summary": "Early access opens 2027-02-01 ahead of red team sign-off and Legal approval, the embargo decision is unresolved, and the corrected browser claim gets 1 day of Legal review instead of 10 business days."
+          },
+          {
+            "team": "Product",
+            "rag": "red",
+            "summary": "Launch-blocking findings F1, F3 and F6 have no fix or retest tasks, the F8 benchmark leak, F4 and F5 are uncovered, and the early access go/no-go is scheduled before its inputs exist."
+          },
+          {
+            "team": "Regional",
+            "rag": "red",
+            "summary": "No owner for localized safety disclaimers, all Regional tasks are unowned, and local 09:00 publishing breaches the 09:00 PT embargo in nearly all regions."
+          },
+          {
+            "team": "Legal",
+            "rag": "yellow",
+            "summary": "Claims review is on schedule for 2027-02-08 if submitted 2027-01-25, but the F7 bias mitigation is missing from the plan and final copy review is squeezed into 2027-03-08."
+          }
+        ],
+        "top_risk_ids": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7"
+        ],
+        "decisions_needed": [
+          "Decide whether to move early access from 2027-02-01 to 2027-02-09, or open on 2027-02-01 only with F1, F3, F6 and F8 verified fixed, the F2 interim disclaimer live, and creator materials limited to cleared claims.",
+          "Approve and staff fix and retest tasks with named owners for F3, F6 and F1 (due 2027-01-29 and 2027-02-05), and make red team sign-off depend on them; if a fix slips, hold that feature or the launch.",
+          "Make a single embargo decision by 2027-02-19: hold all 14 regions until 2027-03-10 17:00 UTC, or move the global embargo earlier. Update media guidance by 2027-02-26.",
+          "Name a Regional owner for localized safety disclaimers by 2027-01-13 and approve an interim non-English medical disclaimer by 2027-01-29.",
+          "Require PR to submit the corrected browser copy to Legal by 2027-02-05 (no later than 2027-02-19), and use non-dated wording like 'coming soon to the browser' until the F5 fix is verified."
+        ],
+        "rejected_risk_note": "R8 (missing owners across Legal, Regional and PRO-6, and duplicated NDA ownership) was rejected by the program manager and is not treated as a live risk here."
+      }
+    },
+    {
+      "ts": 1793915048.9445376,
+      "kind": "run_done",
+      "agent": null,
+      "from_agent": null,
+      "to_agent": null,
+      "summary": "Status ready. Nothing was sent externally.",
       "key": null,
       "data": null
     }
