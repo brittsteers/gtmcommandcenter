@@ -2,7 +2,7 @@
 
 **[Open the live dashboard](https://brittsteers.github.io/gtmcommandcenter/)**
 
-A multi-agent orchestrator for model go-to-market launches. It takes a launch brief and produces a workback schedule, four cross-functional workstream plans, a cross-team risk review, and a one-page leadership status. A program manager approves the risks before anything final is written.
+A multi-agent orchestrator for model go-to-market launches. It takes a launch brief and produces a workback schedule, four cross-functional workstream plans, a cross-team risk review, and a one-page leadership status. A red team triage pipeline turns raw tester reports into scored, routed findings and feeds the serious ones into the risk review. A program manager approves the risks before anything final is written.
 
 It runs two ways:
 
@@ -14,14 +14,15 @@ The sample launch is fictional ("Lumen" and "Nova 2" are invented). A second bri
 ## Agent graph
 
 ```
-            Launch brief
-                 │
-             Planner            master workback schedule
-                 │
-     ┌─────┬─────┴─────┬───────┐   fan-out (parallel)
-     PR  Product  Regional  Legal   tasks, owners, dependencies, asks
-     └─────┴─────┬─────┴───────┘   fan-in
-            Risk agent          cross-plan conflicts, ranked, with evidence
+            Launch brief                       Red team reports (optional)
+                 │                                      │
+             Planner            master schedule      Intake      dedupe into findings
+                 │                                   Severity    critical / high / medium / low
+     ┌─────┬─────┴─────┬───────┐   fan-out           Routing     owner team, next action, date
+     PR  Product  Regional  Legal   tasks, asks      Digest      daily summary for leadership
+     └─────┴─────┬─────┴───────┘   fan-in               │
+            Risk agent  ◄───────────────────────── escalated findings
+                 │              cross-plan conflicts, ranked, with evidence
                  │
       Human approval gate       PM accepts, rejects, or edits mitigations
                  │
@@ -52,6 +53,17 @@ Run "1 · Plan launch"  ──►  agents plan  ──►  PR "Risk review" open
 - **Untrusted input is checked.** The brief path comes from a workflow input, so it's restricted to `.json` files under `data/`, and review decisions must be exactly `accept` or `reject`.
 - **Observable.** Every step and handoff is written to an event log. The dashboard streams it live locally and replays it on Pages.
 - **Nothing external.** The system drafts only. It sends no messages.
+
+## Red team triage
+
+A brief opts in with `"red_team_findings": "data/<file>.json"`. The pipeline runs alongside the planner, so it adds no wait.
+
+- **Intake** merges duplicate reports (three testers reporting fabricated citations become one finding) and sets aside reports that aren't findings, like feature requests.
+- **Severity** uses Opus, since scoring harm is a judgment call. It marks a finding as blocking when it must be fixed before launch or before a pre-launch program, such as early access, puts the model in outside hands.
+- **Routing** assigns one owner team, a next action, a needed-by date and a holding line for the tester.
+- **Digest** writes the leadership summary.
+
+Two deterministic rules back up the agents: a finding the Severity agent skips is treated as high and blocking until a person triages it, and any critical or blocking finding escalates to the Risk agent, whatever the Routing agent said. The sample uses 12 fictional reports in [data/redteam_nova2.json](data/redteam_nova2.json). The Apple case has no red team data on purpose, since inventing findings for a real launch would plant the answers.
 
 ## Planted conflicts in the sample brief
 
@@ -88,7 +100,7 @@ From the CLI, rejecting R6 at the gate:
 |---|---|
 | `schemas.py` | Typed contracts between agents |
 | `llm.py` | Live (Claude, structured outputs) and Replay backends; credential detection |
-| `agents/` | Planner, workstreams, Risk, Synthesizer prompts |
+| `agents/` | Planner, workstreams, Risk, Synthesizer and red team triage prompts |
 | `orchestrator.py` | The two stages around the gate, plus the local run and CLI |
 | `cloud.py` | Cloud stages: plan and write the review file, then finalize from the merged review |
 | `build_site.py` | Builds the static Pages dashboard from finished runs |
@@ -100,6 +112,5 @@ From the CLI, rejecting R6 at the gate:
 
 ## Next
 
-- Red team triage module whose findings feed the Risk agent
 - Re-plan loop: after approval, workstream agents revise their plans based on the accepted mitigations
 - Connectors: read the brief from a doc and write tasks to a tracker, with approval before each write

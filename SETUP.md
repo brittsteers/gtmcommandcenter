@@ -73,4 +73,4 @@ The wizard listens for a successful sign-in for 15 minutes. Starting step 5 with
 - **"GitHub Actions is not permitted to create pull requests"**: the checkbox in step 3 is off.
 - **The dashboard 404s**: Pages source isn't set to GitHub Actions. Then run **3 · Publish dashboard** once by hand.
 
-Each live run makes six model calls (one on Opus, five on Sonnet), which costs well under a dollar.
+Each live run makes seven model calls (one on Opus, six on Sonnet). A brief with red team reports adds four more, one of them on Opus. A run costs a dollar or two at most.

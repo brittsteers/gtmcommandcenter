@@ -71,6 +71,61 @@ class Status(BaseModel):
     rejected_risk_note: Optional[str] = None
 
 
+# --- Red team triage --------------------------------------------------------------------------
+
+FindingSeverity = Literal["critical", "high", "medium", "low"]
+Harm = Literal["safety", "factual accuracy", "privacy and security", "fairness", "claims and IP", "quality"]
+Team = Literal["Product", "Legal", "PR", "Regional"]
+
+
+class Finding(BaseModel):
+    id: str = Field(description="F1, F2, ...")
+    feature: str
+    summary: str
+    observed: str = Field(description="What the model did, as close to the tester's words as possible")
+    reported_by: List[str]
+    first_reported: str = Field(description="ISO date YYYY-MM-DD")
+    source_ids: List[str] = Field(description="Raw report ids merged into this finding")
+
+
+class FindingList(BaseModel):
+    findings: List[Finding]
+    not_findings: List[str] = Field(default_factory=list,
+                                    description="Raw report ids that are not red team findings, with a short reason each")
+
+
+class FindingScore(BaseModel):
+    finding_id: str
+    severity: FindingSeverity
+    harm: Harm
+    blocks_launch: bool
+    rationale: str
+
+
+class ScoreList(BaseModel):
+    scores: List[FindingScore]
+
+
+class FindingRoute(BaseModel):
+    finding_id: str
+    owner_team: Team
+    action: str
+    suggested_response: str = Field(description="Holding line or reply to the tester")
+    needed_by: str = Field(description="ISO date YYYY-MM-DD")
+    escalate: bool
+
+
+class RouteList(BaseModel):
+    routes: List[FindingRoute]
+
+
+class TriageDigest(BaseModel):
+    headline: str
+    launch_blockers: List[str] = Field(description="Finding ids")
+    notes: List[str]
+    decisions_needed: List[str]
+
+
 class HandoffEvent(BaseModel):
     ts: float
     kind: str

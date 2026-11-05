@@ -1,4 +1,6 @@
 """Runs the agent graph: planner -> 4 workstreams in parallel -> risk -> human gate -> synthesizer.
+If the brief lists red team reports, the triage pipeline runs alongside the planner and its
+escalated findings go to the Risk agent too.
 
 The graph is split into two stages around the human gate so the gate can be a live button (local
 dashboard) or a pull request (GitHub Actions, see cloud.py). Every handoff is emitted as an event.
@@ -14,7 +16,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Callable, Iterable, List, Optional, Tuple
 
-from agents import planner, risk, synthesizer, workstreams
+from agents import planner, risk, synthesizer, triage, workstreams
 from llm import load_env
 from schemas import HandoffEvent, MasterSchedule, RiskReport, Status, WorkstreamPlan
 
@@ -30,6 +32,9 @@ Emit = Callable[..., None]
 def stage_plan(llm, brief: dict, emit: Emit) -> Tuple[MasterSchedule, List[WorkstreamPlan], RiskReport]:
     """Everything before the human gate."""
     emit("run_start", summary=brief["launch_name"], data={"brief": brief})
+    reports = triage.load_reports(brief)
+    pool = ThreadPoolExecutor(max_workers=1)
+    triage_job = pool.submit(run_triage, llm, brief, reports, emit) if reports else None
 
     emit("agent_start", agent="Planner", from_agent="orchestrator", to_agent="Planner")
     schedule = planner.run(llm, brief)
@@ -51,12 +56,50 @@ def stage_plan(llm, brief: dict, emit: Emit) -> Tuple[MasterSchedule, List[Works
 
     emit("handoff", from_agent="4 workstream agents", to_agent="Risk agent",
          summary=f"{sum(len(p.tasks) for p in plans)} tasks across {len(plans)} plans")
+    triaged = triage_job.result() if triage_job else None
+    pool.shutdown()
+    if triaged is not None:
+        escalated = [f for f in triaged if f["escalate"]]
+        emit("handoff", from_agent="Digest agent", to_agent="Risk agent",
+             summary=f"{len(escalated)} escalated red team findings")
     emit("agent_start", agent="Risk agent", from_agent="workstreams", to_agent="Risk agent")
-    report = risk.run(llm, brief, schedule, plans)
+    report = risk.run(llm, brief, schedule, plans, triaged)
     highs = sum(r.severity == "high" for r in report.risks)
     emit("agent_done", agent="Risk agent", key="risks", data=report.model_dump(),
          summary=f"{len(report.risks)} risks ({highs} high)")
     return schedule, plans, report
+
+
+def run_triage(llm, brief: dict, reports: list, emit: Emit) -> List[dict]:
+    """Red team pipeline. Runs in a background thread while the planner and workstreams work."""
+    emit("handoff", from_agent="orchestrator", to_agent="Intake agent", summary=f"{len(reports)} raw red team reports")
+    emit("agent_start", agent="Intake agent")
+    findings = triage.intake(llm, brief, reports)
+    emit("agent_done", agent="Intake agent", key="triage:intake", data=findings.model_dump(),
+         summary=f"{len(reports)} reports into {len(findings.findings)} findings, {len(findings.not_findings)} set aside")
+    emit("agent_start", agent="Severity agent", from_agent="Intake agent", to_agent="Severity agent")
+    scores = triage.severity(llm, brief, findings)
+    blocking = sum(s.blocks_launch for s in scores.scores)
+    emit("agent_done", agent="Severity agent", key="triage:severity", data=scores.model_dump(),
+         summary=f"{sum(s.severity == 'critical' for s in scores.scores)} critical, {blocking} block launch")
+    emit("agent_start", agent="Routing agent", from_agent="Severity agent", to_agent="Routing agent")
+    routes = triage.routing(llm, brief, findings, scores)
+    emit("agent_done", agent="Routing agent", key="triage:routing", data=routes.model_dump(),
+         summary=", ".join(f"{t} {n}" for t, n in _count(r.owner_team for r in routes.routes)))
+    triaged = triage.merge(findings, scores, routes)
+    emit("agent_start", agent="Digest agent", from_agent="Routing agent", to_agent="Digest agent")
+    dg = triage.digest(llm, brief, triaged)
+    emit("agent_done", agent="Digest agent", key="triage", data={"findings": triaged, "not_findings": findings.not_findings,
+                                                                  "digest": dg.model_dump()},
+         summary=dg.headline)
+    return triaged
+
+
+def _count(items) -> List[Tuple[str, int]]:
+    counts: dict = {}
+    for i in items:
+        counts[i] = counts.get(i, 0) + 1
+    return sorted(counts.items(), key=lambda kv: -kv[1])
 
 
 def stage_finalize(llm, brief: dict, schedule: MasterSchedule, plans: List[WorkstreamPlan],

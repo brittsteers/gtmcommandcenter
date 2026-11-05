@@ -28,6 +28,7 @@
   .pill.high, .pill.red { background: #4a2a25; color: var(--red); }
   .pill.medium, .pill.yellow { background: #4a3f22; color: var(--yellow); }
   .pill.low, .pill.green { background: #2b3a28; color: var(--green); }
+  .pill.critical { background: #5e2620; color: #f2a08f; }
   #state { color: var(--muted); font-size: 13px; }
   main { display: grid; grid-template-columns: minmax(300px, 380px) 1fr; gap: 16px; padding: 16px 24px; }
   @media (max-width: 900px) { main { grid-template-columns: 1fr; padding: 16px; } header { padding: 14px 16px; } }
@@ -46,6 +47,13 @@
   .node.done::before { content: "✓ "; color: var(--green); }
   .node.gate { border-style: dashed; }
   .arrow { text-align: center; color: var(--dim); font-size: 11px; line-height: 1; }
+  .tri { border: 1px dashed var(--line); border-radius: 10px; padding: 8px; display: grid; gap: 6px; }
+  .tri[hidden] { display: none; }
+  .tri .cap { text-align: center; color: var(--dim); font-size: 11px; }
+  .tri .node { font-size: 11.5px; }
+  .find .meta { color: var(--dim); font-size: 12px; }
+  .find .obs { color: var(--muted); font-size: 12.5px; margin-top: 2px; }
+  .esc { color: var(--yellow); font-size: 12px; font-weight: 600; white-space: nowrap; }
 
   /* log */
   #log { max-height: 420px; overflow-y: auto; font-size: 12.5px; }
@@ -141,6 +149,15 @@
           <div class="node" data-n="Regional agent">Regional</div>
           <div class="node" data-n="Legal agent">Legal</div>
         </div>
+        <div class="tri" id="tri">
+          <div class="cap">Red team triage · runs in parallel</div>
+          <div class="row">
+            <div class="node" data-n="Intake agent">Intake</div>
+            <div class="node" data-n="Severity agent">Severity</div>
+            <div class="node" data-n="Routing agent">Routing</div>
+            <div class="node" data-n="Digest agent">Digest</div>
+          </div>
+        </div>
         <div class="arrow">▼ fan-in</div>
         <div class="row"><div class="node" data-n="Risk agent">Risk agent</div></div>
         <div class="arrow">▼</div>
@@ -164,12 +181,12 @@
 </main>
 
 <script>
-const TABS = [["brief","Brief"],["schedule","Schedule"],["plans","Workstreams"],["risks","Risks"],["status","Status"]];
+const TABS = [["brief","Brief"],["schedule","Schedule"],["plans","Workstreams"],["redteam","Red team"],["risks","Risks"],["status","Status"]];
 let S, es, t0, active = "brief";
 let STATIC = false;  // true when served as a static site (GitHub Pages) with recorded runs
 
 function reset() {
-  S = { brief: null, schedule: null, plans: {}, risks: null, status: null, gate: false, decided: false, decisions: {}, review: null };
+  S = { brief: null, schedule: null, plans: {}, triage: null, risks: null, status: null, gate: false, decided: false, decisions: {}, review: null };
   document.getElementById("log").innerHTML = "";
   document.querySelectorAll(".node").forEach(n => n.classList.remove("active","done"));
 }
@@ -178,7 +195,7 @@ const node = n => document.querySelector(`.node[data-n="${n}"]`);
 const safeUrl = u => /^https:\/\/github\.com\//.test(u || "") ? u : null;
 
 function renderTabs() {
-  const counts = { schedule: S.schedule?.milestones.length, plans: Object.keys(S.plans).length || null, risks: S.risks?.risks.length };
+  const counts = { schedule: S.schedule?.milestones.length, plans: Object.keys(S.plans).length || null, redteam: S.triage?.findings.length, risks: S.risks?.risks.length };
   document.getElementById("tabs").innerHTML = TABS.map(([k, l]) =>
     `<button class="tab ${k===active?"on":""}" data-k="${k}">${l}${counts[k] ? `<span class="n">${counts[k]}</span>` : ""}</button>`).join("");
   document.querySelectorAll(".tab").forEach(b => b.onclick = () => { active = b.dataset.k; render(); });
@@ -209,6 +226,22 @@ function render() {
           <td class="${k.owner==="TBD"?"tbd":""}">${esc(k.owner)}</td><td class="date">${esc(k.depends_on.join(", "))}</td></tr>`).join("")}</table></div>
         ${pl.asks.length ? `<ul class="asks">${pl.asks.map(a => `<li>Ask of <b>${esc(a.to_team)}</b> by ${esc(a.needed_by)}: ${esc(a.request)}</li>`).join("")}</ul>` : ""}`;
     }).join("");
+  } else if (active === "redteam") {
+    const tr = S.triage;
+    if (!tr) { p.innerHTML = none(S.brief && !S.brief.red_team_findings ? "This launch brief has no red team reports." : "Waiting on red team triage."); return; }
+    const dg = tr.digest;
+    p.innerHTML = `<div class="status-head">${esc(dg.headline)}</div>
+      <p class="note" style="margin:0 0 12px;font-style:normal">Launch blockers: <b>${esc(dg.launch_blockers.join(", ") || "none")}</b> · escalated findings go to the Risk agent.</p>
+      <div class="scroll"><table><tr><th>ID</th><th>Finding</th><th>Severity</th><th>Owner</th><th>Needed by</th><th></th></tr>
+      ${tr.findings.map(f => `<tr class="find"><td class="date">${esc(f.id)}</td>
+        <td><b>${esc(f.summary)}</b><div class="meta">${esc(f.harm)} · ${esc(f.source_ids.join(", "))}${f.blocks_launch ? " · blocks launch" : ""}</div>
+          <div class="obs">${esc(f.observed)}</div><div class="obs"><i>Why:</i> ${esc(f.rationale)}</div><div class="obs"><i>Next:</i> ${esc(f.action)}</div></td>
+        <td><span class="pill ${esc(f.severity)}">${esc(f.severity)}</span></td><td>${esc(f.owner_team)}</td>
+        <td class="date">${esc(f.needed_by)}</td><td>${f.escalate ? '<span class="esc">Escalated</span>' : ""}</td></tr>`).join("")}
+      </table></div>
+      <h3>Patterns</h3><ul class="dec">${dg.notes.map(n => `<li>${esc(n)}</li>`).join("")}</ul>
+      <h3>Decisions needed</h3><ul class="dec">${dg.decisions_needed.map(d => `<li>${esc(d)}</li>`).join("")}</ul>
+      ${tr.not_findings?.length ? `<h3>Set aside at intake</h3><ul class="asks">${tr.not_findings.map(n => `<li>${esc(n)}</li>`).join("")}</ul>` : ""}`;
   } else if (active === "risks") {
     if (!S.risks) { p.innerHTML = none("Waiting on the Risk agent."); return; }
     const locked = !S.gate || S.decided;
@@ -262,12 +295,13 @@ function onEvent(ev) {
   if (t0 === undefined) t0 = ev.ts;
   log(ev);
   const k = ev.kind;
-  if (k === "run_start") { S.brief = ev.data.brief; setState("Running"); }
+  if (k === "run_start") { S.brief = ev.data.brief; setState("Running"); document.getElementById("tri").hidden = !S.brief.red_team_findings; }
   if (k === "agent_start") node(ev.agent)?.classList.add("active");
   if (k === "agent_done") {
     node(ev.agent)?.classList.replace("active", "done");
     if (ev.key === "schedule") { S.schedule = ev.data; active = "schedule"; }
     else if (ev.key.startsWith("plan:")) { S.plans[ev.key.slice(5)] = ev.data; active = "plans"; }
+    else if (ev.key === "triage") { S.triage = ev.data; active = "redteam"; }
     else if (ev.key === "risks") { S.risks = ev.data; ev.data.risks.forEach(r => S.decisions[r.id] = { accepted: true, mitigation: r.mitigation }); active = "risks"; }
     else if (ev.key === "status") { S.status = ev.data; active = "status"; }
   }

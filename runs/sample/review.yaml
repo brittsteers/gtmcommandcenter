@@ -44,3 +44,10 @@ risks:
   decision: reject
   owner: Regional PMM
   mitigation: Pre-translate non-claim copy from the 03-01 draft.
+- id: R7
+  title: Two critical red team findings are open days before early access
+  severity: high
+  decision: accept
+  owner: Safety Lead
+  mitigation: Gate early access on red team re-tests of F3 and F6. If they are not verified by 01-31,
+    open early access with image generation off and crisis behavior pinned on.
