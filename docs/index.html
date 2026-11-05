@@ -234,7 +234,7 @@ function render() {
       <p class="note" style="margin:0 0 12px;font-style:normal">Launch blockers: <b>${esc(dg.launch_blockers.join(", ") || "none")}</b> · escalated findings go to the Risk agent.</p>
       <div class="scroll"><table><tr><th>ID</th><th>Finding</th><th>Severity</th><th>Owner</th><th>Needed by</th><th></th></tr>
       ${tr.findings.map(f => `<tr class="find"><td class="date">${esc(f.id)}</td>
-        <td><b>${esc(f.summary)}</b><div class="meta">${esc(f.harm)} · ${esc(f.source_ids.join(", "))}${f.blocks_launch ? " · blocks launch" : ""}</div>
+        <td><b>${esc(f.summary)}</b><div class="meta">${esc(f.harm)} · ${esc(f.source_ids.join(", "))}${f.blocks_launch ? " · blocks launch" : ""}${f.gates_later_release ? ` · gates ${esc(f.gates_later_release)}` : ""}</div>
           <div class="obs">${esc(f.observed)}</div><div class="obs"><i>Why:</i> ${esc(f.rationale)}</div><div class="obs"><i>Next:</i> ${esc(f.action)}</div></td>
         <td><span class="pill ${esc(f.severity)}">${esc(f.severity)}</span></td><td>${esc(f.owner_team)}</td>
         <td class="date">${esc(f.needed_by)}</td><td>${f.escalate ? '<span class="esc">Escalated</span>' : ""}</td></tr>`).join("")}

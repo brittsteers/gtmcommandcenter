@@ -99,6 +99,7 @@ class FindingScore(BaseModel):
     severity: FindingSeverity
     harm: Harm
     blocks_launch: bool
+    gates_later_release: str = Field(default="", description="The post-launch release this finding must clear, or empty")
     rationale: str
 
 

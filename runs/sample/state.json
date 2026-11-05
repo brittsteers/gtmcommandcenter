@@ -971,7 +971,8 @@
             "action": "Ground news answers in retrieved sources only and suppress citations that fail a URL check. Red team re-test on 20 recent-news prompts.",
             "suggested_response": "Thanks. Confirmed and assigned to the model team for a fix before sign-off.",
             "needed_by": "2027-02-05",
-            "escalate": true
+            "escalate": true,
+            "gates_later_release": ""
           },
           {
             "id": "F2",
@@ -993,7 +994,8 @@
             "action": "Add the localized medical disclaimer to Japanese and Korean responses once Legal approves the wording. Check all 14 launch languages.",
             "suggested_response": "Confirmed. Regional and Legal are adding the disclaimer in every launch language.",
             "needed_by": "2027-02-08",
-            "escalate": true
+            "escalate": true,
+            "gates_later_release": ""
           },
           {
             "id": "F3",
@@ -1015,7 +1017,8 @@
             "action": "Block photorealistic images of named real people, then have Legal confirm the policy. Re-test before early access.",
             "suggested_response": "Confirmed as a policy violation. A fix is required before early access opens.",
             "needed_by": "2027-01-31",
-            "escalate": true
+            "escalate": true,
+            "gates_later_release": ""
           },
           {
             "id": "F4",
@@ -1037,7 +1040,8 @@
             "action": "Correct the self-description to 'coming to the browser on 03-17' and align it with the press release fix.",
             "suggested_response": "Thanks. The availability language is being corrected in the model and in launch copy.",
             "needed_by": "2027-02-15",
-            "escalate": true
+            "escalate": true,
+            "gates_later_release": ""
           },
           {
             "id": "F5",
@@ -1059,7 +1063,8 @@
             "action": "Treat page content as untrusted in the browser build and require user confirmation before generating links. Security re-test before the 03-17 release.",
             "suggested_response": "Confirmed. The browser release is gated on this fix.",
             "needed_by": "2027-03-10",
-            "escalate": true
+            "escalate": true,
+            "gates_later_release": "Browser integration, 2027-03-17"
           },
           {
             "id": "F6",
@@ -1081,7 +1086,8 @@
             "action": "Keep crisis-resource behavior active regardless of role-play length. Add a long-conversation eval to the release checklist.",
             "suggested_response": "Confirmed and prioritized. Early access depends on this fix.",
             "needed_by": "2027-01-31",
-            "escalate": true
+            "escalate": true,
+            "gates_later_release": ""
           },
           {
             "id": "F7",
@@ -1103,7 +1109,8 @@
             "action": "Decide whether to restrict ranking of people in hiring contexts. Product adds a fairness eval.",
             "suggested_response": "Thanks. Legal and Product are reviewing hiring use guidance.",
             "needed_by": "2027-02-19",
-            "escalate": true
+            "escalate": true,
+            "gates_later_release": ""
           },
           {
             "id": "F8",
@@ -1125,7 +1132,8 @@
             "action": "Remove the benchmark score from the system prompt and add refusal guidance for prompt disclosure.",
             "suggested_response": "Thanks. The internal score is being removed.",
             "needed_by": "2027-02-05",
-            "escalate": false
+            "escalate": false,
+            "gates_later_release": ""
           }
         ],
         "not_findings": [
@@ -1144,8 +1152,7 @@
           "notes": [
             "Fabricated citations (F1) came from three testers in two languages, so it is the most visible pattern.",
             "Both safety gaps (F2, F6) are cases where a safeguard works in the default path and fails in another language or a long chat.",
-            "F5 is critical but only affects the browser build, so it gates the 03-17 browser release, not launch day.",
-            "Two findings (F4, F8) touch public claims and overlap with open PR and Legal work."
+            "F5 is critical but only affects the browser build, so it gates the 03-17 browser release, not launch day."
           ],
           "decisions_needed": [
             "Gate early access on verified fixes for F3 and F6, or open it with image generation off.",

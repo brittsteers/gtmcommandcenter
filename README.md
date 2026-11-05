@@ -63,7 +63,7 @@ A brief opts in with `"red_team_findings": "data/<file>.json"`. The pipeline run
 - **Routing** assigns one owner team, a next action, a needed-by date and a holding line for the tester.
 - **Digest** writes the leadership summary.
 
-Two deterministic rules back up the agents: a finding the Severity agent skips is treated as high and blocking until a person triages it, and any critical or blocking finding escalates to the Risk agent, whatever the Routing agent said. The sample uses 12 fictional reports in [data/redteam_nova2.json](data/redteam_nova2.json). The Apple case has no red team data on purpose, since inventing findings for a real launch would plant the answers.
+Two deterministic rules back up the agents: a finding the Severity agent skips is treated as high and blocking until a person triages it, and any critical or blocking finding escalates to the Risk agent, whatever the Routing agent said. A finding that only affects a post-launch release gates that release instead of blocking launch. The sample uses 12 fictional reports in [data/redteam_nova2.json](data/redteam_nova2.json). The Apple case has no red team data on purpose, since inventing findings for a real launch would plant the answers.
 
 ## Planted conflicts in the sample brief
 

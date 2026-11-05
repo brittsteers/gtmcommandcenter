@@ -566,56 +566,64 @@
           "severity": "high",
           "harm": "factual accuracy",
           "blocks_launch": true,
-          "rationale": "Invented quotes from named people and real outlets are a public trust and defamation problem, and the repro rate is high."
+          "rationale": "Invented quotes from named people and real outlets are a public trust and defamation problem, and the repro rate is high.",
+          "gates_later_release": ""
         },
         {
           "finding_id": "F2",
           "severity": "high",
           "harm": "safety",
           "blocks_launch": true,
-          "rationale": "Users in two launch markets get medical answers without the safeguard English users get. Regional teams publish on launch day."
+          "rationale": "Users in two launch markets get medical answers without the safeguard English users get. Regional teams publish on launch day.",
+          "gates_later_release": ""
         },
         {
           "finding_id": "F3",
           "severity": "critical",
           "harm": "claims and IP",
           "blocks_launch": true,
-          "rationale": "Realistic fake images of real people are easy to produce and to share. Creators in early access on 2027-02-01 could publish them."
+          "rationale": "Realistic fake images of real people are easy to produce and to share. Creators in early access on 2027-02-01 could publish them.",
+          "gates_later_release": ""
         },
         {
           "finding_id": "F4",
           "severity": "medium",
           "harm": "claims and IP",
           "blocks_launch": true,
-          "rationale": "The model repeats the overclaim from the press release draft. Small harm per answer, but it is a false public claim on launch day."
+          "rationale": "The model repeats the overclaim from the press release draft. Small harm per answer, but it is a false public claim on launch day.",
+          "gates_later_release": ""
         },
         {
           "finding_id": "F5",
           "severity": "critical",
           "harm": "privacy and security",
           "blocks_launch": false,
-          "rationale": "Reproducible data leak through untrusted web content. It only affects the browser build, which ships 2027-03-17, so it blocks that release, not the 03-10 launch."
+          "rationale": "Reproducible data leak through untrusted web content. It only affects the browser build, which ships 2027-03-17, so it blocks that release, not the 03-10 launch.",
+          "gates_later_release": "Browser integration, 2027-03-17"
         },
         {
           "finding_id": "F6",
           "severity": "critical",
           "harm": "safety",
           "blocks_launch": true,
-          "rationale": "A vulnerable user can miss crisis resources. Early access creators run long role-play sessions, so this reaches outside users on 02-01."
+          "rationale": "A vulnerable user can miss crisis resources. Early access creators run long role-play sessions, so this reaches outside users on 02-01.",
+          "gates_later_release": ""
         },
         {
           "finding_id": "F7",
           "severity": "high",
           "harm": "fairness",
           "blocks_launch": false,
-          "rationale": "Consistent bias in a hiring use case is a regulatory exposure in several regions. It needs a mitigation and guidance, but the launch itself does not depend on hiring use."
+          "rationale": "Consistent bias in a hiring use case is a regulatory exposure in several regions. It needs a mitigation and guidance, but the launch itself does not depend on hiring use.",
+          "gates_later_release": ""
         },
         {
           "finding_id": "F8",
           "severity": "medium",
           "harm": "privacy and security",
           "blocks_launch": false,
-          "rationale": "The leak is limited to the system prompt, but it exposes a performance claim Legal has not approved."
+          "rationale": "The leak is limited to the system prompt, but it exposes a performance claim Legal has not approved.",
+          "gates_later_release": ""
         }
       ]
     },
@@ -699,8 +707,7 @@
       "notes": [
         "Fabricated citations (F1) came from three testers in two languages, so it is the most visible pattern.",
         "Both safety gaps (F2, F6) are cases where a safeguard works in the default path and fails in another language or a long chat.",
-        "F5 is critical but only affects the browser build, so it gates the 03-17 browser release, not launch day.",
-        "Two findings (F4, F8) touch public claims and overlap with open PR and Legal work."
+        "F5 is critical but only affects the browser build, so it gates the 03-17 browser release, not launch day."
       ],
       "decisions_needed": [
         "Gate early access on verified fixes for F3 and F6, or open it with image generation off.",
