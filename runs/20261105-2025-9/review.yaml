@@ -22,9 +22,8 @@ risks:
   decision: accept
   owner: Early Access Program Manager (Product)
   mitigation: Move the early access opening to 2027-02-09, after PRO-4 and LEG-2. Alternatively, open
-    on 2027-02-01 only if F3, F6 and F8 are verified fixed and the F2 interim disclaimer is live, with
-    image generation and role-play disabled otherwise and creator materials limited to cleared claims.
-    Move PRO-2 to 2027-01-26 so PRO-3 can decide on 2027-01-27. Name a single accountable decider.
+      on 2027-02-01 only if F1, F3, F6 and F8 are verified fixed and the F2 interim disclaimer is live, with 
+      news citations, image generation and role-play disabled otherwise and creator materials limited to cleared claims.
 - id: R3
   title: Regional 09:00 local publish and app rollout breach the 09:00 PT embargo in nearly all regions,
     and the decision is due too late
@@ -70,7 +69,7 @@ risks:
 - id: R8
   title: Widespread missing owners and duplicated NDA ownership
   severity: medium
-  decision: accept
+  decision: reject
   owner: Program Manager
   mitigation: Assign named owners to every LEG, REG and PRO-6 task by 2027-01-13. Make the Creator Program
     Lead accountable for NDA execution, with Legal (LEG-1) responsible for the NDA template and countersignature
